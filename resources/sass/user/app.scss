@@ -4,51 +4,28 @@
  */
 
 // Bootstrap
-@import '~mdb-ui-kit/src/scss/mdb.free';
-@import '~mdb-ui-kit/src/scss/mdb.core';
-@import '~bootstrap/scss/bootstrap-grid';
-
 @import 'resources/sass/variables';
-
+@import '~mdb-ui-kit/css/mdb.min.css';
+@import '~bootstrap/dist/css/bootstrap-grid.min.css';
 @import '../fontAwesomePro/fontawesome';
 
+
 @import 'header';
-@import 'footer';
-@import 'login';
-@import 'instagram';
-@import 'category-preview';
-@import 'search';
-@import 'register';
-@import 'not-found';
-
-@import 'cart/index';
-
-@import 'product/item';
-@import 'product/catalog';
-@import 'product/show';
-
-@import 'profile/index';
-
-@import 'order/create';
-
-
-// TODO: тут писать все общие стили, по возможности разбивать на файлы, отдельно для продукта, отдельно для корзины и прочее. Разбивать если там стили используются не общие.
-
-// TODO: Каждый отдельный блок подписывать для чего он. Т.е. если идёт какиета стили к корзине, то подписать что Корзина и т.п.
-// TODO: В начале идёт стили на текст и кнопки, потом уже остальное, по медиа запросам глянь в бутстраме, там если без медио то это общее + мобилка, а дальше идёт медия для пк планшетов и больше.
-// TODO: Смотри, не старайся всё в 1 медиа запихать, лучше создавать куча одних и техже медия, дели код по блокам, по страницам, по карточкам товара корзины и прочее. Копилятор сам закинет всё в одно
 
 *:active, *:hover {
   outline: none;
 }
 
 body {
-  background: rgba(242, 243, 246, 1);
+  font-family: 'Tenor Sans', sans-serif;
+  background: $body-bg;
+  font-size:$font-size-base;
+  line-height: $line-height-base;
 }
 
 #index-page {
   .header {
-    position: absolute;
+    //position: absolute;
   }
 }
 
@@ -125,3 +102,6 @@ body {
   opacity: 0;
 }
 
+.font-lato {
+  font-family: 'Lato', sans-serif !important;
+}

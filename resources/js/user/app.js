@@ -3,19 +3,10 @@
  * Я буду рад если вы будите вносить улучшения, всегда жду ваших пул реквестов
  */
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-import * as mdb from 'mdb-ui-kit'
 require('./bootstrap.js')
-
+import * as mdb from 'mdb-ui-kit'; // lib
 import store from "./store";
-
 window.Vue = require('vue')
-window.Swal = require('sweetalert2')
 
 /**
  * The following block of code may be used to automatically register your
@@ -40,7 +31,6 @@ Vue.prototype.$cost = function (number) {
 
 
 Vue.config.productionTip = false
-
 Vue.config.devtools = true;
 Vue.config.performance = true;
 
