@@ -1,0 +1,85 @@
+/*!
+ * Copyright (c) 2021. Данный файл является интелектуальной собственостью Fulliton.
+ * Я буду рад если вы будите вносить улучшения, всегда жду ваших пул реквестов
+ */
+
+.not-found-page {
+  width: 100vw;
+  height: 100vh;
+  color: #fff;
+
+  background-image: url('../images/not-found.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .title {
+    font-size: 4.5em;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    display: block;
+    font-size: 1em;
+    margin: 2rem 0;
+  }
+
+  .preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    color: white;
+    padding: 16px 40px;
+    background: #ffffff29;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 1em;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, rgba(229, 233, 239, 0.53), rgba(229, 233, 239, 0));
+    transition-duration: .5s;
+
+    i {
+      margin-left: 5px;
+    }
+
+    &:hover {
+      background: rgba(229, 233, 239, 0.53);
+      transition-duration: .5s;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .title {
+      font-size: 3em;
+    }
+  }
+
+  @include media-breakpoint-down(xsm) {
+    .title {
+      font-size: 2em;
+    }
+
+    .subtitle {
+      font-size: .9em;
+    }
+
+    .preview {
+      width: 250px;
+      padding: 8px 20px;
+      font-size: .7em;
+    }
+
+    img {
+      width: 200px;
+    }
+  }
+}

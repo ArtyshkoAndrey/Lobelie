@@ -1,0 +1,112 @@
+/*!
+ * Copyright (c) 2021. Данный файл является интелектуальной собственостью Fulliton.
+ * Я буду рад если вы будите вносить улучшения, всегда жду ваших пул реквестов
+ */
+
+#catalog {
+
+  &> div {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    > .title {
+      font-size: 1.5em;
+      font-weight: 700;
+      color: #2D3134;
+      margin-left: .1em;
+
+      @include media-breakpoint-down(md) {
+        font-size: 1.1em;
+      }
+    }
+
+    .badge {
+      line-height: unset;
+      background: #E9EAEC;
+      color: #2D3134;
+      font-weight: 400;
+      margin-left: 1em;
+    }
+
+    .badge-notification {
+      line-height: unset;
+      background: #E9EAEC;
+      color: #2D3134;
+      font-weight: 500;
+      position: absolute;
+      right: -3px;
+      top: 0;
+      font-size: 0.6em;
+      padding: 0 4px;
+    }
+  }
+
+  #product-all {
+    display: flex;
+    align-items: center;
+
+    .dropdown {
+      display: flex;
+
+      .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        &:after {
+          color: #2D3134;
+          margin-left: auto;
+
+          @include media-breakpoint-down(sm) {
+            font-size: 1.6em;
+          }
+        }
+      }
+
+      .dropdown-menu {
+        width: 300px!important;
+        max-height: 300px!important;
+
+        @include media-breakpoint-down(sm) {
+          width: 100vw!important;
+          transform: translate(0, 40px)!important;
+          margin-left: -12px;
+        }
+
+        .checkbox {
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+
+  hr {
+    color: #a4a5a7;
+  }
+
+  .filter-badge {
+    display: flex;
+    align-items: center;
+    background: #E9EAEC;
+    border-radius: 10px;
+
+    button {
+      display: flex;
+      align-items: center;
+      margin: 0 0 0 .3em;
+    }
+  }
+
+  .badge.badge-notification {
+    margin-left: 0 !important;
+  }
+
+  .clear-filters {
+    a {
+      color: #2D3134;
+      text-decoration: underline;
+    }
+  }
+}

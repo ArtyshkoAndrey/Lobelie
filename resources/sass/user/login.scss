@@ -1,0 +1,153 @@
+$link-color: #2D89DE;
+$link-color-hover: #1e5f98;
+
+
+#login-page, #register-page, #password-request-page, #password-reset-page {
+  height: 100vh;
+  width: 100vw;
+
+  .social-signin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-radius: 0;
+    font-size: .9em;
+    box-shadow: none;
+    border: 1px solid #a69c93;
+
+    &#google {
+      i {
+        color: #dd4b39;
+        transition-duration: .3s;
+      }
+
+      &:hover {
+        background: #dd4b39;
+        color: #fff;
+        transition-duration: .3s;
+
+        i {
+          color: #fff;
+        }
+      }
+    }
+
+    &#fb {
+      i {
+        color: #3b5998;
+        transition-duration: .3s;
+      }
+
+      &:hover {
+        background: #3b5998;
+        color: #fff;
+        transition-duration: .3s;
+
+        i {
+          color: #fff;
+        }
+      }
+    }
+
+    &#vk {
+      i {
+        color: #4a76a8;
+        transition-duration: .3s;
+      }
+
+      &:hover {
+        background: #4a76a8;
+        color: #fff;
+        transition-duration: .3s;
+
+        i {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .card {
+    background: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(123, 123, 123, 0.43);
+    border: none;
+  }
+
+  #app {
+    padding: 0 !important;
+    height: 100%;
+
+    main {
+      height: 100%;
+      padding: 0 !important;
+
+      .container-fluid {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .header {
+      display: none;
+    }
+  }
+
+  .form-outline {
+    line-height: 2em;
+
+    .form-control {
+      line-height: 2em;
+
+      &:focus ~ .form-notch {
+        .form-notch-leading, .form-notch-middle, .form-notch-trailing {
+          border-color: $link-color !important;
+        }
+      }
+    }
+  }
+
+  button {
+    font-size: 1em;
+    font-weight: 600;
+  }
+}
+
+.link-inverse-login-register {
+  box-shadow: inset 4px -3px 19px -12px;
+  > *, a {
+    color: $link-color !important;
+    &:hover {
+      color: $link-color-hover !important;
+    }
+  }
+}
+
+.register-page .link-inverse-login-register {
+  box-shadow: inset -4px -3px 19px -12px;
+}
+
+.form-outline.form-password {
+  padding-right: 3em;
+}
+
+.hide-show-btn {
+  position: absolute;
+  top: 0;
+  right: 0.75rem;
+  transform-origin: 0 0;
+  transition: all 0.2s ease-out;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  width: 25px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

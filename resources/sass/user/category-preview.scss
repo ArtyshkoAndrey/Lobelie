@@ -1,0 +1,50 @@
+/*!
+ * Copyright (c) 2020. Данный файл является интелектуальной собственостью Fulliton.
+ * Я буду рад если вы будите вносить улучшения, всегда жду ваших пул реквестов
+ */
+
+.category-preview {
+  margin-top: 50px;
+
+  & .title-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    > .title {
+      font-size: 1.5em;
+      font-weight: 700;
+      color: #2D3134;
+      margin-left: .1em;
+
+      @include media-breakpoint-down(md) {
+        font-size: 1.1em;
+      }
+    }
+
+    > a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      margin-left: 15px;
+      color: #2D89DE;
+      border: 3px solid #2D89DE;
+      transition-duration: .5s;
+
+      i {
+        font-size: 1.4em
+      }
+
+      &:hover {
+        background: #2D89DE;
+        color: white;
+        transition-duration: .5s;
+      }
+      //&:hover i {
+      //  background: #2D89DE;
+      //  color: #ffffff;
+      //}
+    }
+  }
+}

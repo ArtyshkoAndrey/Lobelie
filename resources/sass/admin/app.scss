@@ -1,0 +1,224 @@
+@import "~halfmoon/css/halfmoon-variables.css";
+
+:root {
+  --dm-sidebar-link-text-color-active: #ff6767;
+  --dm-sidebar-link-text-color-active-hover: #ff0000;
+
+  --dm-navbar-link-active-text-color: #ff6767;
+  --dm-navbar-link-active-text-color-hover: #ff0000;
+
+  --lm-sidebar-link-text-color-active: #ff6767;
+  --lm-sidebar-link-text-color-active-hover: #ff0000;
+
+  --lm-navbar-link-active-text-color: #ff6767;
+  --lm-navbar-link-active-text-color-hover: #ff0000;
+  --lm-navbar-link-text-color-hover: rgba(0,0,0, 0.8);
+  --lm-navbar-link-text-color: rgba(0,0,0, 0.65);
+
+  --dm-navbar-link-text-color-hover: rgba(255,255,255, 0.8);
+  --dm-navbar-link-text-color: rgba(255,255,255, 0.65);
+  --lm-base-body-bg-color: var(--gray-color-light);
+
+  --breadcrumb-separator-margin-left: -5px;
+  --breadcrumb-separator-margin-right: 0;
+  --breadcrumb-separator-content: "\e9b2";
+  --tooltip-width: 15rem;
+  /* Small button */
+
+  --small-button-font-size: 1rem;
+  --large-button-font-size: 1.4rem;
+  --code-font-size: 1rem;
+  --base-font-size: 1.1rem;
+  --small-input-font-size: 1rem;
+  --large-input-font-size: 1.6rem;
+  --content-title-font-size: 1.4rem;
+  --modal-close-font-size: 2rem;
+  --alert-heading-font-size: 1.4rem;
+  --alert-close-font-size: 1.4rem;
+  --navbar-brand-font-size: 1.6rem;
+  --sidebar-title-font-size: 1.3rem;
+  --sidebar-icon-font-size: 1.3rem;
+  --tooltip-font-size: 1.1rem;
+  --pagination-item-font-size: 1.1rem;
+  --pagination-item-height: 2.5rem;
+  --pagination-item-width: 2.5rem;
+  --base-html-font-size: 75%;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.3;
+}
+h2 {
+  font-size: 3.2rem;
+  line-height: 1.35;
+}
+h3 {
+  font-size: 2.8rem;
+  line-height: 1.4;
+}
+h4 {
+  font-size: 2.2rem;
+  line-height: 1.45;
+}
+h5 {
+  font-size: 1.6rem;
+}
+h6 {
+  font-size: 1.3rem;
+}
+samp {
+  font-size: .8em;
+}
+sup {
+  font-size: 65%;
+}
+
+.breadcrumb-item:before {
+  font-family: "boxicons", serif;
+  //margin-top: 5px;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.font-size-9 {
+  font-size: .9rem;
+}
+
+#orders [data-toggle="tooltip"]:not([data-placement])::before, [data-toggle="tooltip"][data-placement="top"]::before {
+  left: 25%;
+}
+#orders  [data-toggle="tooltip"]:not([data-placement])::after, [data-toggle="tooltip"][data-placement="top"]::after {
+  left: 25%;
+}
+//@import "~halfmoon/css/halfmoon.css";
+
+.product {
+  transition: all .5s;
+  &:hover {
+    //img {
+    //  transform: scale(1.2);
+    //  transition: .5s;
+    //}
+  }
+  img {
+    transition: .5s;
+  }
+}
+
+//.product:hover {
+//  background-color: #000!important;
+//  color: white!important;
+//}
+
+.link-product {
+  color: #000;
+}
+
+.dark-mode {
+  .product:hover {
+    background-color: #000!important;
+  }
+  .link-product {
+    color: #ffffff;
+  }
+
+  .select2-container--default .select2-selection--multiple, .select2-dropdown {
+    color: var(--dm-input-text-color);
+    background-color: #25282B;
+    border-color: var(--dm-input-border-color);
+    box-shadow: var(--dm-input-box-shadow);
+  }
+
+  .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: black;
+    &:hover {
+      background-color: #25282B;
+    }
+  }
+  .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    height: 100% !important;
+  }
+
+  .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover, .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:focus {
+    background-color: #25282B;
+    color: white;
+    height: 100% !important;
+  }
+
+  .select2-container--default .select2-results__option--selected {
+    background-color: black;
+  }
+}
+
+
+.link-product:hover {
+  color: red!important;
+}
+
+.sidebar, .content-wrapper {
+  transition: .5s
+}
+
+.dz-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.dropzone {
+  background: inherit;
+  border-radius: 5px;
+  border: 1px dashed red;
+  border-image: none;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dropzone .dz-preview.dz-image-preview {
+  background: inherit;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+  object-position: center;
+}
+
+.btn-outline-danger {
+  background: transparent!important;
+  box-shadow: none!important;
+  border: 2px solid #DE6D2D!important;
+  color: #DE6D2D!important;
+  font-size: 18px;
+}
+
+.btn-outline-success {
+  background: transparent!important;
+  box-shadow: none!important;
+  border: 2px solid var(--success-color)!important;
+  color: var(--success-color)!important;
+  font-size: 18px;
+}
+
+.btn-outline-primary {
+  background: transparent!important;
+  box-shadow: none!important;
+  border: 2px solid var(--primary-color)!important;
+  color: var(--primary-color)!important;
+  font-size: 18px;
+}
+.invalid-feedback {
+  display: none;
+}
+.form-group {
+
+  .invalid-feedback {
+    display: none;
+  }
+
+  &.is-invalid {
+    .invalid-feedback {
+      display: block;
+    }
+  }
+}

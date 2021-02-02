@@ -1,0 +1,78 @@
+/*!
+ * Copyright (c) 2021. Данный файл является интелектуальной собственостью Fulliton.
+ * Я буду рад если вы будите вносить улучшения, всегда жду ваших пул реквестов
+ */
+
+#cart-index-page {
+  .cart-page {
+    min-height: calc(100vh - 480px - 175px);
+    padding-bottom: 30px;
+
+    .cart-button {
+      min-width: 35px;
+      min-height: 35px;
+      padding: 0;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include media-breakpoint-down(md) {
+        min-width: 25px;
+        min-height: 25px;
+      }
+    }
+
+    .item-name {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #2D3134;
+    }
+
+    .item-size {
+      font-size: 1em;
+      color: #4F545B;
+      font-weight: normal;
+    }
+
+    @include media-breakpoint-down(md) {
+      .item-name {
+        font-size: 1em;
+      }
+
+      .item-size {
+        font-size: .9em;
+      }
+    }
+
+    .form-outline {
+      line-height: 3em;
+
+      .form-control {
+        line-height: 3em;
+
+        &:focus ~ .form-notch {
+          .form-notch-leading, .form-notch-middle, .form-notch-trailing {
+            border-color: $link-color !important;
+          }
+        }
+
+        &:focus ~ .form-label, &.active ~ .form-label {
+          transform: translateY(-1.4rem) scale(0.8);
+        }
+      }
+    }
+  }
+
+  .promocode-button {
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  .promocode-button:disabled {
+    background: transparent;
+    color: black;
+    box-shadow: none;
+    border: 1px solid  #4F545B;
+  }
+}

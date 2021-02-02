@@ -1,0 +1,80 @@
+/*!
+ * Copyright (c) 2020. Данный файл является интелектуальной собственостью Fulliton.
+ * Я буду рад если вы будите вносить улучшения, всегда жду ваших пул реквестов
+ */
+
+section.instagram {
+  height: 600px;
+  background-image: linear-gradient(0deg,
+    #6480AA, rgba(255, 255, 255, 0)),
+  url('../images/instagram-background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  //padding-left: 8em;
+  position: relative;
+  background-position-y: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 35%;
+    display: block;
+    position: absolute;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../images/instagram-mountains.svg');
+    bottom: -1% !important;
+  }
+
+  &::before {
+    content: "";
+    background-image: url('../images/instagram-phone.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+
+    @include media-breakpoint-down(md) {
+      content: none;
+    }
+  }
+
+  span {
+    color: #ffffff;
+  }
+
+  .small {
+    font-size: 1em;
+    z-index: 100;
+  }
+
+  .big {
+    font-size: 2.2em;
+    font-weight: 800;
+    z-index: 100;
+  }
+
+  a {
+    color: #ffffff;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .big {
+      font-size: 1.5em;
+    }
+
+  }
+}

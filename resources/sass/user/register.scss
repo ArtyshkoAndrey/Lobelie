@@ -1,0 +1,69 @@
+/*!
+ * Copyright (c) 2021. Данный файл является интелектуальной собственостью Fulliton.
+ * Я буду рад если вы будите вносить улучшения, всегда жду ваших пул реквестов
+ */
+
+
+#register-page {
+  .social-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-radius: 0;
+    font-size: .9em;
+    box-shadow: none;
+    border: 1px solid #a69c93;
+
+    &#google {
+      i {
+        color: #dd4b39;
+        transition-duration: .3s;
+      }
+
+      &:hover {
+        background: #dd4b39;
+        color: #fff;
+        transition-duration: .3s;
+
+        i {
+          color: #fff;
+        }
+      }
+    }
+
+    &#fb {
+      i {
+        color: #3b5998;
+        transition-duration: .3s;
+      }
+
+      &:hover {
+        background: #3b5998;
+        color: #fff;
+        transition-duration: .3s;
+
+        i {
+          color: #fff;
+        }
+      }
+    }
+
+    &#vk {
+      i {
+        color: #4a76a8;
+        transition-duration: .3s;
+      }
+
+      &:hover {
+        background: #4a76a8;
+        color: #fff;
+        transition-duration: .3s;
+
+        i {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
