@@ -56965,14 +56965,31 @@ $(window).ready(function () {
   var toggle = $('#nav-toggle');
   var dropdownPage = $('#menu-dropdown-page');
   var search = $('#search');
+  var searchInput = $('.search-input');
+  var searchButton = $('.search-button');
   toggle.click(function () {
+    if ($(toggle).hasClass('open')) {
+      $(search).removeClass('open');
+    }
+
     $(toggle).toggleClass('open');
     dropdownPage.toggleClass('open');
   });
 
-  function toggleSearch() {
-    search.toggleClass('open');
-  }
+  window.toggleSearch = function () {
+    $(search).toggleClass('open');
+  };
+
+  searchInput.focusin(function () {
+    $(searchInput).addClass('active');
+    $(searchButton).addClass('active');
+  });
+  searchInput.focusout(function () {
+    if ($(searchInput).val().length === 0) {
+      $(searchButton).removeClass('active');
+      $(searchInput).removeClass('active');
+    }
+  });
 });
 
 /***/ }),
@@ -57217,9 +57234,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\openserver\domains\lobelie\resources\js\user\app.js */"./resources/js/user/app.js");
-__webpack_require__(/*! C:\openserver\domains\lobelie\resources\sass\user\app.scss */"./resources/sass/user/app.scss");
-module.exports = __webpack_require__(/*! C:\openserver\domains\lobelie\resources\sass\admin\app.scss */"./resources/sass/admin/app.scss");
+__webpack_require__(/*! C:\Users\hugan\Documents\OpenServer\domains\Lobelie\resources\js\user\app.js */"./resources/js/user/app.js");
+__webpack_require__(/*! C:\Users\hugan\Documents\OpenServer\domains\Lobelie\resources\sass\user\app.scss */"./resources/sass/user/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\hugan\Documents\OpenServer\domains\Lobelie\resources\sass\admin\app.scss */"./resources/sass/admin/app.scss");
 
 
 /***/ })

@@ -16887,6 +16887,86 @@ readers do not read off random characters that represent icons */
   width: 100%;
   transition-duration: 0.5s;
   background: white;
+  z-index: 5;
+}
+.header #search.open {
+  top: 0;
+  transition-duration: 0.5s;
+}
+@media (max-width: 768px) {
+  .header #search {
+    height: calc(100vh - 126px);
+    top: calc(126px - 100vh);
+    z-index: 1;
+  }
+  .header #search.open {
+    top: 126px;
+  }
+}
+.header #search .close-search {
+  background: transparent;
+  border: none;
+  font-size: 2em;
+  color: #7A808C;
+}
+.header #search .search-input-wrapper {
+  position: relative;
+}
+.header #search .search-input-wrapper .search-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #7A808C;
+  color: #1B1B1B;
+  outline: none;
+  font-family: "Lato", sans-serif;
+  padding: 0.6em 0;
+  transition-duration: 0.3s;
+}
+.header #search .search-input-wrapper .search-input::-moz-placeholder {
+  font-family: "Lato", sans-serif;
+}
+.header #search .search-input-wrapper .search-input:-ms-input-placeholder {
+  font-family: "Lato", sans-serif;
+}
+.header #search .search-input-wrapper .search-input::placeholder {
+  font-family: "Lato", sans-serif;
+}
+.header #search .search-input-wrapper .search-input:focus, .header #search .search-input-wrapper .search-input.active {
+  transition-duration: 0.3s;
+  border-bottom: 1px solid #7A808C;
+  border-bottom-color: #1B1B1B;
+}
+.header #search .search-input-wrapper i {
+  position: absolute;
+  right: 0;
+  top: 12px;
+  font-size: 1.5em;
+  color: #1B1B1B;
+}
+.header #search .search-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #7A808C;
+  width: 100%;
+  background: transparent;
+  height: 100%;
+  font-family: "Lato", sans-serif;
+  color: #7A808C;
+  transition-duration: 0.3s;
+}
+.header #search .search-button:hover {
+  transition-duration: 0.3s;
+  background: #1B1B1B;
+  color: #FFFFFF;
+}
+.header #search .search-button.active {
+  transition-duration: 0.3s;
+  border-color: #1B1B1B;
+}
+.header #search .search-button i {
+  font-size: 1.2em;
+  margin-right: 0.3em;
 }
 
 *:active, *:hover {
@@ -16898,6 +16978,10 @@ body {
   background: #f8fafc;
   font-size: 0.9rem;
   line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Tenor Sans", sans-serif;
 }
 
 #login-page footer, #register-page footer,

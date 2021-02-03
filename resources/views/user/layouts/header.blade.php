@@ -68,7 +68,7 @@
 
           <ul class="navbar-nav w-100">
             {{--            TODO: Валюта --}}
-            <li class="nav-item dropdown mr-auto">
+            <li class="nav-item dropdown currency-dropdown mr-auto">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -79,7 +79,7 @@
               >
                 <span class="">@{{ $store.state.currency.short_name ?? 'Загрузка' }}</span>
               </a>
-              <ul class="dropdown-menu currency-dropdown" aria-labelledby="navbarDropdown">
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 @foreach(\App\Models\Currency::all() as $currency)
                   <li>
 
@@ -100,7 +100,7 @@
             <div class="divider"></div>
             {{--            TODO: Поиск --}}
             <li class="nav-item">
-              <a class="nav-link" onclick="">
+              <a class="nav-link" onclick="toggleSearch()">
                 <i class="las la-search"></i>
               </a>
             </li>
@@ -134,9 +134,32 @@
     </div>
   </div>
   <div id="search">
-    <h1>Что бы вы хотели найти?</h1>
-    <div>
-
+    <div class="container-fluid h-100 p-2">
+      <div class="row justify-content-center h-100">
+        <div class="col-12 d-flex justify-content-start justify-content-md-end">
+          <button class="close-search" onclick="toggleSearch()">
+            <i class="las la-times"></i>
+          </button>
+        </div>
+        <div class="col-12 col-md-8 d-flex flex-column justify-content-start justify-content-md-center h-100 pl-4 pl-md-0"
+             style="padding-bottom: 6em;">
+          <h1 class="w-100 text-dark text-left text-md-center mb-4">Что бы вы хотели найти?</h1>
+          <div class="row d-flex">
+            <div class="col-12 col-md-9">
+              <div class="search-input-wrapper">
+                <input class="search-input" placeholder="Поиск украшений...">
+                <i class="las la-search d-block d-md-none"></i>
+              </div>
+            </div>
+            <div class="col-3 d-none d-md-flex">
+              <button class="search-button" type="submit">
+                <i class="las la-search"></i>
+                <span>Найти</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
