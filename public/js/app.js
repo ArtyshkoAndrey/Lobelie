@@ -56968,26 +56968,26 @@ $(window).ready(function () {
   var searchInput = $('.search-input');
   var searchButton = $('.search-button');
   toggle.click(function () {
-    if ($(toggle).hasClass('open')) {
-      $(search).removeClass('open');
+    if (toggle.hasClass('open')) {
+      search.removeClass('open');
     }
 
-    $(toggle).toggleClass('open');
+    toggle.toggleClass('open');
     dropdownPage.toggleClass('open');
   });
 
   window.toggleSearch = function () {
-    $(search).toggleClass('open');
+    search.toggleClass('open');
   };
 
   searchInput.focusin(function () {
-    $(searchInput).addClass('active');
-    $(searchButton).addClass('active');
+    searchInput.addClass('active');
+    searchButton.addClass('active');
   });
   searchInput.focusout(function () {
-    if ($(searchInput).val().length === 0) {
-      $(searchButton).removeClass('active');
-      $(searchInput).removeClass('active');
+    if (searchInput.val().length === 0) {
+      searchButton.removeClass('active');
+      searchInput.removeClass('active');
     }
   });
 });

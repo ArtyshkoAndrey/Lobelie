@@ -141,13 +141,13 @@
             <i class="las la-times"></i>
           </button>
         </div>
-        <div class="col-12 col-md-8 d-flex flex-column justify-content-start justify-content-md-center h-100 pl-4 pl-md-0"
+        <div class="col-12 col-md-8 d-flex flex-column justify-content-start justify-content-md-center h-100 pl-4 pl-md-3"
              style="padding-bottom: 6em;">
           <h1 class="w-100 text-dark text-left text-md-center mb-4">Что бы вы хотели найти?</h1>
           <div class="row d-flex">
             <div class="col-12 col-md-9">
               <div class="search-input-wrapper">
-                <input class="search-input" placeholder="Поиск украшений...">
+                <input class="search-input pr-4 pr-md-0" placeholder="Поиск украшений...">
                 <i class="las la-search d-block d-md-none"></i>
               </div>
             </div>
