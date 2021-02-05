@@ -34,7 +34,7 @@
                     @click="$store.dispatch('set_currency', { currency: {{$currency}} })"
                     class="dropdown-item"
                     v-bind:class="$store.state.currency.id === {{ $currency->id }} ? 'active' : '' ">
-                      {{ $currency->short_name }}
+                    {{ $currency->short_name }}
                   </button>
 
                 </li>
@@ -53,11 +53,64 @@
               <i class="fal fa-heart"></i>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" onclick="">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link position-relative"
+              href="#"
+              id="cart-dropdown"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
               <i class="las la-shopping-bag"></i>
               <span class="badge rounded-pill badge-notification bg-dark text-light">0</span>
             </a>
+            <div class="dropdown-menu full-height dropdown-cart dropdown-menu-end">
+              <div class="container-fluid p-3">
+                <div class="row mb-2">
+                  <div class="col-6">
+                    <h2>Корзина</h2>
+                  </div>
+                  <div class="col-6 d-flex justify-content-end align-items-center">
+                    <a href="#!">Очистить корзину</a>
+                  </div>
+                </div>
+                <div class="row pb-3" v-for="i in 3">
+                  <div class="col-3">
+                    <img src="{{ asset('images/product.png') }}" alt=""
+                         class="img-fluid" style="border-radius: 6px;">
+                  </div>
+                  <div class="col-9">
+                    <div class="row h-100">
+                      <div class="col-7">
+                        <div class="row h-100">
+                          <div class="col-12">
+                            <h5>Полное название товара</h5>
+                          </div>
+                          <div class="col-12 d-flex align-items-end">
+                            <h4 class="mb-0">10 000</h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-5">
+                        <div class="row h-100">
+                          <div class="col-12 d-flex justify-content-end">
+                            <a href="#!">Удалить</a>
+                          </div>
+                          <div class="col-12 d-flex align-items-end justify-content-end">
+                            <div class="buttons-wrapper">
+                              <button class="cart-button" onclick="">-</button>
+                              <span class="font-tenor mx-2">1</span>
+                              <button class="cart-button" onclick="">+</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
@@ -141,8 +194,9 @@
             <i class="las la-times"></i>
           </button>
         </div>
-        <div class="col-12 col-md-8 d-flex flex-column justify-content-start justify-content-md-center h-100 pl-4 pl-md-3"
-             style="padding-bottom: 6em;">
+        <div
+          class="col-12 col-md-8 d-flex flex-column justify-content-start justify-content-md-center h-100 pl-4 pl-md-3"
+          style="padding-bottom: 6em;">
           <h1 class="w-100 text-dark text-left text-md-center mb-4">Что бы вы хотели найти?</h1>
           <div class="row d-flex">
             <div class="col-12 col-md-9">

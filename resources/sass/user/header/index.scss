@@ -301,6 +301,34 @@
       }
     }
   }
+
+  .dropdown-cart {
+    min-width: 600px;
+
+    a {
+      color: $gray;
+      font-size: .7em;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .buttons-wrapper {
+      display: flex;
+
+      & > * {
+        font-size: 1.2em;
+      }
+
+      .cart-button {
+        display: flex;
+        background: transparent;
+        border: none;
+        line-height: 1.3em;
+      }
+    }
+  }
 }
 
 //.btn {

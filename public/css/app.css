@@ -16968,6 +16968,28 @@ readers do not read off random characters that represent icons */
   font-size: 1.2em;
   margin-right: 0.3em;
 }
+.header .dropdown-cart {
+  min-width: 600px;
+}
+.header .dropdown-cart a {
+  color: #7A808C;
+  font-size: 0.7em;
+}
+.header .dropdown-cart a:hover {
+  text-decoration: underline;
+}
+.header .dropdown-cart .buttons-wrapper {
+  display: flex;
+}
+.header .dropdown-cart .buttons-wrapper > * {
+  font-size: 1.2em;
+}
+.header .dropdown-cart .buttons-wrapper .cart-button {
+  display: flex;
+  background: transparent;
+  border: none;
+  line-height: 1.3em;
+}
 
 *:active, *:hover {
   outline: none;
@@ -16981,6 +17003,14 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: "Tenor Sans", sans-serif;
+}
+
+.font-lato {
+  font-family: "Lato", sans-serif;
+}
+
+.font-tenor {
   font-family: "Tenor Sans", sans-serif;
 }
 
