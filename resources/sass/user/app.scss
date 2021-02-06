@@ -11,6 +11,8 @@
 
 
 @import 'header';
+@import 'home';
+
 
 *:active, *:hover {
   outline: none;
@@ -21,6 +23,7 @@ body {
   background: $body-bg;
   font-size:$font-size-base;
   line-height: $line-height-base;
+  background: $white;
 }
 
 h1, h2, h3, h4, h5, h6 {

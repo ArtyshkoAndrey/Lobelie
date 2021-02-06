@@ -16733,6 +16733,7 @@ readers do not read off random characters that represent icons */
   width: 100%;
   font-family: "Lato", sans-serif;
   background: #FFFFFF;
+  z-index: 5;
 }
 .header .logo {
   height: 80px;
@@ -16991,6 +16992,96 @@ readers do not read off random characters that represent icons */
   line-height: 1.3em;
 }
 
+.home-slider {
+  margin-top: 80px;
+  height: calc(100vh - 80px);
+}
+.home-slider .slides {
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: flex-end;
+}
+.home-slider .slides .slide-wrapper {
+  width: 70%;
+  height: calc(100vh - 80px);
+  position: absolute;
+  right: 0;
+}
+.home-slider .slides .slide-wrapper .slide {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.home-slider .slides .slide-wrapper .slide.active {
+  opacity: 1;
+}
+.home-slider .slides .slide-wrapper .next-wrapper {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: -130px;
+  bottom: 2em;
+}
+.home-slider .slides .slide-wrapper .next-wrapper .next-slide {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.home-slider .slides .slide-wrapper .next-wrapper .next-slide.active {
+  opacity: 1;
+}
+.home-slider .slides .dots {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1em;
+  z-index: 1;
+}
+.home-slider .slides .dots .dot {
+  width: 8px;
+  height: 8px;
+  margin-bottom: 2em;
+  background: #FFFFFF;
+  border-radius: 50rem;
+  opacity: 0.48;
+}
+.home-slider .slides .dots .dot.active {
+  width: 15px;
+  height: 15px;
+  opacity: 1;
+}
+.home-slider .content {
+  position: absolute;
+  width: 50%;
+  height: calc(100vh - 80px);
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2em;
+}
+.home-slider .content .title {
+  color: #1B1B1B;
+  font-size: 3.4em;
+  line-height: 1.5em;
+}
+.home-slider .content .subtitle {
+  position: absolute;
+  opacity: 0;
+  font-size: 1.2em;
+}
+.home-slider .content .subtitle.active {
+  opacity: 1;
+}
+
 *:active, *:hover {
   outline: none;
 }
@@ -17000,6 +17091,7 @@ body {
   background: #f8fafc;
   font-size: 0.9rem;
   line-height: 1.6;
+  background: #FFFFFF;
 }
 
 h1, h2, h3, h4, h5, h6 {

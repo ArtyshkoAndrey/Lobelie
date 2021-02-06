@@ -5,15 +5,44 @@
 @section('title', 'DOCKU | Главаня страница')
 
 @section('content')
-  <section id="intro" class="container-fluid m-0 d-flex align-items-center">
-    <div class="row">
-      <div class="col-md-6">
-        <h1 class="title">Магазин cноубордов</h1>
-        <span class="subtitle">С одним из лучших<br>ассортиментов в Алматы</span>
-        <a href="{{ route('product.all') }}" class="preview">Начать покупки <i class="bx bx-sm bx-run"></i></a>
+  <div class="home-slider">
+    <div class="slides">
+      <div class="slide-wrapper">
+        <img slide-index="1" class="slide active" src="{{ asset('images/slide1.png') }}">
+        <img slide-index="2" class="slide" src="{{ asset('images/slide2.png') }}">
+        <img slide-index="3" class="slide" src="{{ asset('images/slide1.png') }}">
+        <img slide-index="4" class="slide" src="{{ asset('images/slide2.png') }}">
+
+        <div class="next-wrapper">
+          <img slide-index="1" class="next-slide" src="{{ asset('images/slide1.png') }}">
+          <img slide-index="2" class="next-slide active" src="{{ asset('images/slide2.png') }}">
+          <img slide-index="3" class="next-slide" src="{{ asset('images/slide1.png') }}">
+          <img slide-index="4" class="next-slide" src="{{ asset('images/slide2.png') }}">
+          
+        </div>
+      </div>
+
+      <div class="dots">
+        <div slide-index="1" class="dot active"></div>
+        <div slide-index="2" class="dot"></div>
+        <div slide-index="3" class="dot"></div>
+        <div slide-index="4" class="dot"></div>
       </div>
     </div>
-  </section>
+    <div class="content">
+      <div class="title-wrapper">
+        <h1 class="title">Магазин<br>ювелирных изделий и купальников</h1>
+      </div>
+      <div class="subtitle-wrapper">
+        <span text-index="1" class="subtitle active">Новый завоз колец 1</span>
+        <span text-index="1" class="subtitle">Новый завоз колец 2</span>
+        <span text-index="1" class="subtitle">Новый завоз колец 3</span>
+        <span text-index="1" class="subtitle">Новый завоз колец 4</span>
+      </div>
+    </div>
+  </div>
+
+
 
   <section>
 {{--    TODO: Доделать сортировку товаров в каталоге и вывести ссылку--}}

@@ -18,8 +18,7 @@
 
   @include('user.layouts.header')
   <main>
-   <h1 style="font-size: 70px">Lorem2</h1>
-{{--    @yield('content')--}}
+    @yield('content')
   </main>
 {{--  @include('user.layouts.footer')--}}
 </div>
