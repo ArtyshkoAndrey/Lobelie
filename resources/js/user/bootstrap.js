@@ -12,8 +12,10 @@ try {
   require('bootstrap');
   window.axios = require('axios');
   window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
   require('./menu.js');
   require('./home-slider.js')
+  require('./footer.js')
 } catch (e) {
   console.log(e);
 }

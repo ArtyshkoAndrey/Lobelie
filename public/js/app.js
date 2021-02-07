@@ -56619,6 +56619,8 @@ try {
   __webpack_require__(/*! ./menu.js */ "./resources/js/user/menu.js");
 
   __webpack_require__(/*! ./home-slider.js */ "./resources/js/user/home-slider.js");
+
+  __webpack_require__(/*! ./footer.js */ "./resources/js/user/footer.js");
 } catch (e) {
   console.log(e);
 }
@@ -56953,6 +56955,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_template_id_13316e6a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/user/footer.js":
+/*!*************************************!*\
+  !*** ./resources/js/user/footer.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(window).ready(function () {
+  var subscribeInput = $('.subscribe-input');
+  var subscribeButton = $('.subscribe-button');
+  subscribeInput.focusin(function () {
+    subscribeInput.addClass('active');
+    subscribeButton.addClass('active');
+  });
+  subscribeInput.focusout(function () {
+    if (subscribeInput.val().length === 0) {
+      subscribeButton.removeClass('active');
+      subscribeInput.removeClass('active');
+    }
+  });
+});
 
 /***/ }),
 

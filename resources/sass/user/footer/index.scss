@@ -1,0 +1,95 @@
+
+footer {
+  background: $white;
+
+  .link-block {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      display: block;
+      margin-bottom: 1em;
+      color: $dark;
+      font-size: 1.2em;
+      font-family: $font-family-footer-link-block-title;
+      font-weight: bold;
+    }
+
+    .link {
+      display: block;
+      color: $gray;
+      margin-bottom: .3em;
+      font-family: $font-family-footer-link-block-link;
+
+      &:hover {
+        color: $dark;
+      }
+    }
+
+    .pay-methods {
+      width: 200px;
+    }
+
+    .phone-wrapper, .email-wrapper {
+      display: flex;
+      align-items: center;
+
+      i {
+        font-size: 1.3em;
+        margin-right: .3em;
+      }
+    }
+  }
+
+  .mailing {
+    .subscribe-input {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid $gray;
+      color: $dark;
+      outline: none;
+      font-family: $font-family-search-input;
+      padding: 0.6em 0;
+      margin-bottom: 2em;
+      transition-duration: .3s;
+
+      &::placeholder {
+        font-family: $font-family-search-input;
+      }
+
+      &:focus, &.active {
+        transition-duration: .3s;
+        border-bottom: 1px solid $gray;
+        border-bottom-color: $dark;
+      }
+    }
+
+    .subscribe-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #7A808C;
+      width: 100%;
+      background: transparent;
+      height: 40px;
+      font-family: "Lato", sans-serif;
+      color: #7A808C;
+      transition-duration: .3s;
+
+      &:hover {
+        transition-duration: .3s;
+        background: $dark;
+        color: $white;
+      }
+
+      &.active {
+        transition-duration: .3s;
+        border-color: $dark;
+      }
+    }
+  }
+
+  .copyright {
+    color: $gray;
+  }
+}

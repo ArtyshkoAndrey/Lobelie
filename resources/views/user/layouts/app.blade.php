@@ -20,7 +20,7 @@
   <main>
     @yield('content')
   </main>
-{{--  @include('user.layouts.footer')--}}
+  @include('user.layouts.footer')
 </div>
 </body>
 
