@@ -4,6 +4,9 @@ $(window).ready(function() {
   let search = $('#search')
   let searchInput = $('.search-input')
   let searchButton = $('.search-button')
+  let cart = $('#cart');
+  let cartCloseButton = $('.cart-close-button')
+  let cartOpenButton = $('.cart-open-button')
 
   toggle.click(function () {
     if (toggle.hasClass('open')) {
@@ -29,4 +32,10 @@ $(window).ready(function() {
       searchInput.removeClass('active')
     }
   })
+
+  window.toggleCart = function() {
+    cart.toggleClass('active')
+    cartCloseButton.toggleClass('active')
+    cartOpenButton.toggleClass('active')
+  }
 })

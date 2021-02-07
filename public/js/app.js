@@ -56617,6 +56617,8 @@ try {
   window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
   __webpack_require__(/*! ./menu.js */ "./resources/js/user/menu.js");
+
+  __webpack_require__(/*! ./home-slider.js */ "./resources/js/user/home-slider.js");
 } catch (e) {
   console.log(e);
 }
@@ -56954,6 +56956,43 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/user/home-slider.js":
+/*!******************************************!*\
+  !*** ./resources/js/user/home-slider.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.onload = function () {
+  var current_slide = 1;
+  var next_slide = 2;
+  var slides_amount = $('.slide-wrapper .slide').length;
+  $('.next-wrapper').click(function () {
+    if (current_slide === slides_amount) {
+      current_slide = 1;
+    } else {
+      current_slide++;
+    }
+
+    if (next_slide === slides_amount) {
+      next_slide = 1;
+    } else {
+      next_slide++;
+    }
+
+    $('.slide-wrapper .slide.active').removeClass('active');
+    $('.slide-wrapper .slide[slide-index=' + current_slide + ']').addClass('active');
+    $('.dots .dot.active').removeClass('active');
+    $('.dots .dot[slide-index=' + current_slide + ']').addClass('active');
+    $('.next-wrapper .next-slide.active').removeClass('active');
+    $('.next-wrapper .next-slide[slide-index=' + next_slide + ']').addClass('active');
+    $('.subtitle-wrapper .subtitle.active').removeClass('active');
+    $('.subtitle-wrapper .subtitle[text-index=' + current_slide + ']').addClass('active');
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/user/menu.js":
 /*!***********************************!*\
   !*** ./resources/js/user/menu.js ***!
@@ -56967,6 +57006,9 @@ $(window).ready(function () {
   var search = $('#search');
   var searchInput = $('.search-input');
   var searchButton = $('.search-button');
+  var cart = $('#cart');
+  var cartCloseButton = $('.cart-close-button');
+  var cartOpenButton = $('.cart-open-button');
   toggle.click(function () {
     if (toggle.hasClass('open')) {
       search.removeClass('open');
@@ -56990,6 +57032,12 @@ $(window).ready(function () {
       searchInput.removeClass('active');
     }
   });
+
+  window.toggleCart = function () {
+    cart.toggleClass('active');
+    cartCloseButton.toggleClass('active');
+    cartOpenButton.toggleClass('active');
+  };
 });
 
 /***/ }),

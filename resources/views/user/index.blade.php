@@ -18,7 +18,8 @@
           <img slide-index="2" class="next-slide active" src="{{ asset('images/slide2.png') }}">
           <img slide-index="3" class="next-slide" src="{{ asset('images/slide1.png') }}">
           <img slide-index="4" class="next-slide" src="{{ asset('images/slide2.png') }}">
-          
+
+          <button class="next-button">Следующая</button>
         </div>
       </div>
 
@@ -35,11 +36,16 @@
       </div>
       <div class="subtitle-wrapper">
         <span text-index="1" class="subtitle active">Новый завоз колец 1</span>
-        <span text-index="1" class="subtitle">Новый завоз колец 2</span>
-        <span text-index="1" class="subtitle">Новый завоз колец 3</span>
-        <span text-index="1" class="subtitle">Новый завоз колец 4</span>
+        <span text-index="2" class="subtitle">Новый завоз колец 2</span>
+        <span text-index="3" class="subtitle">Новый завоз колец 3</span>
+        <span text-index="4" class="subtitle">Новый завоз колец 4</span>
       </div>
     </div>
+
+    <a href="#!" class="catalog-link">
+      <i class="las la-shopping-cart"></i>
+      <span>Перейти в каталог</span>
+    </a>
   </div>
 
 
