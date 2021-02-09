@@ -1,0 +1,30 @@
+.instagram {
+  background: $instagram-background;
+  height: 200px;
+
+  .brand-name {
+    margin-top: -0.6em;
+    margin-bottom: 1em;
+    color: $dark;
+  }
+
+  .title {
+    font-size: 1.5em;
+    text-align: center;
+    color: $dark;
+    margin-bottom: 1em;
+  }
+
+  .instagram-button {
+    border: 1px solid $dark;
+    color: $dark;
+    background: transparent;
+    padding: 0.8em 7em;
+    transition-duration: .3s;
+
+    &:hover {
+      background: $dark;
+      color: $white;
+    }
+  }
+}

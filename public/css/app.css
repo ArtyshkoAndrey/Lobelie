@@ -17248,6 +17248,7 @@ readers do not read off random characters that represent icons */
 
 footer {
   background: #FFFFFF;
+  padding-top: 2em;
 }
 footer .link-block {
   display: flex;
@@ -17329,6 +17330,33 @@ footer .mailing .subscribe-button.active {
 }
 footer .copyright {
   color: #7A808C;
+}
+
+.instagram {
+  background: #fafafa;
+  height: 200px;
+}
+.instagram .brand-name {
+  margin-top: -0.6em;
+  margin-bottom: 1em;
+  color: #1B1B1B;
+}
+.instagram .title {
+  font-size: 1.5em;
+  text-align: center;
+  color: #1B1B1B;
+  margin-bottom: 1em;
+}
+.instagram .instagram-button {
+  border: 1px solid #1B1B1B;
+  color: #1B1B1B;
+  background: transparent;
+  padding: 0.8em 7em;
+  transition-duration: 0.3s;
+}
+.instagram .instagram-button:hover {
+  background: #1B1B1B;
+  color: #FFFFFF;
 }
 
 *:active, *:hover {
