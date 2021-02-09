@@ -1,0 +1,55 @@
+.item-card {
+  font-family: "Lato", sans-serif;
+
+  .item-name {
+    font-size: 1.2em;
+  }
+
+  .price, .old-price {
+    font-size: 1.1em;
+  }
+
+  .old-price {
+    color: $light-gray;
+    text-decoration: line-through;
+  }
+
+  .price {
+    color: $dark;
+  }
+
+  .cart-button, .heart-button {
+    font-size: 1.1em;
+  }
+
+  .cart-button {
+    i {
+      font-size: 1.3em;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      i {
+        color: $dark;
+        background: $dark;
+      }
+    }
+  }
+
+  .cart-button {
+    i {
+      font-size: 1.2em;
+    }
+
+    &:hover {
+      color: $dark;
+      cursor: pointer;
+
+      i {
+        color: $dark;
+        background: $dark;
+      }
+    }
+  }
+}

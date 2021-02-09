@@ -57035,6 +57035,8 @@ $(window).ready(function () {
   var cart = $('#cart');
   var cartCloseButton = $('.cart-close-button');
   var cartOpenButton = $('.cart-open-button');
+  var html = $('html');
+  var body = $('body');
   toggle.click(function () {
     if (toggle.hasClass('open')) {
       search.removeClass('open');

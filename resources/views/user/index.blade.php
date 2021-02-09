@@ -48,21 +48,51 @@
     </a>
   </div>
 
+  <section id="new" class="my-5">
+    <div class="container-fluid">
+      <h1 class="section-title">Новые товары</h1>
+      <div class="d-flex justify-content-center">
+        <a href="#!" class="section-link">
+          <span>Смотреть все</span>
+          <i class="las la-long-arrow-alt-right"></i>
+        </a>
+      </div>
+      <div class="row content">
+        <div class="col-8 col-md-3">
+          @include('user.layouts.item')
+        </div>
+        <div class="col-8 col-md-5 mx-auto">
+          @include('user.layouts.item')
+        </div>
+        <div class="col-8 col-md-3">
+          @include('user.layouts.item')
+        </div>
+      </div>
+    </div>
+  </section>
 
-
-  <section>
-{{--    TODO: Доделать сортировку товаров в каталоге и вывести ссылку--}}
-    @include('user.layouts.category-preview', ['title' => 'Новое поступление', 'link' => route('product.all'), 'products' => $newProducts])
-
-    {{--    TODO: Доделать сортировку товаров в каталоге и вывести ссылку--}}
-    @include('user.layouts.category-preview', ['title' => 'Хит продаж', 'link' => route('product.all'), 'products' => $hitProducts])
-
-    @foreach($categories as $category)
-      @if($category->products->count() > 0)
-        @include('user.layouts.category-preview', ['title' => $category->name, 'link' => route('product.all', ['category' => $category->id]), 'products' => $category->products()->orderByDesc('id')->take(4)->get()])
-      @endif
-    @endforeach
-
+  <section id="catalog" class="my-5">
+    <div class="container-fluid">
+      <h1 class="section-title">Каталог</h1>
+      <div class="row line-wrapper" v-for="i in 2">
+        <div class="col-12 col-sm-6 d-flex flex-column" v-for="j in 2">
+          <div class="category-wrapper">
+{{--            <div class="d-flex flex-column w-100">--}}
+              <picture>
+                <source type="image/webp" srcset="{{ asset('images/category-image.png') }}">
+                <source type="image/jpeg" srcset="{{ asset('images/category-image.png') }}">
+                <img class="category-image" src="{{ asset('images/category-image.png') }}">
+              </picture>
+              <span class="category-name">Серьги</span>
+              <div class="arrow-wrapper">
+                <img src="{{ asset('images/arrow.svg') }}">
+              </div>
+              <a href="#!" class="category-link">Перейти в каталог</a>
+            </div>
+          </div>
+{{--        </div>--}}
+      </div>
+    </div>
   </section>
 
   @include('user.layouts.instagram')

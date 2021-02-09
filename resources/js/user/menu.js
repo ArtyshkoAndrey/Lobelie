@@ -7,6 +7,8 @@ $(window).ready(function() {
   let cart = $('#cart');
   let cartCloseButton = $('.cart-close-button')
   let cartOpenButton = $('.cart-open-button')
+  let html = $('html')
+  let body = $('body')
 
   toggle.click(function () {
     if (toggle.hasClass('open')) {

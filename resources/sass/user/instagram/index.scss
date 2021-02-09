@@ -1,6 +1,10 @@
 .instagram {
   background: $instagram-background;
-  height: 200px;
+  min-height: 200px;
+
+  @include media-breakpoint-down(md) {
+    padding: 2em 0 1.6em 0;
+  }
 
   .brand-name {
     margin-top: -0.6em;
