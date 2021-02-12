@@ -27,7 +27,7 @@ $transition-duration-slide: .5s;
 
       @include media-breakpoint-down(md) {
         width: 100%;
-        height: calc(100vh - 80px - 200px);
+        height: calc(100vh - 80px - 230px);
       }
 
       .slide {
@@ -108,7 +108,8 @@ $transition-duration-slide: .5s;
         flex-direction: row;
         margin-right: 0;
         position: absolute;
-        bottom: 25px;
+        //bottom: 25px;
+        top: 100%;
         width: 100%;
       }
 
@@ -153,7 +154,7 @@ $transition-duration-slide: .5s;
     @include media-breakpoint-down(md) {
       padding-top: 80px;
       justify-content: space-between;
-      padding-bottom: 3.5em;
+      padding-bottom: 5.5em;
     }
 
     .title {
@@ -185,7 +186,8 @@ $transition-duration-slide: .5s;
 
   .catalog-link {
     position: absolute;
-    bottom: .5em;
+    //bottom: .5em;
+    top: 95%;
     left: 1em;
     font-family: $font-family-slider-to-cart;
     color: $gray;

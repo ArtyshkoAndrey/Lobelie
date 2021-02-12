@@ -16,6 +16,7 @@
 @import 'instagram';
 @import 'item';
 @import 'index';
+@import 'product/catalog';
 
 
 *:active, *:hover {
@@ -128,4 +129,23 @@ h1, h2, h3, h4, h5, h6 {
 
 .font-lato {
   font-family: 'Lato', sans-serif !important;
+}
+
+
+.badge {
+  line-height: unset;
+  background: #E9EAEC;
+  color: #2D3134;
+  font-weight: 400;
+  //margin-left: 1em;
+}
+
+.badge-notification {
+  line-height: unset;
+  font-weight: 500;
+  position: absolute;
+  right: -3px;
+  top: 0;
+  font-size: .6em;
+  padding: 0 4px;
 }

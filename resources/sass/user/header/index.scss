@@ -190,7 +190,7 @@
       font-family: $font-family-category-menu;
       overflow-y: auto;
       height: calc(100vh - 80px);
-      padding-bottom: 90px;
+      padding-bottom: 110px;
       padding-top: 1em;
 
       h4 {
@@ -365,7 +365,7 @@
 
     .price-result-wrapper {
       position: sticky;
-      bottom: 30px;
+      bottom: 70px;
       left: 0;
       width: 100%;
       height: 100px;
@@ -388,5 +388,11 @@
         }
       }
     }
+  }
+
+  .badge-notification {
+    right: 2px;
+    top: 12px;
+    font-size: .4em;
   }
 }

@@ -71,26 +71,24 @@
     </div>
   </section>
 
-  <section id="catalog" class="my-5">
+  <section id="catalog-section" class="my-5">
     <div class="container-fluid">
       <h1 class="section-title">Каталог</h1>
       <div class="row line-wrapper" v-for="i in 2">
         <div class="col-12 col-sm-6 d-flex flex-column" v-for="j in 2">
           <div class="category-wrapper">
-{{--            <div class="d-flex flex-column w-100">--}}
-              <picture>
-                <source type="image/webp" srcset="{{ asset('images/category-image.png') }}">
-                <source type="image/jpeg" srcset="{{ asset('images/category-image.png') }}">
-                <img class="category-image" src="{{ asset('images/category-image.png') }}">
-              </picture>
-              <span class="category-name">Серьги</span>
-              <div class="arrow-wrapper">
-                <img src="{{ asset('images/arrow.svg') }}">
-              </div>
-              <a href="#!" class="category-link">Перейти в каталог</a>
+            <picture>
+              <source type="image/webp" srcset="{{ asset('images/category-image.png') }}">
+              <source type="image/jpeg" srcset="{{ asset('images/category-image.png') }}">
+              <img class="category-image" src="{{ asset('images/category-image.png') }}">
+            </picture>
+            <span class="category-name">Серьги</span>
+            <div class="arrow-wrapper">
+              <img src="{{ asset('images/arrow.svg') }}">
             </div>
+            <a href="#!" class="category-link">Перейти в каталог</a>
           </div>
-{{--        </div>--}}
+        </div>
       </div>
     </div>
   </section>
