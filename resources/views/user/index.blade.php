@@ -8,16 +8,16 @@
   <div class="home-slider">
     <div class="slides">
       <div class="slide-wrapper">
-        <img slide-index="1" class="slide active" src="{{ asset('images/slide1.png') }}">
-        <img slide-index="2" class="slide" src="{{ asset('images/slide2.png') }}">
-        <img slide-index="3" class="slide" src="{{ asset('images/slide1.png') }}">
-        <img slide-index="4" class="slide" src="{{ asset('images/slide2.png') }}">
+        <img slide-index="1" class="slide active" src="{{ asset('images/slide1.png') }}" alt="">
+        <img slide-index="2" class="slide" src="{{ asset('images/slide2.png') }}"  alt="">
+        <img slide-index="3" class="slide" src="{{ asset('images/slide1.png') }}"  alt="">
+        <img slide-index="4" class="slide" src="{{ asset('images/slide2.png') }}" alt="">
 
         <div class="next-wrapper">
-          <img slide-index="1" class="next-slide" src="{{ asset('images/slide1.png') }}">
-          <img slide-index="2" class="next-slide active" src="{{ asset('images/slide2.png') }}">
-          <img slide-index="3" class="next-slide" src="{{ asset('images/slide1.png') }}">
-          <img slide-index="4" class="next-slide" src="{{ asset('images/slide2.png') }}">
+          <img slide-index="1" class="next-slide" src="{{ asset('images/slide1.png') }}"  alt="">
+          <img slide-index="2" class="next-slide active" src="{{ asset('images/slide2.png') }}"  alt="">
+          <img slide-index="3" class="next-slide" src="{{ asset('images/slide1.png') }}"  alt="">
+          <img slide-index="4" class="next-slide" src="{{ asset('images/slide2.png') }}"  alt="">
 
           <button class="next-button">Следующая</button>
         </div>
@@ -61,7 +61,7 @@
         <div class="col-8 col-md-3">
           @include('user.layouts.item')
         </div>
-        <div class="col-8 col-md-5 mx-auto">
+        <div class="col-8 col-md-4 mx-auto">
           @include('user.layouts.item')
         </div>
         <div class="col-8 col-md-3">
@@ -75,16 +75,16 @@
     <div class="container-fluid">
       <h1 class="section-title">Каталог</h1>
       <div class="row line-wrapper" v-for="i in 2">
-        <div class="col-12 col-sm-6 d-flex flex-column" v-for="j in 2">
+        <div class="col-12 offset-sm-1 col-sm-4 d-flex flex-column" v-for="j in 2">
           <div class="category-wrapper">
             <picture>
               <source type="image/webp" srcset="{{ asset('images/category-image.png') }}">
               <source type="image/jpeg" srcset="{{ asset('images/category-image.png') }}">
-              <img class="category-image" src="{{ asset('images/category-image.png') }}">
+              <img class="category-image" src="{{ asset('images/category-image.png') }}" alt="">
             </picture>
             <span class="category-name">Серьги</span>
             <div class="arrow-wrapper">
-              <img src="{{ asset('images/arrow.svg') }}">
+              <img src="{{ asset('images/arrow.svg') }}" alt="">
             </div>
             <a href="#!" class="category-link">Перейти в каталог</a>
           </div>
