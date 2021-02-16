@@ -17854,6 +17854,123 @@ a:hover {
   border: 1px solid #4F545B;
 }
 
+.order-create-page {
+  margin-top: 80px;
+  padding-bottom: 30px;
+}
+.order-create-page .title {
+  color: #2D3134;
+  font-size: 1.4em;
+  margin-bottom: 1em;
+}
+.order-create-page select.form-control span.required, .order-create-page .form-outline span.required {
+  color: #ff5200;
+}
+.order-create-page select.form-control label.form-label, .order-create-page .form-outline label.form-label {
+  color: #4F545B;
+}
+.order-create-page .order-results {
+  border: 1px solid #4F545B;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+}
+.order-create-page .order-results .row .col-12 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3em 0.5em;
+  font-weight: 500;
+}
+.order-create-page .complete {
+  width: 100%;
+  font-weight: 600;
+  font-size: 1em;
+  padding: 1em;
+}
+.order-create-page .form-outline {
+  line-height: 2em;
+  margin-bottom: 1em;
+  padding-right: 3em;
+}
+.order-create-page .form-outline .form-control {
+  line-height: 2em;
+}
+.order-create-page .form-outline .form-control ~ .form-label {
+  line-height: 2.4em;
+}
+.order-create-page .form-outline .form-control ~ .form-notch .form-notch-leading, .order-create-page .form-outline .form-control ~ .form-notch .form-notch-middle, .order-create-page .form-outline .form-control ~ .form-notch .form-notch-trailing {
+  border-radius: 0;
+}
+.order-create-page .form-outline .form-control:focus ~ .form-notch .form-notch-leading, .order-create-page .form-outline .form-control:focus ~ .form-notch .form-notch-middle, .order-create-page .form-outline .form-control:focus ~ .form-notch .form-notch-trailing {
+  border-color: #1B1B1B !important;
+  border-radius: 0;
+}
+.order-create-page .form-outline .form-control:focus ~ .form-label {
+  color: #1B1B1B;
+  transform: translateY(-1.1rem) scale(0.8);
+}
+.order-create-page .form-outline .form-control:focus ~ .icon {
+  color: #1B1B1B;
+}
+.order-create-page .form-outline .form-control.active ~ .form-notch .form-notch-leading, .order-create-page .form-outline .form-control.active ~ .form-notch .form-notch-middle, .order-create-page .form-outline .form-control.active ~ .form-notch .form-notch-trailing {
+  border-color: #1B1B1B !important;
+  border-radius: 0;
+}
+.order-create-page .form-outline .form-control.active ~ .form-label {
+  color: #1B1B1B;
+  transform: translateY(-1.1rem) translateY(-0.1rem) scale(0.8);
+}
+.order-create-page .form-outline .form-control.active ~ .icon {
+  color: #1B1B1B;
+}
+.order-create-page .form-outline .icon {
+  position: absolute;
+  top: 0;
+  right: 0.75rem;
+  transform-origin: 0 0;
+  transition: all 0.2s ease-out;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  width: 25px;
+  font-size: 1.3em;
+}
+.order-create-page .choice-field {
+  width: 100%;
+  border: 1px solid #7A808C;
+  display: flex;
+  align-items: center;
+  padding: 1em 0.5em;
+  font-family: "Lato", sans-serif;
+}
+.order-create-page .choice-field .icon {
+  margin-right: 0.5em;
+  font-size: 1.4em;
+  color: #1B1B1B;
+}
+.order-create-page .choice-field .content {
+  margin-right: auto;
+  color: #1B1B1B;
+}
+.order-create-page .choice-field .radio-wrapper {
+  position: relative;
+  width: 30px;
+  height: 15px;
+}
+.order-create-page .choice-field .radio-wrapper .radio {
+  position: absolute;
+  border-radius: 50px;
+  border: 1px solid #7A808C;
+  width: 15px;
+  height: 15px;
+  top: calc(50% - 7px);
+  right: calc(50% - 7px);
+}
+
 *:active, *:hover {
   outline: none;
 }

@@ -1,10 +1,12 @@
 
 .order-create-page {
+  margin-top: 80px;
   padding-bottom: 30px;
 
   .title {
-    font-weight: bold;
     color: #2D3134;
+    font-size: 1.4em;
+    margin-bottom: 1em;
   }
 
   select.form-control, .form-outline {
@@ -14,38 +16,6 @@
 
     label.form-label {
       color: #4F545B;
-    }
-  }
-
-  .choosable-field {
-    border: 2px solid #4F545B;
-    border-radius: 10px;
-    padding: 1.5em;
-    cursor: pointer;
-
-    .title {
-      font-weight: bold;
-      color: #2D3134;
-      font-size: 1.2em;
-    }
-
-    .description {
-      font-size: .9em;
-      color: #4F545B;
-    }
-
-    .price {
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-
-    &.active {
-      background: #fff;
-      border-color: #2D89DE;
-
-      .description {
-        font-size: 1em;
-      }
     }
   }
 
@@ -70,24 +40,112 @@
   }
 
   .form-outline {
-    line-height: 3em;
+    line-height: 2em;
+    margin-bottom: 1em;
+    padding-right: 3em;
 
     .form-control {
-      line-height: 3em;
+      line-height: 2em;
 
-      &:focus ~ .form-notch {
+      & ~ .form-label {
+        line-height: 2.4em;
+      }
 
+      & ~ .form-notch {
         .form-notch-leading, .form-notch-middle, .form-notch-trailing {
-          border-color: $link-color !important;
+          border-radius: 0;
+        }
+      }
+
+      &:focus {
+        & ~ .form-notch {
+          .form-notch-leading, .form-notch-middle, .form-notch-trailing {
+            border-color: $dark !important;
+            border-radius: 0;
+          }
         }
 
+        & ~ .form-label {
+          color: $dark;
+          transform: translateY(-1.1rem) scale(.8);
+        }
+
+        & ~ .icon {
+          color: $dark;
+        }
+      }
+    }
+
+    .form-control.active {
+      & ~ .form-notch {
+        .form-notch-leading, .form-notch-middle, .form-notch-trailing {
+          border-color: $dark !important;
+          border-radius: 0;
+        }
       }
 
-      &:focus ~ .form-label,
-      &.active ~ .form-label {
-        transform: translateY(-1.4rem) scale(0.8);
+      & ~ .form-label {
+        color: $dark;
+        transform: translateY(-1.1rem) translateY(-0.1rem) scale(.8);
       }
 
+      & ~ .icon {
+        color: $dark;
+      }
+    }
+
+    .icon {
+      position: absolute;
+      top: 0;
+      right: 0.75rem;
+      transform-origin: 0 0;
+      transition: all 0.2s ease-out;
+      color: rgba(0, 0, 0, 0.6);
+      margin-bottom: 0;
+      border: none;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      justify-content: center;
+      width: 25px;
+      font-size: 1.3em;
+    }
+  }
+
+  .choice-field {
+    width: 100%;
+    border: 1px solid $gray;
+    display: flex;
+    align-items: center;
+    padding: 1em .5em;
+    font-family: "Lato", sans-serif;
+
+    .icon {
+      margin-right: .5em;
+      font-size: 1.4em;
+      color: $dark;
+    }
+
+    .content {
+      margin-right: auto;
+      color: $dark;
+    }
+
+    .radio-wrapper {
+      position: relative;
+      width: 30px;
+      height: 15px;
+
+      .radio {
+        position: absolute;
+        border-radius: 50px;
+        border: 1px solid $gray;
+        width: 15px;
+        height: 15px;
+        top: calc(50% - 7px);
+        right: calc(50% - 7px);
+      }
     }
   }
 }
