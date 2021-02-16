@@ -17,6 +17,9 @@
 @import 'item';
 @import 'index';
 @import 'product/catalog';
+@import 'login';
+
+@import 'cart';
 
 
 *:active, *:hover {
@@ -57,6 +60,10 @@ h1, h2, h3, h4, h5, h6 {
 #login-page, #register-page,
 #password-request-page,
 #password-reset-page {
+  .header {
+    display: none;
+  }
+
   footer {
     display: none;
   }

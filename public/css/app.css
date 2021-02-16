@@ -16997,29 +16997,12 @@ readers do not read off random characters that represent icons */
     width: 100%;
   }
 }
-@media (max-width: 576px) {
-  .header #cart .item-title, .header #cart .item-price {
-    font-size: 1.4em;
-  }
-}
 .header #cart a {
   color: #7A808C;
   font-size: 1em;
 }
 .header #cart a:hover {
   text-decoration: underline;
-}
-.header #cart .buttons-wrapper {
-  display: flex;
-}
-.header #cart .buttons-wrapper > * {
-  font-size: 1.4em;
-}
-.header #cart .buttons-wrapper .cart-button {
-  display: flex;
-  background: transparent;
-  border: none;
-  line-height: 1.4em;
 }
 .header #cart .price-result-wrapper {
   position: -webkit-sticky;
@@ -17634,6 +17617,243 @@ footer .copyright {
   font-size: 1.6em;
 }
 
+#login-page, #register-page, #password-request-page, #password-reset-page {
+  height: 100vh;
+  width: 100vw;
+}
+#login-page a, #register-page a, #password-request-page a, #password-reset-page a {
+  color: #7A808C !important;
+}
+#login-page a:hover, #register-page a:hover, #password-request-page a:hover, #password-reset-page a:hover {
+  color: #1B1B1B !important;
+}
+#login-page .social-signin, #register-page .social-signin, #password-request-page .social-signin, #password-reset-page .social-signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-radius: 0;
+  font-size: 0.9em;
+  box-shadow: none;
+  border: 1px solid #a69c93;
+}
+#login-page .social-signin#google i, #register-page .social-signin#google i, #password-request-page .social-signin#google i, #password-reset-page .social-signin#google i {
+  color: #dd4b39;
+  transition-duration: 0.3s;
+}
+#login-page .social-signin#google:hover, #register-page .social-signin#google:hover, #password-request-page .social-signin#google:hover, #password-reset-page .social-signin#google:hover {
+  background: #dd4b39;
+  color: #fff;
+  transition-duration: 0.3s;
+}
+#login-page .social-signin#google:hover i, #register-page .social-signin#google:hover i, #password-request-page .social-signin#google:hover i, #password-reset-page .social-signin#google:hover i {
+  color: #fff;
+}
+#login-page .social-signin#fb i, #register-page .social-signin#fb i, #password-request-page .social-signin#fb i, #password-reset-page .social-signin#fb i {
+  color: #3b5998;
+  transition-duration: 0.3s;
+}
+#login-page .social-signin#fb:hover, #register-page .social-signin#fb:hover, #password-request-page .social-signin#fb:hover, #password-reset-page .social-signin#fb:hover {
+  background: #3b5998;
+  color: #fff;
+  transition-duration: 0.3s;
+}
+#login-page .social-signin#fb:hover i, #register-page .social-signin#fb:hover i, #password-request-page .social-signin#fb:hover i, #password-reset-page .social-signin#fb:hover i {
+  color: #fff;
+}
+#login-page .social-signin#vk i, #register-page .social-signin#vk i, #password-request-page .social-signin#vk i, #password-reset-page .social-signin#vk i {
+  color: #4a76a8;
+  transition-duration: 0.3s;
+}
+#login-page .social-signin#vk:hover, #register-page .social-signin#vk:hover, #password-request-page .social-signin#vk:hover, #password-reset-page .social-signin#vk:hover {
+  background: #4a76a8;
+  color: #fff;
+  transition-duration: 0.3s;
+}
+#login-page .social-signin#vk:hover i, #register-page .social-signin#vk:hover i, #password-request-page .social-signin#vk:hover i, #password-reset-page .social-signin#vk:hover i {
+  color: #fff;
+}
+#login-page .card, #register-page .card, #password-request-page .card, #password-reset-page .card {
+  background: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(123, 123, 123, 0.43);
+  border: none;
+}
+#login-page #app, #register-page #app, #password-request-page #app, #password-reset-page #app {
+  padding: 0 !important;
+  height: 100%;
+}
+#login-page #app main, #register-page #app main, #password-request-page #app main, #password-reset-page #app main {
+  height: 100%;
+  padding: 0 !important;
+}
+#login-page #app main .container-fluid, #register-page #app main .container-fluid, #password-request-page #app main .container-fluid, #password-reset-page #app main .container-fluid {
+  width: 100%;
+  height: 100%;
+}
+#login-page #app .header, #register-page #app .header, #password-request-page #app .header, #password-reset-page #app .header {
+  display: none;
+}
+#login-page .form-outline, #register-page .form-outline, #password-request-page .form-outline, #password-reset-page .form-outline {
+  line-height: 2em;
+}
+#login-page .form-outline .form-control, #register-page .form-outline .form-control, #password-request-page .form-outline .form-control, #password-reset-page .form-outline .form-control {
+  line-height: 2em;
+}
+#login-page .form-outline .form-control ~ .form-label, #register-page .form-outline .form-control ~ .form-label, #password-request-page .form-outline .form-control ~ .form-label, #password-reset-page .form-outline .form-control ~ .form-label {
+  line-height: 2.4em;
+}
+#login-page .form-outline .form-control ~ .form-notch .form-notch-leading, #login-page .form-outline .form-control ~ .form-notch .form-notch-middle, #login-page .form-outline .form-control ~ .form-notch .form-notch-trailing, #register-page .form-outline .form-control ~ .form-notch .form-notch-leading, #register-page .form-outline .form-control ~ .form-notch .form-notch-middle, #register-page .form-outline .form-control ~ .form-notch .form-notch-trailing, #password-request-page .form-outline .form-control ~ .form-notch .form-notch-leading, #password-request-page .form-outline .form-control ~ .form-notch .form-notch-middle, #password-request-page .form-outline .form-control ~ .form-notch .form-notch-trailing, #password-reset-page .form-outline .form-control ~ .form-notch .form-notch-leading, #password-reset-page .form-outline .form-control ~ .form-notch .form-notch-middle, #password-reset-page .form-outline .form-control ~ .form-notch .form-notch-trailing {
+  border-radius: 0;
+}
+#login-page .form-outline .form-control:focus ~ .form-notch .form-notch-leading, #login-page .form-outline .form-control:focus ~ .form-notch .form-notch-middle, #login-page .form-outline .form-control:focus ~ .form-notch .form-notch-trailing, #register-page .form-outline .form-control:focus ~ .form-notch .form-notch-leading, #register-page .form-outline .form-control:focus ~ .form-notch .form-notch-middle, #register-page .form-outline .form-control:focus ~ .form-notch .form-notch-trailing, #password-request-page .form-outline .form-control:focus ~ .form-notch .form-notch-leading, #password-request-page .form-outline .form-control:focus ~ .form-notch .form-notch-middle, #password-request-page .form-outline .form-control:focus ~ .form-notch .form-notch-trailing, #password-reset-page .form-outline .form-control:focus ~ .form-notch .form-notch-leading, #password-reset-page .form-outline .form-control:focus ~ .form-notch .form-notch-middle, #password-reset-page .form-outline .form-control:focus ~ .form-notch .form-notch-trailing {
+  border-color: #1B1B1B !important;
+  border-radius: 0;
+}
+#login-page .form-outline .form-control:focus ~ .form-label, #register-page .form-outline .form-control:focus ~ .form-label, #password-request-page .form-outline .form-control:focus ~ .form-label, #password-reset-page .form-outline .form-control:focus ~ .form-label {
+  color: #1B1B1B;
+  transform: translateY(-1rem) translateY(-0.1rem) scale(0.8);
+}
+#login-page .form-outline .form-control.active ~ .form-notch .form-notch-leading, #login-page .form-outline .form-control.active ~ .form-notch .form-notch-middle, #login-page .form-outline .form-control.active ~ .form-notch .form-notch-trailing, #register-page .form-outline .form-control.active ~ .form-notch .form-notch-leading, #register-page .form-outline .form-control.active ~ .form-notch .form-notch-middle, #register-page .form-outline .form-control.active ~ .form-notch .form-notch-trailing, #password-request-page .form-outline .form-control.active ~ .form-notch .form-notch-leading, #password-request-page .form-outline .form-control.active ~ .form-notch .form-notch-middle, #password-request-page .form-outline .form-control.active ~ .form-notch .form-notch-trailing, #password-reset-page .form-outline .form-control.active ~ .form-notch .form-notch-leading, #password-reset-page .form-outline .form-control.active ~ .form-notch .form-notch-middle, #password-reset-page .form-outline .form-control.active ~ .form-notch .form-notch-trailing {
+  border-color: #1B1B1B !important;
+  border-radius: 0;
+}
+#login-page .form-outline .form-control.active ~ .form-label, #register-page .form-outline .form-control.active ~ .form-label, #password-request-page .form-outline .form-control.active ~ .form-label, #password-reset-page .form-outline .form-control.active ~ .form-label {
+  color: #1B1B1B;
+  transform: translateY(-1rem) translateY(-0.1rem) scale(0.8);
+}
+#login-page button, #register-page button, #password-request-page button, #password-reset-page button {
+  font-size: 1em;
+  font-weight: 600;
+}
+#login-page #submitter, #register-page #submitter, #password-request-page #submitter, #password-reset-page #submitter {
+  display: block;
+  width: 100%;
+  height: 43px;
+  border: 1px solid #1B1B1B;
+  background: #FFFFFF;
+  color: #1B1B1B;
+  transition-duration: 0.3s;
+  margin-top: 1em;
+  cursor: pointer;
+}
+#login-page #submitter:hover, #register-page #submitter:hover, #password-request-page #submitter:hover, #password-reset-page #submitter:hover {
+  background: #1B1B1B;
+  color: #FFFFFF;
+}
+
+.link-inverse-login-register {
+  box-shadow: inset 4px -3px 19px -12px;
+}
+.link-inverse-login-register > *, .link-inverse-login-register a {
+  color: #7A808C !important;
+}
+.link-inverse-login-register > *:hover, .link-inverse-login-register a:hover {
+  color: #1B1B1B !important;
+}
+
+.register-page .link-inverse-login-register {
+  box-shadow: inset -4px -3px 19px -12px;
+}
+
+.form-outline.form-password {
+  padding-right: 3em;
+}
+
+.hide-show-btn {
+  position: absolute;
+  top: 0;
+  right: 0.75rem;
+  transform-origin: 0 0;
+  transition: all 0.2s ease-out;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  width: 25px;
+}
+.hide-show-btn:hover {
+  cursor: pointer;
+}
+
+/*!
+ * Copyright (c) 2021. Данный файл является интелектуальной собственостью Fulliton.
+ * Я буду рад если вы будите вносить улучшения, всегда жду ваших пул реквестов
+ */
+@media (max-width: 576px) {
+  .item-title, .item-price {
+    font-size: 1.4em;
+  }
+}
+
+.item-title {
+  margin-bottom: 0;
+}
+
+a {
+  color: #7A808C;
+  font-size: 1em;
+}
+a:hover {
+  color: #1B1B1B;
+}
+
+.buttons-wrapper {
+  display: flex;
+}
+.buttons-wrapper > * {
+  font-size: 1.4em;
+}
+.buttons-wrapper .cart-button {
+  display: flex;
+  background: transparent;
+  border: none;
+  line-height: 1.4em;
+}
+
+#cart-index-page .cart-page {
+  min-height: calc(100vh - 480px - 175px);
+  margin-top: 80px;
+  padding-bottom: 30px;
+}
+#cart-index-page .cart-page .result-wrapper {
+  border: 1px solid #C1C5CE;
+  padding: 1em 0;
+  font-family: "Lato", sans-serif;
+}
+#cart-index-page .cart-page .result-wrapper > * {
+  margin-bottom: 0.5em;
+}
+#cart-index-page .cart-page .result-wrapper > *:last-child {
+  margin-bottom: 0;
+}
+#cart-index-page .cart-page .result-wrapper .create-order-button {
+  width: 100%;
+  background: #1B1B1B;
+  color: #FFFFFF;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#cart-index-page .cart-page .result-wrapper .result-field span {
+  color: #1B1B1B;
+  font-size: 1.3em;
+}
+#cart-index-page .promocode-button {
+  font-size: 1em;
+  font-weight: bold;
+}
+#cart-index-page .promocode-button:disabled {
+  background: transparent;
+  color: black;
+  box-shadow: none;
+  border: 1px solid #4F545B;
+}
+
 *:active, *:hover {
   outline: none;
 }
@@ -17663,6 +17883,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Tenor Sans", sans-serif;
 }
 
+#login-page .header, #register-page .header,
+#password-request-page .header,
+#password-reset-page .header {
+  display: none;
+}
 #login-page footer, #register-page footer,
 #password-request-page footer,
 #password-reset-page footer {

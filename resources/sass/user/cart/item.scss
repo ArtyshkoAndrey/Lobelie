@@ -1,0 +1,33 @@
+.item-title, .item-price {
+  @include media-breakpoint-down(sm) {
+    font-size: 1.4em;
+  }
+}
+
+.item-title {
+  margin-bottom: 0;
+}
+
+a {
+  color: $gray;
+  font-size: 1em;
+
+  &:hover {
+    color: $dark;
+  }
+}
+
+.buttons-wrapper {
+  display: flex;
+
+  & > * {
+    font-size: 1.4em;
+  }
+
+  .cart-button {
+    display: flex;
+    background: transparent;
+    border: none;
+    line-height: 1.4em;
+  }
+}

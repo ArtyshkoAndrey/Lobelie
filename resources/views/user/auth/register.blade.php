@@ -7,8 +7,8 @@
     <div class="row w-100 d-flex justify-content-center">
       <div class="col-lg-4 col-md-5 col-sm-8 col-12">
         <div class="row justify-content-center">
-          <div class="col-md-5 col-6">
-            <img src="{{ asset('images/logo-dark.svg') }}" alt="logo" class="img-fluid mb-5 mx-auto d-block">
+          <div class="col-md-8 col-6">
+            <img src="{{ asset('images/logo.svg') }}" alt="logo" class="img-fluid mb-2 mx-auto d-block">
           </div>
         </div>
         <div class="card rounded-0">
@@ -94,7 +94,7 @@
                     <button type="button" class="hide-show-btn" onclick="passwordTypeToggle(this, 'password_confirmation')"><i class="fas fa-eye"></i></button>
                   </div>
 
-                  <button id="submitter" class="btn btn-dark w-100 d-block mt-3" style="height: 43px;" disabled>Зарегистрироваться</button>
+                  <button id="submitter" style="height: 43px;" disabled>Зарегистрироваться</button>
                 </form>
               </div>
             </div>
