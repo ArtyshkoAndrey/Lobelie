@@ -11,9 +11,9 @@
     <order inline-template >
       <transition name="slide-fade" mode="out-in" appear>
         <div key="windowOrder" class="row justify-content-start flex-column flex-md-row mt-5" v-if="!windowsLoader">
-          <div class="col-12 col-md-7">
+          <div class="col-12 col-md-8">
             <div class="row mb-4">
-              <div class="col-6 d-flex flex-column">
+              <div class="col-12 col-sm-6 d-flex flex-column">
                 <p class="h4 title">Личные данные</p>
                 <div class="form-outline">
                   <input type="text"
@@ -64,7 +64,7 @@
                   </span>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-12 col-sm-6">
                 <p class="h4 title">Адрес доставки</p>
                 <country :id="'country'"
                          :name="'country'"
@@ -95,25 +95,49 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-6">
+              <div class="col-12 col-sm-6 col-md-12 col-lg-6">
                 <p class="h4 title">Способ оплаты</p>
-                <div class="choice-field">
+                <div class="choice-field active">
                   <i class="icon las la-credit-card"></i>
                   <span class="content">Оплатить картой</span>
                   <div class="radio-wrapper">
                     <div class="radio"></div>
-                    <div class="active"></div>
+                    <div class="dot"></div>
+                  </div>
+                </div>
+                <div class="choice-field">
+                  <i class="icon las la-money-bill"></i>
+                  <span class="content">Наличными</span>
+                  <div class="radio-wrapper">
+                    <div class="radio"></div>
+                    <div class="dot"></div>
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-12 col-sm-6 col-md-12 col-lg-6">
                 <p class="h4 title">Способ доставки</p>
+                <div class="choice-field active">
+                  <span class="content">Самовывоз</span>
+                  <span>0 ₸</span>
+                  <div class="radio-wrapper">
+                    <div class="radio"></div>
+                    <div class="dot"></div>
+                  </div>
+                </div>
+                <div class="choice-field">
+                  <span class="content">Стандартная доставка</span>
+                  <span>1 000 ₸</span>
+                  <div class="radio-wrapper">
+                    <div class="radio"></div>
+                    <div class="dot"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-5">
+          <div class="col-12 col-md-4">
             <div class="row">
-              <div class="col-12 justify-content-end d-flex mb-3 mt-4">
+              <div class="col-12 justify-content-end d-flex mbСумма: mt-4">
                 <a href="{{ route('login') }}" class="text-decoration-none" v-if="!$store.state.auth" style="font-size: .9em;">Войдите в аккаунт,
                   чтобы оплачивать быстрее</a>
               </div>
@@ -121,97 +145,29 @@
                 <div class="order-results">
                   <div class="row">
                     <div class="col-12">
-                      <span>Сумма покупок</span>
+                      <span>Сумма:</span>
                       <span>@{{ $cost($store.getters.priceAmount) }} @{{ $store.state.currency.symbol }}</span>
                     </div>
                     <div class="col-12">
-                      <span>Доставка</span>
-                      <span>@{{ $cost(transfer.price * $store.state.currency.ratio) }} @{{ $store.state.currency.symbol }}</span>
-                    </div>
-                    <div class="col-12" v-if="sale">
-                      <span>Скидка</span>
+                      <span>Скидка:</span>
                       <span>- @{{ $cost(price_with_sale * $store.state.currency.ratio) }} @{{ $store.state.currency.symbol }}</span>
                     </div>
+                    <div class="col-12 result">
+                      <span>Итого:</span>
+                      <span>@{{ $cost(price) }} @{{ $store.state.currency.symbol }}</span>
+                    </div>
                     <div class="col-12">
-                      <span>Итог заказа</span>
-                      <span class="font-weight-bold">@{{ $cost(price) }} @{{ $store.state.currency.symbol }}</span>
+                      <button @click="checkSale" class="complete-button">Завершить и оплатить</button>
+                    </div>
+                    <div class="col-12 agreement">
+                      <span>Нажимая на кнопку “Завершить и оплатить” вы соглашаетесь с политикой конфиденциальности</span>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="form-outline">
-                  <input type="text" id="promocode" name="promocode" class="form-control" v-model="code"/>
-                  <label class="form-label" for="promocode">Введите промокод (при наличии)</label>
-                </div>
-              </div>
-              <div class="col-12 mb-5">
-                <button @click="checkSale" class="btn btn-dark d-block w-100 mt-2 py-3 promocode-button" :disabled="disabledButtonCode">Активировать промокод</button>
-              </div>
-
-              <div class="col-12">
-                <div class="row">
-                  <div class="col-12 mb-3">
-                    <span class="h5 title">Позиции заказа</span>
                   </div>
-                  <transition name="slide-fade" mode="out-in" appear>
-                    <div class="col-12" v-if="!$root.cartLoader" key="products">
-                      <div class="row">
-                        <div class="col-12 mb-3" v-for="product in $store.getters.productsCart">
-                          <div class="row">
-                            <div class="col-3">
-                              <img :src="product.thumbnail_jpg" :alt="product.title" class="w-100" style="object-fit: cover">
-                            </div>
-                            <div class="col-9 d-flex flex-column justify-content-around pl-0"
-                                 style="border-bottom: 1px solid #E9EAEC;">
-                              <span style="font-weight: 500;">@{{ product.title }}</span>
-                              <span class="font-weight-bold">
-                            @{{ $cost((product.on_sale ? product.price_sale : product.price) * $store.state.currency.ratio * product.item.amount) }} @{{ $store.state.currency.symbol }}
-                          </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-12" v-else key="loader">
-                      <div class="row justify-content-center">
-                        <div class="col-auto">
-                          <div class="spinner-border" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </transition>
-
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-7">
-            <div class="row">
-              <div class="col-md-6 d-flex">
-                <button class="btn btn-dark complete" id="checkout" @click="orderedNow" :disabled="disabledButton">
-                  <span v-if="!loaderButton">Завершить и перейти к оплате</span>
-                  <div v-else class="spinner-border text-light" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                  </div>
-                </button>
-              </div>
-              <div class="col-md-6 d-flex">
-                <button class="btn btn-outline-dark complete" @click="orderAfter" data-mdb-ripple-color="dark" id="checkout" :disabled="disabledButtonAfter">
-                  <span v-if="!loaderButtonAfter">Завершить и оплатить позже</span>
-
-                  <div v-else class="spinner-border text-dark" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div v-else key="loaderWindow" class="mt-5">
           <div class="row">

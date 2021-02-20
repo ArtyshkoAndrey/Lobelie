@@ -61,7 +61,7 @@
         <div class="col-8 col-md-3">
           @include('user.layouts.item')
         </div>
-        <div class="col-8 col-md-5 mx-auto">
+        <div class="col-8 col-md-4 mx-auto">
           @include('user.layouts.item')
         </div>
         <div class="col-8 col-md-3">
@@ -80,11 +80,11 @@
             <picture>
               <source type="image/webp" srcset="{{ asset('images/category-image.png') }}">
               <source type="image/jpeg" srcset="{{ asset('images/category-image.png') }}">
-              <img class="category-image" src="{{ asset('images/category-image.png') }}">
+              <img class="category-image" src="{{ asset('images/category-image.png') }}" alt="">
             </picture>
             <span class="category-name">Серьги</span>
             <div class="arrow-wrapper">
-              <img src="{{ asset('images/arrow.svg') }}">
+              <img src="{{ asset('images/arrow.svg') }}" alt="">
             </div>
             <a href="#!" class="category-link">Перейти в каталог</a>
           </div>

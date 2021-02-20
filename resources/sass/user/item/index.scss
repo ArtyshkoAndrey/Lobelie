@@ -1,8 +1,19 @@
+a.item-link:hover .heart-button,
+a.item-link:hover .cart-button {
+  color: $gray;
+}
+
 .item-card {
   font-family: "Lato", sans-serif;
 
   .item-name {
+    color: $dark;
     font-size: 1.2em;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    overflow: hidden;
+    height: 1.5rem;
+    -webkit-box-orient: vertical;
   }
 
   .price, .old-price {
@@ -23,32 +34,49 @@
   }
 
   .cart-button {
-    i {
-      font-size: 1.3em;
-    }
+    display: flex;
+    cursor: pointer;
+    //i {
+    //  font-size: 1.3em;
+    //}
+    //
+    //&:hover {
+    //  cursor: pointer;
+    //
+    //  i {
+    //    color: $dark;
+    //    background: $dark;
+    //  }
+    //}
 
-    &:hover {
-      cursor: pointer;
+    img {
+      display: none;
 
-      i {
-        color: $dark;
-        background: $dark;
+      &.shopping-bag {
+        width: 25px;
+      }
+
+      &.shopping-bag-alt {
+        width: 17px;
+        margin: 0 4px;
+      }
+
+      &.active {
+        display: block;
       }
     }
   }
 
-  .cart-button {
+  .heart-button {
     i {
       font-size: 1.2em;
     }
 
     &:hover {
-      color: $dark;
       cursor: pointer;
 
       i {
         color: $dark;
-        background: $dark;
       }
     }
   }

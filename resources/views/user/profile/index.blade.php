@@ -3,7 +3,7 @@
 
 @section('content')
 
-  <section class="container py-5" id="profile">
+  <section class="container-fluid px-3 py-5" id="profile">
     <div class="card rounded-0 px-0">
       <div class="card-body px-0 py-0 rounded-0">
         <div class="row mx-0">
@@ -27,7 +27,7 @@
                   @method('PUT')
                   <input type="file" id="photo" name="photo" size="chars" accept="image/jpeg,image/png" style="visibility: hidden; width: 100px;">
                   <button type="button" class="btn btn-dark position-absolute" id="add-photo">
-                    <i class="bx bx-sm bx-camera"></i>
+                    <i class="las la-camera"></i>
                   </button>
                 </form>
               </div>
@@ -58,7 +58,7 @@
                         <label class="form-label" for="password_confirmation">Повторите пароль</label>
                         <button type="button" class="hide-show-btn" onclick="passwordTypeToggle(this, 'password_confirmation')"><i class="fas fa-eye"></i></button>
                       </div>
-                      <button type="submit" class="btn btn-dark m-0 rounded-0">Сохранить</button>
+                      <button type="submit" class="btn btn-dark m-0 shadow-0 rounded-0">Сохранить</button>
                     </form>
                   </div>
                 </div>
@@ -189,7 +189,7 @@
                       </div>
 
                       <button type="submit"
-                              class="btn btn-dark m-0 mt-3 rounded-0">
+                              class="btn btn-dark m-0 mt-3 rounded-0 shadow-0">
                         Сохранить
                       </button>
                     </form>

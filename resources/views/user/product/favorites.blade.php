@@ -3,7 +3,7 @@
 @section('title', 'DOCKU | Избранные товары')
 
 @section('content')
-  <div class="container-fluid" id="catalog">
+  <div class="container-fluid" id="favorites">
     <div class="row">
       <div class="col-12 breadcrumb">
 

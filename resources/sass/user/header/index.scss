@@ -3,8 +3,6 @@
  * Я буду рад если вы будите вносить улучшения, всегда жду ваших пул реквестов
  */
 
-@import "colors";
-
 .header {
   position: fixed;
   top: 0;
@@ -344,7 +342,7 @@
 
     .price-result-wrapper {
       position: sticky;
-      bottom: 70px;
+      bottom: 0;
       left: 0;
       width: 100%;
       height: 100px;

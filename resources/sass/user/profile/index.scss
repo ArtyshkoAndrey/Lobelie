@@ -1,13 +1,10 @@
 
 #profile {
-  .form-outline {
-    .form-notch-leading {
-      border-radius: .25rem 0 0 .25rem;
-    }
+  margin-top: 80px;
 
-    .form-notch-trailing {
-      border-radius: 0 .25rem .25rem 0;
-    }
+  h4 {
+    color: $dark;
+    margin-bottom: .5em;
   }
 
   button#add-photo {
@@ -23,8 +20,53 @@
     bottom: 1.3em;
 
     i {
-      margin-top: 5px;
-      margin-left: 1px;
+      font-size: 1.8em;
+    }
+  }
+
+  .form-outline {
+    line-height: 2em;
+
+    .form-control {
+      line-height: 2em;
+
+      & ~ .form-label {
+        line-height: 2.4em;
+      }
+
+      & ~ .form-notch {
+        .form-notch-leading, .form-notch-middle, .form-notch-trailing {
+          border-radius: 0;
+        }
+      }
+
+      &:focus {
+        & ~ .form-notch {
+          .form-notch-leading, .form-notch-middle, .form-notch-trailing {
+            border-color: $dark !important;
+            border-radius: 0;
+          }
+        }
+
+        & ~ .form-label {
+          color: $dark;
+          transform: translateY(-1rem) translateY(-0.1rem) scale(.8);
+        }
+      }
+    }
+
+    .form-control.active {
+      & ~ .form-notch {
+        .form-notch-leading, .form-notch-middle, .form-notch-trailing {
+          border-color: $dark !important;
+          border-radius: 0;
+        }
+      }
+
+      & ~ .form-label {
+        color: $dark;
+        transform: translateY(-1rem) translateY(-0.1rem) scale(.8);
+      }
     }
   }
 
@@ -39,7 +81,17 @@
 
       &.active {
         background: #fff;
-        color: #1266f1;
+        color: $dark;
+      }
+    }
+  }
+
+  .nav-tabs {
+    .nav-link {
+      color: $gray;
+
+      &.active {
+        color: $dark;
       }
     }
   }

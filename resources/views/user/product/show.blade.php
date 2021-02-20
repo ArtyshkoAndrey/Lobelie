@@ -3,81 +3,35 @@
 @section('title', 'DOCKU | ' . $product->title)
 
 @section('content')
-  <div class="container item-page">
-    <div class="row">
-      <div class="col-12 col-md-7 d-none d-md-block">
-        <div class="row">
-          <div class="col-3 d-flex justify-content-center">
-            <button id="prev" class="slider-button"><i class="far fa-chevron-up"></i></button>
-          </div>
-        </div>
+  <div class="container-fluid item-page">
+    <div class="row mb-5">
+      <div class="col-12 col-md-6 images-stack">
+        <img src="{{ asset('images/product.png') }}">
+        <img src="{{ asset('images/product.png') }}">
+        <img src="{{ asset('images/product.png') }}">
       </div>
-      <div class="col-12 col-md-7 slider">
-        <div class="row flex-column-reverse flex-md-row">
-          <div class="col-12 col-md-3 slider-nav">
-            <div class="scroll-wrapper flex-row flex-md-column justify-content-start">
-
-              @foreach($product->photos as $photo)
-
-                <div class="item">
-                  <div class="img-wrapper" data-image-id="{{ $photo->id }}">
-                    <picture>
-                      <source type="image/webp" srcset="{{ $photo->thumbnail_url_webp }}">
-                      <source type="image/jpeg" srcset="{{ $photo->thumbnail_url_jpg }}">
-                      <img class="w-100" src="{{ $photo->thumbnail_url_jpg }}" alt="{{ $photo->name }}">
-                    </picture>
-
-                  </div>
-                </div>
-
-              @endforeach
-
-            </div>
-          </div>
-          <div class="col-12 col-md-9 slider-for">
-            @foreach($product->photos as $index => $photo)
-              <div class="img-wrapper {{ $index === 0 ? 'active' : null }}" data-id="{{ $photo->id }}">
-                <picture>
-                  <source type="image/webp" srcset="{{  $photo->url_webp }}">
-                  <source type="image/jpeg" srcset="{{  $photo->url_jpg }}">
-                  <img class="w-100 img-product" src="{{ $photo->url_jpg }}" alt="{{ $photo->name }}">
-                </picture>
-              </div>
-            @endforeach
-
-          </div>
-          <div class="col-12 d-none d-md-block">
-            <div class="row">
-              <div class="col-3 d-flex justify-content-center">
-                <button id="next" class="slider-button"><i class="far fa-chevron-down"></i></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-5 pl-3 pl-md-4 item-details">
-        <div class="row flex-column">
+      <div class="col-12 col-md-6 pl-3 pl-md-4 item-details">
+        <div class="row flex-column content-wrapper">
           <div class="col-12 breadcrumb">
 
             @foreach($categories as $category)
-              <a class="breadcrumb-link" href="{{ route('product.all', ['category' => $category->id]) }}">{{ $category->name }}</a> /
+              <a class="breadcrumb-link" href="{{ route('product.all', ['category' => $category->id]) }}">{{ $category->name }}</a> / 
             @endforeach
-            {{ $product->title }}
+            <span>{{ $product->title }}</span>
 
           </div>
-          <div class="col-12 title-wrapper mb-2">{{ $product->title }}</div>
+          <div class="col-12 title-wrapper">{{ $product->title }}</div>
+          <div class="col-12 type-wrapper mb-2">Браслет</div>
           <div class="col-12 prices-wrapper sale mb-2">
             @if($product->on_sale)
-              <span class="old-price">{{ $cost($store.state.currency.ratio * <? echo $product->price ?>) }} @{{ $store.state.currency.symbol }}</span>
+              <span class="old-price">{{ $cost($store.state.currency.ratio * <? echo $product->price ?>) }} тг.</span>
             @endif
-            <span class="price">{{ $cost($store.state.currency.ratio * <? echo $product->on_sale ? $product->price_sale : $product->price?>) }} @{{ $store.state.currency.symbol }}</span>
+            <span class="old-price">10 000 тг.</span>
+            <span class="price">{{ $cost($store.state.currency.ratio * <? echo $product->on_sale ? $product->price_sale : $product->price?>) }} тг.</span>
           </div>
           <div class="col-12 sizes-wrapper mb-2">
             <div class="row">
-              <div class="col-auto mr-auto font-weight-bold" style="color: #2D3134;">Выберите размер</div>
-              <div class="col-auto">
-                <a href="#!">Как выбрать нужный размер</a>
-              </div>
+              <div class="col-auto title">Выберите размер</div>
               <div class="col-12 mt-2 size-table">
                <div class="row">
                  @foreach($product->skuses as $skus)
@@ -93,12 +47,15 @@
               </div>
             </div>
           </div>
-          <div class="col-12 mb-5">
-            <button class="btn btn-dark btn-to-cart mt-2 mt-md-0"
+          <div class="col-12 mb-3 d-flex">
+            <button class="btn-to-cart mt-2 mt-md-0"
                     :disabled="selectSkus === null"
                     @click="$store.commit('addItem', {id: selectSkus, amount: 1})">
-              <span>Добавить в корзину</span>
-              <i class="bx bx-cart-alt"></i>
+              <i class="las la-shopping-bag"></i>
+              <span>В корзину</span>
+            </button>
+            <button class="btn-to-favorite mt-2 mt-md-0">
+              <i class="fal fa-heart"></i>
             </button>
           </div>
           <div class="col-12 description-wrapper">
@@ -113,15 +70,15 @@
       </div>
     </div>
 
-
-    <div class="mb-5">
-      @if(isset($category))
-        @include('user.layouts.category-preview',
-        ['title' => 'Может быть интересно',
-          'link' => route('product.all', ['category' => $category->id]),
-          'products' => $category->products()->take(4)->get()
-        ])
-        @endif
+    <div class="row">
+      <div class="col-12">
+        <h1 class="title">Может быть интересно</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 col-md-3 mb-4" v-for="i in 4">
+        @include('user.layouts.item')
+      </div>
     </div>
   </div>
 @endsection

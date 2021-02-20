@@ -1,131 +1,35 @@
 
 .item-page {
   min-height: calc(100vh - 480px - 175px);
+  margin-top: 100px;
+  padding-left: 30px;
+  padding-right: 30px;
 
-  .slider {
+  .images-stack {
+    img {
+      width: 100%;
+      margin-bottom: 1.5em;
 
-    .slider-nav {
-      overflow: hidden;
-      height: 0;
-
-      .scroll-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        transition-duration: .5s;
-
-        @include media-breakpoint-down(sm) {
-          overflow-y: auto;
-          padding-bottom: 1em;
-          top: 0 !important;
-        }
+      &:last-child {
+        margin-bottom: 0;
       }
-
-      .item {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 20px;
-
-        @include media-breakpoint-down(sm) {
-          margin-bottom: 0;
-          margin-right: 15px;
-          width: auto;
-        }
-
-        .img-wrapper {
-          display: flex;
-          justify-content: center;
-          border-radius: 10px;
-          cursor: pointer;
-
-          img {
-            border-radius: 10px;
-          }
-        }
-      }
-    }
-
-    .slider-for {
-      @include media-breakpoint-down(sm) {
-        margin-bottom: 1em;
-      }
-
-      .img-wrapper {
-        width: 100%;
-        border-radius: 10px;
-        display: none;
-
-        &.active {
-          display: block;
-          animation: fade-in .5s;
-        }
-
-        &:not(.active) {
-          animation: fade-out .5s;
-        }
-
-        img {
-          border-radius: 10px;
-        }
-
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
-        @keyframes fade-out {
-          from {
-            opacity: 1;
-          }
-          to {
-            opacity: 0;
-          }
-        }
-      }
-    }
-
-    .hidden-overflow {
-      overflow: hidden;
     }
   }
 
-  .slider-button {
-    border: none;
-    background: transparent;
-    color: #4F545B;
-
-    i {
-      font-size: 1.8em;
-    }
-
-    &#prev {
-      i {
-        margin-bottom: .3em;
-      }
-    }
-
-    &#next {
-      i {
-        margin-top: .3em;
-      }
-    }
+  .content-wrapper {
+    position: sticky;
+    top: 100px;
   }
 
   .breadcrumb {
     font-size: 0.9em;
-    color: #2D3134;
+    color: $gray;
 
     .breadcrumb-link {
-      color: #2D3134;
+      color: $gray;
 
       &:hover {
-        text-decoration: underline;
+        color: $dark;
       }
     }
   }
@@ -136,22 +40,27 @@
     color: #2D3134;
   }
 
+  .type-wrapper {
+    color: $gray;
+
+  }
+
   .prices-wrapper {
+    display: flex;
+
     .old-price {
-      display: none;
-      color: #4F545B;
-      font-size: 0.9em;
-      text-align: left;
-      width: 100%;
+      //display: none;
+      color: $light-gray;
+      font-size: 1.7em;
       padding-left: 0.1em;
       text-decoration: line-through;
-      margin-bottom: -0.3em;
+      margin-right: .5em;
     }
 
     .price {
       font-weight: 500;
-      font-size: 1.2em;
-      color: #2D3134;
+      font-size: 1.7em;
+      color: $dark;
     }
 
     &.sale {
@@ -162,6 +71,11 @@
   }
 
   .sizes-wrapper {
+    .title {
+      color: $dark;
+      font-size: 1.1em;
+    }
+
     .size-table {
       display: flex;
       justify-content: flex-start;
@@ -206,12 +120,12 @@
 
   .description-wrapper {
     .title {
-      font-weight: bold;
-      color: #2D3134;
+      color: $dark;
+      font-size: 1.1em;
     }
 
     .description {
-      color: #4F545B;
+      color: $gray;
       font-size: .9em;
     }
   }
@@ -219,10 +133,33 @@
   .item-details {
     .btn-to-cart {
       width: auto;
+      background: $dark;
+      color: $white;
+      border: 1px solid $dark;
+      display: flex;
+      align-items: center;
+      padding: .5em 1em;
+      margin-right: 1em;
+
+      i {
+        font-size: 1.3em;
+        margin-right: .3em;
+      }
 
       @include media-breakpoint-down(sm) {
         width: 100%;
       }
+    }
+
+    .btn-to-favorite {
+      border: 1px solid $dark;
+      color: $dark;
+      background: transparent;
+      font-size: 1.3em;
+      padding: 0.2em 0.8em;
+      justify-content: center;
+      align-items: center;
+      display: flex;
     }
   }
 
@@ -234,5 +171,10 @@
   .category-preview {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .title {
+    font-size: 1.6em;
+    color: $dark;
   }
 }

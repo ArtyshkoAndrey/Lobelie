@@ -137,7 +137,7 @@
     </div>
   </div>
   <div id="cart">
-    <div class="container-fluid" style="padding-bottom: 60px;">
+    <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-6">
           <h2>Корзина</h2>

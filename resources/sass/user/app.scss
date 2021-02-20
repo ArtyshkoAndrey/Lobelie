@@ -16,10 +16,13 @@
 @import 'instagram';
 @import 'item';
 @import 'index';
-@import 'product/catalog';
 @import 'login';
 @import 'cart';
 @import 'order';
+@import 'profile';
+
+@import 'product/catalog';
+@import 'product/show';
 
 
 *:active, *:hover {
@@ -71,10 +74,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .alert.info-alert {
   display: flex;
+  display: none;
   align-items: center;
   position: fixed;
   right: 3em;
-  top: 6em;
+  top: 3em;
   z-index: 1000;
 
   button {
