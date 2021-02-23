@@ -32,6 +32,10 @@
         color: $dark;
       }
     }
+
+    span {
+      color: $dark;
+    }
   }
 
   .title-wrapper {
@@ -73,7 +77,7 @@
   .sizes-wrapper {
     .title {
       color: $dark;
-      font-size: 1.1em;
+      font-size: 1.3em;
     }
 
     .size-table {
@@ -121,12 +125,12 @@
   .description-wrapper {
     .title {
       color: $dark;
-      font-size: 1.1em;
+      font-size: 1.3em;
     }
 
     .description {
       color: $gray;
-      font-size: .9em;
+      font-size: 1.1em;
     }
   }
 

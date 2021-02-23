@@ -149,15 +149,14 @@
       <div class="row pb-3" v-for="product in $store.getters.productsCart" v-if="product">
 
         <div class="col-3">
-          <img :src="product.thumbnail_jpg" alt=""
-               class="img-fluid" style="border-radius: 6px;">
+          <img :src="product.thumbnail_jpg" alt="" class="img-fluid">
         </div>
         <div class="col-9">
           <div class="row h-100">
             <div class="col-7">
               <div class="row h-100">
                 <div class="col-12">
-                  <h5 class="item-title">@{{ product.title }} -  @{{ product.skus.skus.title }}</h5>
+                  <h5 class="item-title">@{{ product.title }} - @{{ product.skus.skus.title }}</h5>
                 </div>
                 <div class="col-12 d-flex align-items-end">
                   <h4 class="item-price mb-0">@{{ $cost( (product.on_sale ? product.price_sale : product.price) * $store.state.currency.ratio) }} @{{ $store.state.currency.symbol }}</h4>
@@ -190,7 +189,7 @@
           <span>@{{ $cost($store.getters.priceAmount) }} @{{ $store.state.currency.symbol }}</span>
         </div>
         <div class="col-12 col-sm-6 d-flex align-items-center justify-content-end">
-          <button class="btn btn-dark">Оформить заказ</button>
+          <a class="btn btn-dark">Оформить заказ</a>
         </div>
       </div>
     </div>

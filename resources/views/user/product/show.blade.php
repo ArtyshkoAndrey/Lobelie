@@ -26,7 +26,6 @@
             @if($product->on_sale)
               <span class="old-price">{{ $cost($store.state.currency.ratio * <? echo $product->price ?>) }} тг.</span>
             @endif
-            <span class="old-price">10 000 тг.</span>
             <span class="price">{{ $cost($store.state.currency.ratio * <? echo $product->on_sale ? $product->price_sale : $product->price?>) }} тг.</span>
           </div>
           <div class="col-12 sizes-wrapper mb-2">
@@ -58,7 +57,7 @@
               <i class="fal fa-heart"></i>
             </button>
           </div>
-          <div class="col-12 description-wrapper">
+          <div class="col-12 col-lg-8 description-wrapper">
             <div class="row">
               <div class="col-12 title">Описание</div>
               <div class="col-12 description">

@@ -1,7 +1,7 @@
 <a href="{{ route('product.show', $product->id) }}" class="item-link">
 
   <div class="item-card">
-    <div class="row">
+    <div class="row mb-2">
       <div class="col-12">
         <picture>
           <source type="image/webp" srcset="{{ $product->thumbnail_webp }}">
@@ -10,13 +10,13 @@
         </picture>
       </div>
     </div>
-    <div class="row mb-1">
+    <div class="row mb-1 px-1 px-sm-2 px-md-3">
       <div class="col-12">
         <span class="item-name">{{ $product->title }}</span>
       </div>
     </div>
-    <div class="row mb-2">
-      <div class="col-12 d-flex justify-content-between">
+    <div class="row mb-2 px-1 px-sm-2 px-md-3">
+      <div class="col-12 d-flex flex-column flex-sm-row justify-content-between">
         @if($product->on_sale)
           <span class="old-price">{{ $cost($store.state.currency.ratio * <?= $product->price ?>) }} @{{ $store.state.currency.symbol }}</span>
           <span class="price">{{ $cost($store.state.currency.ratio * <?= $product->price_sale ?>) }} @{{ $store.state.currency.symbol }}</span>
@@ -25,27 +25,27 @@
         @endif
       </div>
     </div>
-    <div class="row">
+    <div class="row px-1 px-sm-2 px-md-3">
       <div class="col-12 d-flex justify-content-between">
         @if($product->skuses->count() > 1)
-          <div class="cart-button">
+          <button class="cart-button">
             <img class="shopping-bag active" src="{{ asset('images/la_shopping-bag.svg') }}" alt="bag">
             <img class="shopping-bag-alt" src="{{ asset('images/la_shopping-bag-alt.svg') }}" alt="bag">
             {{--        <i class="las la-shopping-bag"></i>--}}
-            <span>Выбрать размер</span>
-          </div>
+            <span class="d-none d-sm-block">Выбрать размер</span>
+          </button>
         @else
-          <div class="cart-button">
+          <button class="cart-button">
             <img class="shopping-bag active" src="{{ asset('images/la_shopping-bag.svg') }}" alt="bag">
             <img class="shopping-bag-alt" src="{{ asset('images/la_shopping-bag-alt.svg') }}" alt="bag">
             {{--        <i class="las la-shopping-bag"></i>--}}
-            <span>В корзину</span>
-          </div>
+            <span class="d-none d-sm-block">В корзину</span>
+          </button>
         @endif
 
-        <span class="heart-button">
+        <button class="heart-button">
           <i class="fal fa-heart"></i>
-        </span>
+        </button>
       </div>
     </div>
   </div>

@@ -5,6 +5,11 @@ a.item-link:hover .cart-button {
 
 .item-card {
   font-family: "Lato", sans-serif;
+  padding-bottom: .5em;
+
+  &:hover {
+    background: #F8F8F8;
+  }
 
   .item-name {
     color: $dark;
@@ -31,23 +36,26 @@ a.item-link:hover .cart-button {
 
   .cart-button, .heart-button {
     font-size: 1.1em;
+    border: none;
+    background: transparent;
+    color: $gray;
   }
 
   .cart-button {
     display: flex;
     cursor: pointer;
-    //i {
-    //  font-size: 1.3em;
-    //}
-    //
-    //&:hover {
-    //  cursor: pointer;
-    //
-    //  i {
-    //    color: $dark;
-    //    background: $dark;
-    //  }
-    //}
+    align-items: center;
+    padding-left: 0;
+
+    &:hover {
+      span {
+        color: $dark;
+      }
+    }
+
+    span {
+      margin-left: .5em;
+    }
 
     img {
       display: none;

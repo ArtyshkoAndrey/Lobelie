@@ -353,12 +353,14 @@
         font-family: 'Tenor Sans', sans-serif;
       }
 
-      button {
+      a {
         font-size: 0.7em;
         width: 100%;
         margin: 0 2em;
         border-radius: 0;
         box-shadow: none;
+        color: $white;
+        text-decoration: none;
 
         @include media-breakpoint-down(sm) {
           margin: 0 0;

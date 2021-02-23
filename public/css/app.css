@@ -17017,15 +17017,17 @@ readers do not read off random characters that represent icons */
   font-size: 1.4em;
   font-family: "Tenor Sans", sans-serif;
 }
-.header #cart .price-result-wrapper button {
+.header #cart .price-result-wrapper a {
   font-size: 0.7em;
   width: 100%;
   margin: 0 2em;
   border-radius: 0;
   box-shadow: none;
+  color: #FFFFFF;
+  text-decoration: none;
 }
 @media (max-width: 576px) {
-  .header #cart .price-result-wrapper button {
+  .header #cart .price-result-wrapper a {
     margin: 0 0;
   }
 }
@@ -17237,6 +17239,7 @@ readers do not read off random characters that represent icons */
 footer {
   background: #FFFFFF;
   padding-top: 2em;
+  padding-bottom: 2em;
 }
 footer .link-block {
   display: flex;
@@ -17359,6 +17362,10 @@ a.item-link:hover .cart-button {
 
 .item-card {
   font-family: "Lato", sans-serif;
+  padding-bottom: 0.5em;
+}
+.item-card:hover {
+  background: #F8F8F8;
 }
 .item-card .item-name {
   color: #1B1B1B;
@@ -17381,10 +17388,21 @@ a.item-link:hover .cart-button {
 }
 .item-card .cart-button, .item-card .heart-button {
   font-size: 1.1em;
+  border: none;
+  background: transparent;
+  color: #7A808C;
 }
 .item-card .cart-button {
   display: flex;
   cursor: pointer;
+  align-items: center;
+  padding-left: 0;
+}
+.item-card .cart-button:hover span {
+  color: #1B1B1B;
+}
+.item-card .cart-button span {
+  margin-left: 0.5em;
 }
 .item-card .cart-button img {
   display: none;
@@ -18132,6 +18150,9 @@ a:hover {
 .item-page .breadcrumb .breadcrumb-link:hover {
   color: #1B1B1B;
 }
+.item-page .breadcrumb span {
+  color: #1B1B1B;
+}
 .item-page .title-wrapper {
   font-size: 1.5em;
   font-weight: bold;
@@ -18160,7 +18181,7 @@ a:hover {
 }
 .item-page .sizes-wrapper .title {
   color: #1B1B1B;
-  font-size: 1.1em;
+  font-size: 1.3em;
 }
 .item-page .sizes-wrapper .size-table {
   display: flex;
@@ -18200,11 +18221,11 @@ a:hover {
 }
 .item-page .description-wrapper .title {
   color: #1B1B1B;
-  font-size: 1.1em;
+  font-size: 1.3em;
 }
 .item-page .description-wrapper .description {
   color: #7A808C;
-  font-size: 0.9em;
+  font-size: 1.1em;
 }
 .item-page .item-details .btn-to-cart {
   width: auto;
