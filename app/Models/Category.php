@@ -46,7 +46,8 @@ class Category extends Model
   protected $fillable = [
     'name',
     'to_menu',
-    'description'
+    'description',
+    'photo',
   ];
 
   /**
@@ -61,6 +62,8 @@ class Category extends Model
   protected $appends = [
     'search_name'
   ];
+
+  const PHOTO_PATH = 'storage/category/';
 
   /**
    * Дочерние категории
@@ -96,5 +99,15 @@ class Category extends Model
       return $this->name . '(' . $this->child()->first()->name .')';
 
     return '()';
+  }
+
+  public function getPhotoStorageAttribute (): string
+  {
+    if ($this->photo)
+      return asset(Category::PHOTO_PATH . $this->photo);
+
+    else
+      return asset('images/user-o.png');
+
   }
 }

@@ -143,18 +143,51 @@
           <h2>Корзина</h2>
         </div>
         <div class="col-6 d-flex justify-content-end align-items-center">
-          <a href="#!">Очистить корзину</a>
+          <a href="#!" onclick="event.stopPropagation();" @click="$store.commit('clearCart')">Очистить корзину</a>
         </div>
       </div>
-      <div class="row pb-3" v-for="i in 7">
-        @include('user.cart.item-dropdown')
+      <div class="row pb-3" v-for="product in $store.getters.productsCart" v-if="product">
+
+        <div class="col-3">
+          <img :src="product.thumbnail_jpg" alt=""
+               class="img-fluid" style="border-radius: 6px;">
+        </div>
+        <div class="col-9">
+          <div class="row h-100">
+            <div class="col-7">
+              <div class="row h-100">
+                <div class="col-12">
+                  <h5 class="item-title">@{{ product.title }} -  @{{ product.skus.skus.title }}</h5>
+                </div>
+                <div class="col-12 d-flex align-items-end">
+                  <h4 class="item-price mb-0">@{{ $cost( (product.on_sale ? product.price_sale : product.price) * $store.state.currency.ratio) }} @{{ $store.state.currency.symbol }}</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-5">
+              <div class="row h-100">
+                <div class="col-12 d-flex justify-content-end">
+                  <a href="#!" @click="$store.commit('removeItem', product.item.id)">Удалить</a>
+                </div>
+                <div class="col-12 d-flex align-items-end justify-content-end">
+                  <div class="buttons-wrapper">
+                    <button class="cart-button"  @click="$store.commit('addItem', {id: product.item.id, amount: -1 })">-</button>
+                    <span class="font-tenor mx-2">@{{ product.item.amount }}</span>
+                    <button class="cart-button" @click="$store.commit('addItem', {id: product.item.id, amount: 1 })">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
     <div class="container-fluid price-result-wrapper">
       <div class="row h-100">
         <div class="col-12 col-sm-6 d-flex align-items-center">
           <span class="mr-2">Итого:</span>
-          <span>40 000 ₸</span>
+          <span>@{{ $cost($store.getters.priceAmount) }} @{{ $store.state.currency.symbol }}</span>
         </div>
         <div class="col-12 col-sm-6 d-flex align-items-center justify-content-end">
           <button class="btn btn-dark">Оформить заказ</button>

@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Brand;
+use App\Models\SkusCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class BrandFactory extends Factory
+class SkusCategoryFactory extends Factory
 {
   /**
    * The name of the factory's corresponding model.
    *
    * @var string
    */
-  protected string $model = Brand::class;
+  protected string $model = SkusCategory::class;
 
   /**
    * Define the model's default state.
@@ -22,7 +22,7 @@ class BrandFactory extends Factory
   public function definition(): array
   {
     return [
-      'name' => $this->faker->unique()->words(1, true)
+      'name' => $this->faker->unique()->words(1, true),
     ];
   }
 }
