@@ -56,7 +56,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link position-relative cart-open-button active" onclick="toggleCart()">
               <i class="las la-shopping-bag"></i>
-              <span class="badge rounded-pill badge-notification bg-dark text-light">0</span>
+              <span class="badge rounded-pill badge-notification bg-dark text-light">@{{ $store.state.cart.items.reduce((a, b) => +a + +b.amount, 0) }}</span>
             </a>
             <a class="nav-link position-relative cart-close-button" onclick="toggleCart()">
               <i class="las la-times"></i>
@@ -189,7 +189,7 @@
           <span>@{{ $cost($store.getters.priceAmount) }} @{{ $store.state.currency.symbol }}</span>
         </div>
         <div class="col-12 col-sm-6 d-flex align-items-center justify-content-end">
-          <a class="btn btn-dark">Оформить заказ</a>
+          <a class="btn btn-dark" href="{{ route('cart.index') }}">Оформить заказ</a>
         </div>
       </div>
     </div>
@@ -206,20 +206,22 @@
           class="col-12 col-md-8 d-flex flex-column justify-content-start justify-content-md-center h-100 pl-4 pl-md-3"
           style="padding-bottom: 6em;">
           <h1 class="w-100 text-dark text-left text-md-center mb-4">Что бы вы хотели найти?</h1>
-          <div class="row d-flex">
-            <div class="col-12 col-md-9">
-              <div class="search-input-wrapper">
-                <input class="search-input pr-4 pr-md-0" placeholder="Поиск украшений...">
-                <i class="las la-search d-block d-md-none"></i>
+          <form action="{{ route('product.search') }}" method="GET">
+            <div class="row d-flex">
+              <div class="col-12 col-md-9">
+                <div class="search-input-wrapper">
+                  <input class="search-input pr-4 pr-md-0" name="q" id="q" placeholder="Поиск украшений...">
+                  <i class="las la-search d-block d-md-none"></i>
+                </div>
+              </div>
+              <div class="col-3 d-none d-md-flex">
+                <button class="search-button" type="submit">
+                  <i class="las la-search"></i>
+                  <span>Найти</span>
+                </button>
               </div>
             </div>
-            <div class="col-3 d-none d-md-flex">
-              <button class="search-button" type="submit">
-                <i class="las la-search"></i>
-                <span>Найти</span>
-              </button>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

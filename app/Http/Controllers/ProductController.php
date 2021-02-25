@@ -162,7 +162,7 @@ class ProductController extends Controller
     }
 
     $itemsCount = $items->count();
-    $items = $items->paginate(15);
+    $items = $items->paginate(16);
     $filter = [
       'category' => $categoryArr,
       'order' => $order,

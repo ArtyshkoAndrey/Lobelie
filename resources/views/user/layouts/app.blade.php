@@ -7,7 +7,7 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
-  <title>@yield('title', 'ЕБАл')</title>
+  <title>{{ config('app.name') }} | @yield('title', config('app.name'))</title>
   <!-- Styles -->
   <link rel="preload" href="{{ mix('css/app.css') }}" as="style" />
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
@@ -16,20 +16,22 @@
 <body id="{{ str_replace('.', '-', Route::currentRouteName()) . '-page' }}">
 <div id="app">
 
-  <div data-mdb-color="danger" role="alert" class="alert alert-danger fade show info-alert">
-    <div class="d-flex flex-column justify-content-center w-100">
-      <strong>Ошибка!</strong>
-      <span>Нет аккаунта с такими данными</span>
+  <div class="content">
+    <div data-mdb-color="danger" role="alert" class="alert alert-danger fade show info-alert">
+      <div class="d-flex flex-column justify-content-center w-100">
+        <strong>Ошибка!</strong>
+        <span>Нет аккаунта с такими данными</span>
+      </div>
+      <button type="button" data-dismiss="alert" aria-label="Close" class="close">
+        <span aria-hidden="true">×</span>
+      </button>
     </div>
-    <button type="button" data-dismiss="alert" aria-label="Close" class="close">
-      <span aria-hidden="true">×</span>
-    </button>
-  </div>
 
-  @include('user.layouts.header')
-  <main>
-    @yield('content')
-  </main>
+    @include('user.layouts.header')
+    <main>
+      @yield('content')
+    </main>
+  </div>
   @include('user.layouts.footer')
 </div>
 </body>

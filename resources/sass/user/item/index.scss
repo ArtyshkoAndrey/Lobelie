@@ -44,7 +44,7 @@ a.item-link:hover .cart-button {
   .cart-button {
     display: flex;
     cursor: pointer;
-    align-items: center;
+    align-items: flex-start;
     padding-left: 0;
 
     &:hover {

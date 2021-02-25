@@ -29,12 +29,29 @@
   outline: none;
 }
 
+html, body, #app{
+  height: 100%;
+}
+
 body {
   font-family: 'Tenor Sans', sans-serif;
   background: $body-bg;
   font-size:$font-size-base;
   line-height: $line-height-base;
   background: $white;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
 }
 
 .scroll-blocked {

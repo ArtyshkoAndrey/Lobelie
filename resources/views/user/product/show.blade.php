@@ -1,14 +1,18 @@
 @extends('user.layouts.app')
 
-@section('title', 'DOCKU | ' . $product->title)
+@section('title', $product->title)
 
 @section('content')
   <div class="container-fluid item-page">
     <div class="row mb-5">
       <div class="col-12 col-md-6 images-stack">
-        <img src="{{ asset('images/product.png') }}">
-        <img src="{{ asset('images/product.png') }}">
-        <img src="{{ asset('images/product.png') }}">
+        @foreach($product->photos as $photo)
+          <picture>
+            <source type="image/webp" srcset="{{ $photo->thumbnail_url_webp }}">
+            <source type="image/jpeg" srcset="{{ $photo->thumbnail_url_jpg }}">
+            <img src="{{ $photo->thumbnail_url_jpg }}" alt="{{ $photo->name }}">
+          </picture>
+        @endforeach
       </div>
       <div class="col-12 col-md-6 pl-3 pl-md-4 item-details">
         <div class="row flex-column content-wrapper">

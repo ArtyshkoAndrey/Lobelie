@@ -17395,7 +17395,7 @@ a.item-link:hover .cart-button {
 .item-card .cart-button {
   display: flex;
   cursor: pointer;
-  align-items: center;
+  align-items: flex-start;
   padding-left: 0;
 }
 .item-card .cart-button:hover span {
@@ -17672,16 +17672,16 @@ a.item-link:hover .cart-button {
  * Copyright (c) 2021. Данный файл является интелектуальной собственостью Fulliton.
  * Я буду рад если вы будите вносить улучшения, всегда жду ваших пул реквестов
  */
-@media (max-width: 576px) {
-  .item-title, .item-price {
-    font-size: 1.4em;
-  }
-}
-
 .item-title {
   margin-bottom: 0;
+  font-size: 0.8em;
 }
 
+@media (min-width: 768px) {
+  .item-title, .item-price {
+    font-size: 1.1em;
+  }
+}
 a {
   color: #7A808C;
   font-size: 1em;
@@ -18273,12 +18273,29 @@ a:hover {
   outline: none;
 }
 
+html, body, #app {
+  height: 100%;
+}
+
 body {
   font-family: "Tenor Sans", sans-serif;
   background: #f8fafc;
   font-size: 0.9rem;
   line-height: 1.6;
   background: #FFFFFF;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
 }
 
 .scroll-blocked {

@@ -1,7 +1,6 @@
-<a href="{{ route('product.show', $product->id) }}" class="item-link">
-
-  <div class="item-card">
-    <div class="row mb-2">
+ <div class="item-card">
+   <div onclick="location.href = '{{ route('product.show', $product->id) }}'" style="cursor: pointer">
+      <div class="row mb-2">
       <div class="col-12">
         <picture>
           <source type="image/webp" srcset="{{ $product->thumbnail_webp }}">
@@ -10,11 +9,12 @@
         </picture>
       </div>
     </div>
-    <div class="row mb-1 px-1 px-sm-2 px-md-3">
-      <div class="col-12">
-        <span class="item-name">{{ $product->title }}</span>
+      <div class="row mb-1 px-1 px-sm-2 px-md-3">
+        <div class="col-12">
+          <span class="item-name">{{ $product->title }}</span>
+        </div>
       </div>
-    </div>
+   </div>
     <div class="row mb-2 px-1 px-sm-2 px-md-3">
       <div class="col-12 d-flex flex-column flex-sm-row justify-content-between">
         @if($product->on_sale)
@@ -28,14 +28,14 @@
     <div class="row px-1 px-sm-2 px-md-3">
       <div class="col-12 d-flex justify-content-between">
         @if($product->skuses->count() > 1)
-          <button class="cart-button">
+          <a class="cart-button" href="{{ route('product.show', $product->id) }}">
             <img class="shopping-bag active" src="{{ asset('images/la_shopping-bag.svg') }}" alt="bag">
             <img class="shopping-bag-alt" src="{{ asset('images/la_shopping-bag-alt.svg') }}" alt="bag">
             {{--        <i class="las la-shopping-bag"></i>--}}
             <span class="d-none d-sm-block">Выбрать размер</span>
-          </button>
+          </a>
         @else
-          <button class="cart-button">
+          <button class="cart-button" @click="$store.commit('addItem', {id: {{ $product->skuses()->first()->pivot->id }}, amount: 1})">
             <img class="shopping-bag active" src="{{ asset('images/la_shopping-bag.svg') }}" alt="bag">
             <img class="shopping-bag-alt" src="{{ asset('images/la_shopping-bag-alt.svg') }}" alt="bag">
             {{--        <i class="las la-shopping-bag"></i>--}}
@@ -49,4 +49,3 @@
       </div>
     </div>
   </div>
-</a>
