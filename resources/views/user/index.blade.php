@@ -1,8 +1,8 @@
-@extends('user.layouts.app', ['theme_menu' => 'light-menu'])
+@extends('user.layouts.app')
 {{--@extends('user.layouts.app') Это без параметра и следовательно меню придёт dark автоматически --}}
 {{-- Говорим шаблону что будет переменная в нём с значением --}}
 
-@section('title', 'DOCKU | Главаня страница')
+@section('title', 'Главаня страница')
 
 @section('content')
 {{--  TODO: слайдер подгружать из бд--}}

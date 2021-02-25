@@ -1,6 +1,6 @@
 <div class="col-3 pl-0">
   <img src="{{ asset('images/product.png') }}" alt=""
-       class="img-fluid" style="border-radius: 6px;">
+       class="img-fluid">
 </div>
 <div class="col-9">
   <div class="row h-100">
