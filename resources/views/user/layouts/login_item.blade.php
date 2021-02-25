@@ -8,7 +8,7 @@
     data-mdb-toggle="dropdown"
     aria-expanded="false"
   >
-    Lorem ipsum.
+    {{ auth()->user()->name }}
   </a>
   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="user-dropdown">
     <div class="row m-0">
@@ -25,22 +25,22 @@
               </div>
             </a>
           </div>
-{{--          @if(auth()->user()->is_admin)--}}
-{{--          <div class="row">--}}
-{{--            <a href="{{ route('admin.index') }}" class="d-flex dropdown-item">--}}
-{{--              <div class="col-2 d-flex align-items-center justify-content-center">--}}
-{{--                <i class="bx bx-sm bxs-dashboard"></i>--}}
-{{--              </div>--}}
-{{--              <div class="col-auto mx-2">--}}
-{{--                Администитивная панель--}}
-{{--              </div>--}}
-{{--            </a>--}}
-{{--          </div>--}}
-{{--          @endif--}}
+          @if(auth()->user()->is_admin)
+          <div class="row">
+            <a href="{{ route('admin.index') }}" class="d-flex dropdown-item">
+              <div class="col-2 d-flex align-items-center justify-content-center">
+                <i class="las la-tachometer-alt"></i>
+              </div>
+              <div class="col-auto mx-2">
+                Администитивная панель
+              </div>
+            </a>
+          </div>
+          @endif
           <div class="row">
             <a href="#" class="d-flex dropdown-item" onclick="event.preventDefault();$('#logout').submit()">
               <div class="col-2 d-flex align-items-center justify-content-center">
-                <i class="bx bx-sm bx-log-out"></i>
+                <i class="las la-sign-out-alt"></i>
               </div>
               <div class="col-auto mx-2">
                 Выйти
