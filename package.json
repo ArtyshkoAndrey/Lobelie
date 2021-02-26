@@ -26,6 +26,9 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.20.0",
+    "eslint-plugin-vue": "^7.6.0",
     "halfmoon": "^1.1.1",
     "mdb-ui-kit": "^3.2.0",
     "sweetalert2": "^10.14.0",
