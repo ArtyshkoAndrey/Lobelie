@@ -203,7 +203,11 @@ class ProductController extends Controller
         $categories = [];
       }
 
-      return view('user.product.show', compact('product', 'categories'));
+      if ($category = end($categories)) {
+        $similarProducts = $category->products()->take(4)->get();
+      }
+
+      return view('user.product.show', compact('product', 'categories', 'similarProducts'));
     }
     throw new NotFoundHttpException();
   }

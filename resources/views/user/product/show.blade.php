@@ -79,9 +79,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-6 col-md-3 mb-4" v-for="i in 4">
-        @include('user.layouts.item')
-      </div>
+      @foreach($similarProducts as $product)
+        <div class="col-6 col-md-3 mb-4">
+          @include('user.layouts.item', ['product' => $product])
+        </div>
+      @endforeach
     </div>
   </div>
 @endsection
