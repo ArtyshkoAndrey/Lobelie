@@ -39,11 +39,11 @@
                <div class="row">
                  @foreach($product->skuses as $skus)
                    <div class="col-auto">
-                     <div class="size-box p-2 {{ $skus->pivot->stock === 0 ? 'disabled' : null }}"
+                     <button class="size-box p-2 {{ $skus->pivot->stock === 0 ? 'disabled' : null }}"
                           :class="selectSkus === {{$skus->pivot->id}} ? 'selected' : null"
                           @click="selectSkus = {{$skus->pivot->stock ? $skus->pivot->id : 'null'}}">
                        {{ $skus->title }}
-                     </div>
+                     </button>
                    </div>
                  @endforeach
                </div>

@@ -94,13 +94,15 @@
         margin-bottom: 1em;
         cursor: pointer;
         position: relative;
+        border: none;
 
         &.selected {
           background: #2D3134;
           color: #fff;
         }
 
-        &.disabled {
+        &:disabled {
+          background: #E9EAEC;
           color: #4F545B;
           cursor: default;
 
@@ -152,6 +154,12 @@
 
       @include media-breakpoint-down(sm) {
         width: 100%;
+      }
+
+      &:disabled {
+        background: $light-gray;
+        border-color: $light-gray;
+        color: $dark;
       }
     }
 
