@@ -118,20 +118,7 @@
       </nav>
       <div class="container-fluid category-menu">
         <div class="row">
-          <div class="col-12 col-md-6 col-lg-4 d-flex flex-column" v-for="i in 3">
-            <div class="row category" v-for="i in 3">
-              <div class="col-6 d-flex flex-column">
-                <h4>Мужчинам</h4>
-                <a href="#!">Кольца</a>
-                <a href="#!">Перстни</a>
-                <a href="#!">Браслеты</a>
-                <a href="#!">Цепочки</a>
-              </div>
-              <div class="col-6">
-                <a href="#!" class="see-all">Смотреть все</a>
-              </div>
-            </div>
-          </div>
+          @widget('category-menu')
         </div>
       </div>
     </div>
