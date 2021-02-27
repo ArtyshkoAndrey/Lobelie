@@ -72,19 +72,20 @@
         </div>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-12">
-        <h1 class="title">Может быть интересно</h1>
-      </div>
-    </div>
-    <div class="row">
-      @foreach($similarProducts as $product)
-        <div class="col-6 col-md-3 mb-4">
-          @include('user.layouts.item', ['product' => $product])
+    @if(count($similarProducts) > 0)
+      <div class="row">
+        <div class="col-12">
+          <h1 class="title">Может быть интересно</h1>
         </div>
-      @endforeach
-    </div>
+      </div>
+      <div class="row">
+        @foreach($similarProducts as $product)
+          <div class="col-6 col-md-3 mb-4">
+            @include('user.layouts.item', ['product' => $product])
+          </div>
+        @endforeach
+      </div>
+    @endif
   </div>
 @endsection
 

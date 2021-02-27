@@ -98,7 +98,7 @@ class Category extends Model
     if ($this->child()->count() > 0)
       return $this->name . '(' . $this->child()->first()->name .')';
 
-    return '()';
+    return $this->name;
   }
 
   public function getPhotoStorageAttribute (): string

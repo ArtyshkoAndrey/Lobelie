@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Docku - Список брендов')
+@section('title', 'Список цветов')
 
 @section('content')
   <div class="container-fluid mt-20 mb-20">
@@ -8,7 +8,7 @@
       <div class="col-12">
         <nav aria-label="Breadcrumb navigation example">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item active"><a href="#">Бренды</a></li>
+            <li class="breadcrumb-item active"><a href="#">Цвета</a></li>
             <li class="breadcrumb-item"></li>
           </ul>
         </nav>
@@ -16,11 +16,11 @@
       <div class="col-12">
         <div class="row align-items-center">
           <div class="col-auto">
-            <h3>Бренды</h3>
+            <h3>Цвета</h3>
           </div>
 
           <div class="col-auto px-10">
-            <a href="#modal-brand-add" class="btn d-block">Создать новый бренд</a>
+            <a href="#modal-brand-add" class="btn d-block">Создать новый цвет</a>
           </div>
 
         </div>
@@ -132,7 +132,7 @@
 
           <div class="row justify-content-center">
             <div class="col-12">
-              <h1 class="modal-title font-size-16 text-center">Добавление нового бренда</h1>
+              <h1 class="modal-title font-size-16 text-center">Добавление нового цвета</h1>
             </div>
             <div class="col-md-8 col-12">
               <form action="{{ route('admin.brand.store') }}" method="POST">

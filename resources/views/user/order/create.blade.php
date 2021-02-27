@@ -1,5 +1,5 @@
 @extends('user.layouts.app')
-@section('title', 'DOCKU | Оплата')
+@section('title', 'Оплата')
 
 @section('style')
   <style>
@@ -92,47 +92,95 @@
                     <i class="las la-map-marker-alt"></i>
                   </span>
                 </div>
+
+                <div class="form-outline">
+                  <input type="text"
+                         id="post_code"
+                         name="post_code"
+                         class="form-control {{ (auth()->user()->post_code ?? null) ? 'active' : '' }}"
+                         value="{{ auth()->user()->post_code ?? null }}"
+                         @input="setPostCode"/>
+                  <label class="form-label"
+                         for="post_code">
+                    Индекс
+                    <span class="required">*</span>
+                  </label>
+                  <span class="icon">
+                    <i class="las la-map-marker-alt"></i>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="row">
+
               <div class="col-12 col-sm-6 col-md-12 col-lg-6">
                 <p class="h4 title">Способ оплаты</p>
-                <div class="choice-field active">
-                  <i class="icon las la-credit-card"></i>
-                  <span class="content">Оплатить картой</span>
-                  <div class="radio-wrapper">
-                    <div class="radio"></div>
-                    <div class="dot"></div>
+                <transition name="slide-fade" mode="out-in" appear>
+
+                  <div v-if="transfer.name !== null">
+
+                    @if($cloudPayment ? ($cloudPayment->data === '1') : false)
+                      <transition name="slide-fade" mode="out-in" appear key="1">
+                        <div class="choice-field" :class="method_pay === 'cloudPayment' ? 'active' : null" @click="setCloudPaymentMethod" key="1">
+                          <i class="icon las la-credit-card"></i>
+                          <span class="content">Оплатить картой</span>
+                          <div class="radio-wrapper">
+                            <div class="radio"></div>
+                            <div class="dot"></div>
+                          </div>
+                        </div>
+                      </transition>
+                    @endif
+
+                    @if($cash ? ($cash->data === '1') : false)
+                      <transition name="slide-fade" mode="out-in" appear v-if="transfer.name !== 'ems'" key="2">
+                        <div class="choice-field" :class="method_pay === 'cash' ? 'active' : null" @click="setCashMethod" key="1">
+                          <i class="icon las la-money-bill"></i>
+                          <span class="content">Наличными</span>
+                          <div class="radio-wrapper">
+                            <div class="radio"></div>
+                            <div class="dot"></div>
+                          </div>
+                        </div>
+                      </transition>
+                    @endif
+
                   </div>
-                </div>
-                <div class="choice-field">
-                  <i class="icon las la-money-bill"></i>
-                  <span class="content">Наличными</span>
-                  <div class="radio-wrapper">
-                    <div class="radio"></div>
-                    <div class="dot"></div>
-                  </div>
-                </div>
+
+                </transition>
+
               </div>
+
               <div class="col-12 col-sm-6 col-md-12 col-lg-6">
                 <p class="h4 title">Способ доставки</p>
-                <div class="choice-field active">
-                  <span class="content">Самовывоз</span>
-                  <span>0 ₸</span>
-                  <div class="radio-wrapper">
-                    <div class="radio"></div>
-                    <div class="dot"></div>
+
+                <transition name="slide-fade" mode="out-in" appear>
+
+                  <div class="choice-field" :class="transfer.name === 'pickup' ? 'active' : null" v-if="info.city ? info.city.pickup : false" key="1" @click="setPickupTransfer">
+                    <span class="content">Самовывоз</span>
+                    <span>0 @{{ $store.state.currency.symbol }}</span>
+                    <div class="radio-wrapper">
+                      <div class="radio"></div>
+                      <div class="dot"></div>
+                    </div>
                   </div>
-                </div>
-                <div class="choice-field">
-                  <span class="content">Стандартная доставка</span>
-                  <span>1 000 ₸</span>
-                  <div class="radio-wrapper">
-                    <div class="radio"></div>
-                    <div class="dot"></div>
+
+                </transition>
+
+                <transition name="slide-fade" mode="out-in" appear>
+                  <div class="choice-field" :class="transfer.name === 'ems' ? 'active' : null" v-if="!ems.error && ems.price !== null" @click="setEmsTransfer" key="2">
+                    <span class="content">Стандартная доставка</span>
+                    <span>@{{ $cost(ems.price * $store.state.currency.ratio) }} @{{ $store.state.currency.symbol }}</span>
+                    <div class="radio-wrapper">
+                      <div class="radio"></div>
+                      <div class="dot"></div>
+                    </div>
                   </div>
-                </div>
+
+                </transition>
               </div>
+
+
             </div>
           </div>
           <div class="col-12 col-md-4">
@@ -156,18 +204,41 @@
                       <span>Итого:</span>
                       <span>@{{ $cost(price) }} @{{ $store.state.currency.symbol }}</span>
                     </div>
+
                     <div class="col-12">
-                      <button @click="checkSale" class="complete-button">Завершить и оплатить</button>
+                      <button @click="orderedNow" class="complete-button" :disabled="disabledButton">
+                        <span v-if="!loaderButton">Завершить и оплатить</span>
+                        <div v-else class="spinner-border text-light" role="status">
+                          <span class="visually-hidden">Loading...</span>
+                        </div>
+                      </button>
                     </div>
+
                     <div class="col-12 agreement">
                       <span>Нажимая на кнопку “Завершить и оплатить” вы соглашаетесь с политикой конфиденциальности</span>
                     </div>
                   </div>
                   </div>
                 </div>
+              <div class="col-12 mb-2">
+                <div class="order-results">
+                  <div class="row">
+
+                    <div class="col-12 mb-0">
+                      <div class="form-outline mb-0 w-100">
+                        <input type="text" id="promocode" name="promocode" class="form-control" v-model="code"/>
+                        <label class="form-label" for="promocode">Введите промокод (при наличии)</label>
+                      </div>
+                    </div>
+                    <div class="col-12 mt-0">
+                      <button @click="checkSale" class="btn btn-dark d-block w-100 mt-2 rounded-0 promocode-btn" :disabled="disabledButtonCode">Применить</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
         <div v-else key="loaderWindow" class="mt-5">
           <div class="row">

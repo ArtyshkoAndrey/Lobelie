@@ -17747,6 +17747,11 @@ a:hover {
   margin-top: 80px;
   padding-bottom: 30px;
 }
+.order-create-page .promocode-btn {
+  text-transform: none;
+  font-size: 1em;
+  padding: 0.8em;
+}
 .order-create-page .title {
   color: #2D3134;
   font-size: 1.4em;

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Services\PhotoService;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -12,6 +13,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class CategoryController extends Controller
 {
@@ -72,16 +74,28 @@ class CategoryController extends Controller
     $request->validate([
       'name' => 'required|string',
       'category_id' => 'required|exists_or_null:categories,id',
-      'to_menu' => 'required|boolean'
+      'to_menu' => 'required|boolean',
+      'photo' => 'sometimes|image',
     ]);
-
-    $category = new Category($request->all());
+    $data = $request->all();
+    if ($request->has('photo')) {
+      $image = $request->file('photo');
+      $img = Image::make($image->getRealPath())->encode('jpg', 70);
+      $originalName = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME) . '.jpg';
+      $img->fit(500, 500, function ($constraint) {
+        $constraint->aspectRatio();
+        $constraint->upsize();
+      });
+      $img->save('public/' . Category::PHOTO_PATH . $originalName);
+      $data['photo'] = $originalName;
+    }
+    $category = new Category($data);
     $category->save();
     if((int) $category_id = $request->get('category_id')) {
       $category->parents()->attach($category_id);
-      return redirect()->route('admin.category.index', ['category_id' => $category_id])->with('success', ['Категория успешно создана']);
+      return redirect()->route('admin.category.index', ['category_id' => $category_id])->with('success', ['Вид изделий успешно создан']);
     }
-    return redirect()->route('admin.category.index')->with('success', ['Категория успешно создана']);
+    return redirect()->route('admin.category.index')->with('success', ['Вид изделий успешно создан']);
   }
 
   /**
@@ -117,10 +131,23 @@ class CategoryController extends Controller
   {
     $request->validate([
       'name' => 'required|string',
-      'to_menu' => 'required|boolean'
+      'to_menu' => 'required|boolean',
+      'photo' => 'sometimes|image',
     ]);
-    Category::find($id)->update($request->all());
-    return redirect()->back()->with('success', ['Категория успешна изменена']);
+    $data = $request->all();
+    if ($request->has('photo')) {
+      $image = $request->file('photo');
+      $img = Image::make($image->getRealPath())->encode('jpg', 70);
+      $originalName = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME) . '.jpg';
+      $img->fit(500, 500, function ($constraint) {
+        $constraint->aspectRatio();
+        $constraint->upsize();
+      });
+      $img->save('public/' . Category::PHOTO_PATH . $originalName);
+      $data['photo'] = $originalName;
+    }
+    Category::find($id)->update($data);
+    return redirect()->back()->with('success', ['Вид изделий успешно изменён']);
   }
 
   /**
@@ -134,9 +161,9 @@ class CategoryController extends Controller
   {
     try {
       Category::find($id)->delete();
-      return redirect()->back()->with('success', ['Категория успешна удалена']);
+      return redirect()->back()->with('success', ['Вид изделий успешно удалён']);
     } catch (Exception $exception) {
-      return redirect()->back()->withErrors(['Ошибка удаления категории']);
+      return redirect()->back()->withErrors(['Ошибка в удалении вида изделий']);
     }
   }
 }

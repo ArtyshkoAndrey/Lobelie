@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Docku - Список городов для самовывоза')
+@section('title', 'Список городов для самовывоза')
 
 @section('content')
   <div class="container-fluid mt-20 mb-20">

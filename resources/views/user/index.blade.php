@@ -114,7 +114,7 @@
           @if (isset($categories[2]))
             <div class="col-12 col-md-4 col-sm-6 offset-md-1 d-flex flex-column" >
               <div class="category-wrapper">
-                <img class="category-image" src="{{ $categories[1]->photo_storage }}" alt="{{ $categories[1]->name }}">
+                <img class="category-image" src="{{ $categories[2]->photo_storage }}" alt="{{ $categories[1]->name }}">
                 <span class="category-name">{{ $categories[2]->name }}</span>
                 <div class="arrow-wrapper">
                   <img src="{{ asset('images/arrow.svg') }}" alt="">
@@ -127,7 +127,7 @@
           @if (isset($categories[3]))
             <div class="col-12 col-md-4 col-sm-6 offset-md-1 d-flex flex-column" >
               <div class="category-wrapper">
-                <img class="category-image" src="{{ $categories[1]->photo_storage }}" alt="{{ $categories[1]->name }}">
+                <img class="category-image" src="{{ $categories[3]->photo_storage }}" alt="{{ $categories[1]->name }}">
                 <span class="category-name">{{ $categories[3]->name }}</span>
                 <div class="arrow-wrapper">
                   <img src="{{ asset('images/arrow.svg') }}" alt="">

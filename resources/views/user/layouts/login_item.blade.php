@@ -17,7 +17,7 @@
             <a href="{{ route('profile.index') }}" class="d-flex dropdown-item">
               <div class="col-2 d-flex align-items-center justify-content-center">
                 <img class="rounded-circle"
-                     src="{{ asset('images/user-o.png') }}"
+                     src="{{ auth()->user()->avatar_image }}"
                      style="width: 25px; height: 25px;" alt="logo"/>
               </div>
               <div class="col-auto mx-2">

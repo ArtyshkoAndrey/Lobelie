@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Docku - Административная панель')
+@section('title', 'Административная панель')
 
 @section('content')
   <div class="container">

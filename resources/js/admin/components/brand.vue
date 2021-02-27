@@ -2,17 +2,17 @@
   <div class="form-group">
     <div :class="'dropdown w-full ' + (this.show ? 'show' : '')">
       <input type="hidden" :value="selected_brand.id" :name="name" :id="id">
-      <label :for="id" class="required">Бренд</label>
+      <label :for="id" class="required">Цвет</label>
       <div class="input-group w-full">
-        <input autocomplete="off" @blur="closedMenu()" type="text" placeholder="Бренд" class="form-control" :name="'search-' + name" v-model="search">
+        <input autocomplete="off" @blur="closedMenu()" type="text" placeholder="Цвет" class="form-control" :name="'search-' + name" v-model="search">
         <div class="input-group-append">
           <span class="input-group-text"><i class="bx bx-down-arrow-alt"></i></span>
         </div>
       </div>
       <div class="dropdown-menu mt-20">
-        <h6 class="dropdown-header">Выберите категория</h6>
+        <h6 class="dropdown-header">Выберите цвет</h6>
         <a v-if="brands.length > 0" @click="setCountry(brand)" v-for="brand in brands" class="dropdown-item pointer-events-auto">{{ brand.name }}</a>
-        <h5 v-if="brands.length === 0" class="dropdown-header">Нет брендов</h5>
+        <h5 v-if="brands.length === 0" class="dropdown-header">Нет цветов</h5>
       </div>
       <div class="form-text font-size-10">
         Начните писать, что бы увидеть варианты

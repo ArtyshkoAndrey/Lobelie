@@ -2,17 +2,17 @@
   <div class="form-group">
     <div :class="'dropdown w-full ' + (this.show ? 'show' : '')">
       <input type="hidden" :value="selected_category.id" :name="name" :id="id">
-      <label :for="id" class="required">Категория</label>
+      <label :for="id" class="required">Изделие</label>
       <div class="input-group w-full">
-        <input autocomplete="off" @blur="closedMenu()" type="text" placeholder="Категория" class="form-control w-full" :name="'search-' + name" v-model="search">
+        <input autocomplete="off" @blur="closedMenu()" type="text" placeholder="Изделие" class="form-control w-full" :name="'search-' + name" v-model="search">
         <div class="input-group-append">
           <span class="input-group-text"><i class="bx bx-down-arrow-alt"></i></span>
         </div>
       </div>
       <div class="dropdown-menu mt-20">
-        <h6 class="dropdown-header">Выберите категория</h6>
+        <h6 class="dropdown-header">Выберите изделие</h6>
         <a v-if="categories.length > 0" @click="setCountry(category)" v-for="category in categories" class="dropdown-item pointer-events-auto">{{ category.search_name }}</a>
-        <h5 v-if="categories.length === 0" class="dropdown-header">Нет категорий</h5>
+        <h5 v-if="categories.length === 0" class="dropdown-header">Нет изделий</h5>
       </div>
     </div>
     <div class="form-text font-size-10">

@@ -14271,7 +14271,7 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("label", { staticClass: "required", attrs: { for: _vm.id } }, [
-        _vm._v("Бренд")
+        _vm._v("Цвет")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "input-group w-full" }, [
@@ -14288,7 +14288,7 @@ var render = function() {
           attrs: {
             autocomplete: "off",
             type: "text",
-            placeholder: "Бренд",
+            placeholder: "Цвет",
             name: "search-" + _vm.name
           },
           domProps: { value: _vm.search },
@@ -14313,7 +14313,7 @@ var render = function() {
         { staticClass: "dropdown-menu mt-20" },
         [
           _c("h6", { staticClass: "dropdown-header" }, [
-            _vm._v("Выберите категория")
+            _vm._v("Выберите цвет")
           ]),
           _vm._v(" "),
           _vm._l(_vm.brands, function(brand) {
@@ -14335,7 +14335,7 @@ var render = function() {
           _vm._v(" "),
           _vm.brands.length === 0
             ? _c("h5", { staticClass: "dropdown-header" }, [
-                _vm._v("Нет брендов")
+                _vm._v("Нет цветов")
               ])
             : _vm._e()
         ],
@@ -14389,7 +14389,7 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("label", { staticClass: "required", attrs: { for: _vm.id } }, [
-        _vm._v("Категория")
+        _vm._v("Изделие")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "input-group w-full" }, [
@@ -14406,7 +14406,7 @@ var render = function() {
           attrs: {
             autocomplete: "off",
             type: "text",
-            placeholder: "Категория",
+            placeholder: "Изделие",
             name: "search-" + _vm.name
           },
           domProps: { value: _vm.search },
@@ -14431,7 +14431,7 @@ var render = function() {
         { staticClass: "dropdown-menu mt-20" },
         [
           _c("h6", { staticClass: "dropdown-header" }, [
-            _vm._v("Выберите категория")
+            _vm._v("Выберите изделие")
           ]),
           _vm._v(" "),
           _vm._l(_vm.categories, function(category) {
@@ -14453,7 +14453,7 @@ var render = function() {
           _vm._v(" "),
           _vm.categories.length === 0
             ? _c("h5", { staticClass: "dropdown-header" }, [
-                _vm._v("Нет категорий")
+                _vm._v("Нет изделий")
               ])
             : _vm._e()
         ],
@@ -27216,7 +27216,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\OpenServer\domains\lobelie\resources\js\admin\app.js */"./resources/js/admin/app.js");
+module.exports = __webpack_require__(/*! C:\OpenServer\domains\lobelie\resources\js\admin\app.js */"./resources/js/admin/app.js");
 
 
 /***/ })

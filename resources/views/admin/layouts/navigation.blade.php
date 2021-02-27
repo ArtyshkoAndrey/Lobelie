@@ -86,7 +86,7 @@
       <span class="sidebar-icon bg-transparent justify-content-start mr-0">
         <i class="bx bx-purchase-tag-alt" aria-hidden="true"></i>
       </span>
-      Бренды
+      Цвета
     </a>
 
     <a href="{{ route('admin.skus.index') }}" class="sidebar-link sidebar-link-with-icon {{ Route::currentRouteNamed('admin.skus.*') ? 'active' : '' }}">
@@ -100,7 +100,7 @@
       <span class="sidebar-icon bg-transparent justify-content-start mr-0">
         <i class="bx bx-purchase-tag" aria-hidden="true"></i>
       </span>
-      Категории
+      Вид изделий
     </a>
 
     <br />

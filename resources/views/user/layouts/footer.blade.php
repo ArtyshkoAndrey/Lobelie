@@ -11,13 +11,13 @@
           <div class="col-12 col-md-7">
             <div class="row">
               <div class="col-12 col-sm-6 link-block mb-3 mb-sm-0">
-                <span href="#!" class="title">Покупателям</span>
-                <a href="#!" class="link">Личный кабинет</a>
+                <span class="title">Покупателям</span>
+                <a href="{{ route('profile.index') }}" class="link">Личный кабинет</a>
                 <a href="#!" class="link">Доставка и оплата</a>
                 <a href="#!" class="link">Политика конфидециальности</a>
               </div>
               <div class="col-12 col-sm-6 link-block mb-3 mb-sm-0">
-                <span href="{{ route('product.all') }}" class="title">Каталог</span>
+                <span class="title">Каталог</span>
                 @widget('footer-category')
               </div>
             </div>
@@ -41,11 +41,11 @@
           <span class="title">Контакты</span>
           <div class="phone-wrapper">
             <i class="las la-phone"></i>
-            <a href="tel:" class="link">+ 7 777 777 77 77</a>
+            <a href="tel:+77074720332" class="link">+7(707)472-03-32</a>
           </div>
           <div class="email-wrapper">
             <i class="las la-envelope"></i>
-            <a href="mailto:" class="link">info@lobelie.com</a>
+            <a href="mailto:info@lobelie.com" class="link">info@lobelie.com</a>
           </div>
         </div>
       </div>

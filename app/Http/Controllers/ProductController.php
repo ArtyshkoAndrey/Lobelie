@@ -202,7 +202,7 @@ class ProductController extends Controller
       } catch (\Error $exception) {
         $categories = [];
       }
-
+      $similarProducts = [];
       if ($category = end($categories)) {
         $similarProducts = $category->products()->take(4)->get();
       }

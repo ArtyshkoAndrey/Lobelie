@@ -16,7 +16,7 @@
   @endif
   <link rel="stylesheet" href="{{ asset('css/boxicons.min.css') }}">
   @yield('css')
-  <title>@yield('title')</title>
+  <title>{{ config('app.name') }} - @yield('title')</title>
 </head>
 <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true" data-set-preferred-theme-onload="dark" data-set-preferred-mode-onload="true">
 
