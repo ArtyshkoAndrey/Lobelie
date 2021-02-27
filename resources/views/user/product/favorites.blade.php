@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 
-@section('title', 'DOCKU | Избранные товары')
+@section('title', 'Избранные товары')
 
 @section('content')
   <div class="container-fluid mt-5" id="favorites">

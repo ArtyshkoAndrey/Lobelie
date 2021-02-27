@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 
-@section('title', 'DOCKU | Подтверждение пароля')
+@section('title', 'Подтверждение пароля')
 
 @section('content')
 <div class="container">

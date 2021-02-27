@@ -1,8 +1,6 @@
 @extends('user.layouts.app')
-{{--@extends('user.layouts.app') Это без параметра и следовательно меню придёт dark автоматически --}}
-{{-- Говорим шаблону что будет переменная в нём с значением --}}
 
-@section('title', 'Главаня страница')
+@section('title', 'Главная страница')
 
 @section('content')
   <div class="home-slider">

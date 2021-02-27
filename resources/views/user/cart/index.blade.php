@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 
-@section('title', 'DOCKU | Корзина')
+@section('title', 'Корзина')
 
 @section('content')
   <div class="container-fluid cart-page">

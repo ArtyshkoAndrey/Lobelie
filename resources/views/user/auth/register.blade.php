@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 
-@section('title', 'DOCKU | Регистрация профиля')
+@section('title', 'Регистрация профиля')
 
 @section('content')
   <div class="container-fluid d-flex align-items-center justify-content-center">

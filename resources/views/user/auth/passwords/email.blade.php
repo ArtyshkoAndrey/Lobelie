@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 
-@section('title', 'DOCKU | Сброс пароля')
+@section('title', 'Сброс пароля')
 
 @section('content')
   {{--  TODO: Backend part --}}
