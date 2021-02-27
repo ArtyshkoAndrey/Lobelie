@@ -71,6 +71,13 @@
       Промокоды
     </a>
 
+    <a href="{{ route('admin.slider.index') }}" class="sidebar-link sidebar-link-with-icon {{ Route::currentRouteNamed('admin.slider.*') ? 'active' : '' }}">
+      <span class="sidebar-icon bg-transparent justify-content-start mr-0">
+        <i class="bx bxs-image" aria-hidden="true"></i>
+      </span>
+      Slider
+    </a>
+
     <br />
     <h5 class="sidebar-title">Товары</h5>
     <div class="sidebar-divider"></div>

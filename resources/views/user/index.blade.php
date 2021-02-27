@@ -9,26 +9,30 @@
   <div class="home-slider">
     <div class="slides">
       <div class="slide-wrapper">
-        <img slide-index="1" class="slide active" src="{{ asset('images/slide1.png') }}" alt="">
-        <img slide-index="2" class="slide" src="{{ asset('images/slide2.png') }}"  alt="">
-        <img slide-index="3" class="slide" src="{{ asset('images/slide1.png') }}"  alt="">
-        <img slide-index="4" class="slide" src="{{ asset('images/slide2.png') }}"  alt="">
+
+        @forelse($sliders as $slider)
+          <img slide-index="{{ $loop->index + 1 }}" class="slide {{ $loop->first ? 'active' : null }}" src="{{ $slider->photo_storage }}" alt="{{ $slider->title }}">
+        @empty
+          <img slide-index="1" class="slide active" src="{{ asset('images/slide1.png') }}" alt="">
+        @endforelse
 
         <div class="next-wrapper">
-          <img slide-index="1" class="next-slide" src="{{ asset('images/slide1.png') }}"  alt="">
-          <img slide-index="2" class="next-slide active" src="{{ asset('images/slide2.png') }}"  alt="">
-          <img slide-index="3" class="next-slide" src="{{ asset('images/slide1.png') }}"  alt="">
-          <img slide-index="4" class="next-slide" src="{{ asset('images/slide2.png') }}"  alt="">
+          @forelse($sliders as $slider)
+            <img slide-index="{{ $loop->index +1 }}" class="next-slide {{ count($sliders) === 1 || $loop->index === 1 ? 'active' : null }}" src="{{ $slider->photo_storage }}" alt="{{ $slider->title }}">
+          @empty
+            <img slide-index="1" class="slide active" src="{{ asset('images/slide1.png') }}" alt="">
+          @endforelse
 
           <button class="next-button">Следующая</button>
         </div>
       </div>
 
       <div class="dots">
-        <div slide-index="1" class="dot active"></div>
-        <div slide-index="2" class="dot"></div>
-        <div slide-index="3" class="dot"></div>
-        <div slide-index="4" class="dot"></div>
+        @forelse($sliders as $slider)
+          <div slide-index="{{ $loop->index + 1}}" class="dot {{ $loop->first ? 'active' : null }}"></div>
+        @empty
+          <div slide-index="1" class="dot active"></div>
+        @endforelse
       </div>
     </div>
     <div class="content">
@@ -36,10 +40,12 @@
         <h1 class="title">Магазин<br>ювелирных изделий и купальников</h1>
       </div>
       <div class="subtitle-wrapper">
-        <span text-index="1" class="subtitle active">Новый завоз колец 1</span>
-        <span text-index="2" class="subtitle">Новый завоз колец 2</span>
-        <span text-index="3" class="subtitle">Новый завоз колец 3</span>
-        <span text-index="4" class="subtitle">Новый завоз колец 4</span>
+
+        @forelse($sliders as $slider)
+          <span text-index="{{ $loop->index +1 }}" class="subtitle {{ $loop->first ? 'active' : null }}">{{ $slider->title }}</span>
+        @empty
+          <span text-index="1" class="subtitle active">Новый завоз колец 1</span>
+        @endforelse
       </div>
     </div>
 

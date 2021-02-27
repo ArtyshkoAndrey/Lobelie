@@ -69,6 +69,9 @@ Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function ()
   Route::resource('coupon', App\Http\Controllers\Admin\CouponController::class)->except([
     'show'
   ]);
+  Route::resource('slider', App\Http\Controllers\Admin\SliderController::class)->except([
+    'show', 'create', 'edit'
+  ]);
 
   Route::post('product/photo/store', [\App\Http\Controllers\Admin\ProductController::class, 'photoStore'])->name('product.store.photo');
   Route::post('product/photo/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'photo'])->name('product.photo');

@@ -33,6 +33,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Product[] $products
  * @property-read int|null $products_count
  * @property-read string $search_name
+ * @property string|null $photo
+ * @property-read string $photo_storage
+ * @method static \Illuminate\Database\Eloquent\Builder|Category wherePhoto($value)
  */
 class Category extends Model
 {

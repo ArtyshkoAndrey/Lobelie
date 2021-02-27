@@ -67,6 +67,10 @@ use Illuminate\Support\Carbon;
  * @property-read string $avatar_image
  * @property-read string $full_address
  * @method static Builder|User wherePhone($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Product[] $favorites
+ * @property-read int|null $favorites_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Order[] $orders
+ * @property-read int|null $orders_count
  */
 class User extends Authenticatable
 {

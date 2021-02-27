@@ -46,6 +46,18 @@ use Illuminate\Support\Carbon;
  * @method static Builder|CouponCode whereUsed($value)
  * @method static Builder|CouponCode whereValue($value)
  * @mixin Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Brand[] $brandsDisabled
+ * @property-read int|null $brands_disabled_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Brand[] $brandsEnabled
+ * @property-read int|null $brands_enabled_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Category[] $categoriesDisabled
+ * @property-read int|null $categories_disabled_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Category[] $categoriesEnabled
+ * @property-read int|null $categories_enabled_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Product[] $productsDisabled
+ * @property-read int|null $products_disabled_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Product[] $productsEnabled
+ * @property-read int|null $products_enabled_count
  */
 class CouponCode extends Model
 {

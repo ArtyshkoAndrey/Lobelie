@@ -51,6 +51,9 @@ use Log;
  * @property string $sale
  * @method static Builder|Order whereCouponCodeId($value)
  * @method static Builder|Order whereSale($value)
+ * @property string $transfer
+ * @property-read \App\Models\CouponCode|null $couponCode
+ * @method static Builder|Order whereTransfer($value)
  */
 class Order extends Model
 {

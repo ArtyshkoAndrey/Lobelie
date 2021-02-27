@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 27 2021 г., 14:19
+-- Время создания: Фев 27 2021 г., 15:59
 -- Версия сервера: 5.7.29
 -- Версия PHP: 7.4.5
 
@@ -3119,7 +3119,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (28, '2021_01_24_060658_coupons_categories', 6),
 (29, '2021_01_24_061105_disabled_coupons_categories', 6),
 (30, '2021_02_23_113909_add_photo_category', 7),
-(31, '2021_02_26_210359_user_favorite_product', 8);
+(31, '2021_02_26_210359_user_favorite_product', 8),
+(32, '2021_02_27_184341_create_sliders_table', 9);
 
 -- --------------------------------------------------------
 
@@ -3394,6 +3395,28 @@ CREATE TABLE `skus_categories` (
 
 INSERT INTO `skus_categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (20, 'omnis', '2021-02-23 05:27:38', '2021-02-23 05:27:38');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `sliders`
+--
+
+CREATE TABLE `sliders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `photo` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `photo`, `title`, `created_at`, `updated_at`) VALUES
+(3, '1614429886_defaultImage.small_1000_1000_nofilter.jpg', 'Find something you love', '2021-02-27 12:44:46', '2021-02-27 12:44:46'),
+(5, '1614429920_65535_50087825307_0f774e7db1_h_1000_1000_nofilter.jpg', 'Asaý Júrek Vintage home', '2021-02-27 12:45:11', '2021-02-27 12:45:20');
 
 -- --------------------------------------------------------
 
@@ -3675,6 +3698,12 @@ ALTER TABLE `skus_categories`
   ADD UNIQUE KEY `skus_categories_name_unique` (`name`);
 
 --
+-- Индексы таблицы `sliders`
+--
+ALTER TABLE `sliders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `telescope_entries`
 --
 ALTER TABLE `telescope_entries`
@@ -3814,7 +3843,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT для таблицы `orders`
@@ -3863,6 +3892,12 @@ ALTER TABLE `skuses`
 --
 ALTER TABLE `skus_categories`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT для таблицы `sliders`
+--
+ALTER TABLE `sliders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `telescope_entries`

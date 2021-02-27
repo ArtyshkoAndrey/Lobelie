@@ -4,9 +4,11 @@ namespace App\Providers;
 
 use App\Models\Photo;
 use App\Models\Product;
+use App\Models\Slider;
 use App\Models\User;
 use App\Observers\PhotoObserver;
 use App\Observers\ProductObserver;
+use App\Observers\SliderObserver;
 use App\Observers\UserObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -36,6 +38,6 @@ class EventServiceProvider extends ServiceProvider
     Photo::observe(PhotoObserver::class);
     User::observe(UserObserver::class);
     Product::observe(ProductObserver::class);
-
+    Slider::observe(SliderObserver::class);
   }
 }

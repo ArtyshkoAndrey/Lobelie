@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Slider;
 use Illuminate\Contracts\View\View;
 
 
@@ -20,6 +21,7 @@ class HomeController extends Controller
       ->take(3)
       ->get();
 
-    return view('user.index', compact('categories', 'newProducts'));
+    $sliders = Slider::all();
+    return view('user.index', compact('categories', 'newProducts', 'sliders'));
   }
 }
