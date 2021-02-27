@@ -59,6 +59,10 @@
       border: none;
       padding: .8em;
       margin-top: 1.5em;
+
+      &:disabled {
+        opacity: .65;
+      }
     }
   }
 
