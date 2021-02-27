@@ -5,7 +5,6 @@
 @section('title', 'Главаня страница')
 
 @section('content')
-{{--  TODO: слайдер подгружать из бд--}}
   <div class="home-slider">
     <div class="slides">
       <div class="slide-wrapper">

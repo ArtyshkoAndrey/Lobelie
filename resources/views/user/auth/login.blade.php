@@ -67,7 +67,6 @@
                     <button type="button" class="hide-show-btn" onclick="passwordTypeToggle(this, 'password')"><i class="fas fa-eye"></i></button>
                   </div>
                   <a href="{{ route('password.request') }}">Забыли пароль?</a>
-{{--                  TODO: forgot password--}}
                   <button id="submitter" style="height: 43px;">Войти</button>
                 </form>
               </div>

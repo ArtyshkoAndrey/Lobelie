@@ -6,6 +6,7 @@
 
 namespace App\Models;
 
+use App\Notifications\ResetPassword;
 use Eloquent;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Builder;
@@ -191,5 +192,10 @@ class User extends Authenticatable
       $text .= $this->post_code;
 
     return $text;
+  }
+
+  public function sendPasswordResetNotification($token)
+  {
+    $this->notify(new ResetPassword($token));
   }
 }

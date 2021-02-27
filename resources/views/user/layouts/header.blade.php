@@ -70,7 +70,6 @@
         <div class="navbar-collapse collapse align-items-center justify-content-center" id="navbarSupportedContent">
 
           <ul class="navbar-nav w-100">
-            {{--            TODO: Валюта --}}
             <li class="nav-item dropdown currency-dropdown mr-auto">
               <a
                 class="nav-link dropdown-toggle"
@@ -97,17 +96,14 @@
                 @endforeach
               </ul>
             </li>
-            {{--            TODO: Войти --}}
 
             @include('user.layouts.login_item')
             <div class="divider"></div>
-            {{--            TODO: Поиск --}}
             <li class="nav-item">
               <a class="nav-link" onclick="toggleSearch()">
                 <i class="las la-search"></i>
               </a>
             </li>
-            {{--            TODO: Сердечко --}}
             <li class="nav-item">
               <a class="nav-link" href="{{ route('profile.favorites') }}">
                 <i class="fal fa-heart"></i>

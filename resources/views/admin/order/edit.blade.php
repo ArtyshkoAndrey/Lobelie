@@ -61,7 +61,6 @@
               <div class="card p-0 m-0 bg-dark-dm">
                 <div class="row p-20">
                   <div class="col-12">
-{{--                    TODO: переделать вывод выбраной компании, хранить имя в бд --}}
                     <p class="m-0"><span class="font-weight-bold">Доставка:</span> {{ \App\Models\Order::$transferMethodsMap[$order->transfer] }}</p>
                   </div>
                   <div class="col-12">
