@@ -139,6 +139,11 @@ class User extends Authenticatable
     return $this->belongsTo(Country::class);
   }
 
+  public function favorites ()
+  {
+    return $this->belongsToMany(Product::class, 'user_favorite_products');
+  }
+
   public function addToCart (Skus $skus)
   {
     if ($item = $this->cartItems()->where('product_sku_id', $skus->pivot->id)->first()) {

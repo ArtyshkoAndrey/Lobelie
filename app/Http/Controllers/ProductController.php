@@ -211,4 +211,10 @@ class ProductController extends Controller
     }
     throw new NotFoundHttpException();
   }
+
+  public function favorites ()
+  {
+    $products = auth()->user()->favorites;
+    return view('user.product.favorites', compact('products'));
+  }
 }

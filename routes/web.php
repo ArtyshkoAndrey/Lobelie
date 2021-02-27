@@ -30,6 +30,7 @@ Route::middleware(['auth'])->prefix('profile')->name('profile.')->group( functio
     Route::put('photo', [ProfileController::class, 'photo'])->name('photo');
     Route::put('password', [ProfileController::class, 'password'])->name('password');
   });
+  Route::get('/favorites', [ProductController::class, 'favorites'])->name('favorites');
   Route::get('/', [ProfileController::class, 'index'])->name('index');
 });
 

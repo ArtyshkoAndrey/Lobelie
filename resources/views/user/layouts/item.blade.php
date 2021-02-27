@@ -43,7 +43,7 @@
           </button>
         @endif
 
-        <button class="heart-button">
+        <button class="heart-button" @click="addFavor({{ $product->id }})">
           <i class="fal fa-heart"></i>
         </button>
       </div>

@@ -118,5 +118,24 @@ const app = new Vue({
   },
   destroyed () {
     this.$store.state.cart.products = []
+  },
+  methods: {
+    addFavor (id) {
+      window.axios.post('/profile/favorites/add', {id: id})
+        .then(response => {
+          window.Swal.fire({
+            icon: 'success',
+            title: 'Товар добавлен в корзину',
+            width: '40rem'
+          })
+        })
+        .catch(response => {
+          window.Swal.fire({
+            icon: 'error',
+            title: 'Войдите в аккаунт',
+            width: '40rem'
+          })
+        })
+    }
   }
 })

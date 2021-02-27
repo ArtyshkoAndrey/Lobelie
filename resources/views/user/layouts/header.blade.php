@@ -49,7 +49,7 @@
           @include('user.layouts.login_item')
           <li class="divider d-none d-md-block"></li>
           <li class="nav-item d-none d-md-block">
-            <a class="nav-link" onclick="">
+            <a class="nav-link" href="{{ route('profile.favorites') }}">
               <i class="fal fa-heart"></i>
             </a>
           </li>
@@ -109,7 +109,7 @@
             </li>
             {{--            TODO: Сердечко --}}
             <li class="nav-item">
-              <a class="nav-link" onclick="">
+              <a class="nav-link" href="{{ route('profile.favorites') }}">
                 <i class="fal fa-heart"></i>
               </a>
             </li>

@@ -3,7 +3,7 @@
 @section('title', 'DOCKU | Избранные товары')
 
 @section('content')
-  <div class="container-fluid" id="favorites">
+  <div class="container-fluid mt-5" id="favorites">
     <div class="row">
       <div class="col-12 breadcrumb">
 
@@ -20,9 +20,15 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-6 col-md-4 col-lg-3 mb-4" v-for="i in 12">
-        @include('user.layouts.item')
-      </div>
+      @forelse($products as $product)
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          @include('user.layouts.item', ['product' => $product])
+        </div>
+      @empty
+       <div class="col-12 mt-5 text-center">
+         <h4>Нет товаров</h4>
+       </div>
+      @endforelse
     </div>
   </div>
 @endsection

@@ -5,4 +5,5 @@
  */
 return [
   'category-menu' => 'App\Widget\CategoryMenuWidget',
+  'footer-category' => 'App\Widget\FooterCategoryWidget'
 ];

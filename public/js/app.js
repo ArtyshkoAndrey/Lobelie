@@ -56587,6 +56587,25 @@ var app = new Vue({
   },
   destroyed: function destroyed() {
     this.$store.state.cart.products = [];
+  },
+  methods: {
+    addFavor: function addFavor(id) {
+      window.axios.post('/profile/favorites/add', {
+        id: id
+      }).then(function (response) {
+        window.Swal.fire({
+          icon: 'success',
+          title: 'Товар добавлен в корзину',
+          width: '40rem'
+        });
+      })["catch"](function (response) {
+        window.Swal.fire({
+          icon: 'error',
+          title: 'Войдите в аккаунт',
+          width: '40rem'
+        });
+      });
+    }
   }
 });
 

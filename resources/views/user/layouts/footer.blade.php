@@ -17,11 +17,8 @@
                 <a href="#!" class="link">Политика конфидециальности</a>
               </div>
               <div class="col-12 col-sm-6 link-block mb-3 mb-sm-0">
-                <span href="#!" class="title">Каталог</span>
-                <a href="#!" class="link">Серьги</a>
-                <a href="#!" class="link">Браслеты</a>
-                <a href="#!" class="link">Кольца</a>
-                <a href="#!" class="link">Колье</a>
+                <span href="{{ route('product.all') }}" class="title">Каталог</span>
+                @widget('footer-category')
               </div>
             </div>
           </div>
