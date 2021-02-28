@@ -31,6 +31,7 @@ Route::middleware(['auth'])->prefix('profile')->name('profile.')->group( functio
     Route::put('password', [ProfileController::class, 'password'])->name('password');
   });
   Route::get('/favorites', [ProductController::class, 'favorites'])->name('favorites');
+  Route::post('/favorites', [ProductController::class, 'userFavorites'])->name('userFavorites');
   Route::get('/', [ProfileController::class, 'index'])->name('index');
 });
 

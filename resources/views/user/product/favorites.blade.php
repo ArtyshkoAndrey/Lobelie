@@ -22,7 +22,7 @@
     <div class="row">
       @forelse($products as $product)
         <div class="col-6 col-md-4 col-lg-3 mb-4">
-          @include('user.layouts.item', ['product' => $product])
+          @include('user.layouts.item', ['product' => $product, 'delete' => true])
         </div>
       @empty
        <div class="col-12 mt-5 text-center">

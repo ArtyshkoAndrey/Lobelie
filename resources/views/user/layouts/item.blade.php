@@ -1,4 +1,4 @@
- <div class="item-card">
+ <div class="item-card" id="product-item-{{ $product->id }}">
    <div onclick="location.href = '{{ route('product.show', $product->id) }}'" style="cursor: pointer">
       <div class="row mb-2">
       <div class="col-12">
@@ -42,10 +42,22 @@
             <span class="d-none d-sm-block">В корзину</span>
           </button>
         @endif
+        @if(auth()->check())
+          @if(auth()->user()->favorites()->where('product_id', $product->id)->count() > 0)
+            <button class="heart-button" @click="deleteFavor({{ $product->id }}, {{ $delete ?? false }})">
+              <i class="fa fa-heart"></i>
+            </button>
+          @else
+              <button class="heart-button" @click="addFavor({{ $product->id }})">
+                <i class="fal fa-heart"></i>
+              </button>
+          @endif
+        @else
+          <button class="heart-button" @click="addFavor({{ $product->id }})">
+            <i class="fal fa-heart"></i>
+          </button>
+        @endif
 
-        <button class="heart-button" @click="addFavor({{ $product->id }})">
-          <i class="fal fa-heart"></i>
-        </button>
       </div>
     </div>
   </div>
