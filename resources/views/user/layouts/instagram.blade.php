@@ -1,9 +1,10 @@
 <section class="instagram">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-sm-6 d-flex flex-column">
-        <span class="small">Следите за новостями</span>
-        <span class="big">в нашем инстаграме -<br><a href="https://www.instagram.com/dockuboardhouse/">@dockuboardhouse</a></span>
+      <div class="col-12 d-flex flex-column align-items-center">
+        <h1 class="brand-name">Lobélie</h1>
+        <span class="title">В нашем Instagram вдохновение и эстетика каждый день!</span>
+        <a href="https://www.instagram.com/lobelie_intime/" target="_blank" class="instagram-button">Посмотреть</a>
       </div>
     </div>
   </div>

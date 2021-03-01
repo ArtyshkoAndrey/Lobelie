@@ -140,7 +140,7 @@ export default {
       let widget = new cp.CloudPayments();
       widget.pay('auth', // или 'charge'
         { //options
-          publicId: 'pk_e531fbe6a10b284d414ce62fbf852', //id из личного кабинета
+          publicId: 'pk_b5c5ad6d88e7b2dd6554a7f65b2e1', //id из личного кабинета
           description: 'Оплата товаров dockuboardhouse.com', //назначение
           amount: this.price, //сумма
           currency: this.$store.state.currency.short_name, //валюта

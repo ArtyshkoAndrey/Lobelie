@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Docku -  Редактировать промокод')
+@section('title', 'Редактировать промокод')
 
 @section('css')
 
@@ -139,7 +139,7 @@
                   </div>
 
                   <div class="col-sm-6 mt-10">
-                    <label for="brands">Бренды</label>
+                    <label for="brands">Цвета</label>
                     <select class="js-example-basic-multiple w-100 rounded-0" id="brands" name="brands[]" multiple="multiple">
                       @foreach(\App\Models\Brand::all() as $brand)
                         <?= $check = false; ?>
@@ -157,7 +157,7 @@
                   </div>
 
                   <div class="col-sm-6 mt-10">
-                    <label for="categories">Категории</label>
+                    <label for="categories">Изделия</label>
                     <select class="js-example-basic-multiple w-100 rounded-0" id="categories" name="categories[]" multiple="multiple">
                       @foreach(\App\Models\Category::all() as $category)
                         <?= $check = false; ?>
@@ -195,7 +195,7 @@
                   </div>
 
                   <div class="col-sm-6 mt-10">
-                    <label for="disabled_brands">Исключить бренды</label>
+                    <label for="disabled_brands">Исключить цвета</label>
                     <select class="js-example-basic-multiple w-100 rounded-0" id="disabled_brands" name="disabled_brands[]" multiple="multiple">
                       @foreach(\App\Models\Brand::all() as $brand)
                         <?= $check = false; ?>
@@ -213,7 +213,7 @@
                   </div>
 
                   <div class="col-sm-6 mt-10">
-                    <label for="disabled_categories">Исключить категории</label>
+                    <label for="disabled_categories">Исключить изделия</label>
                     <select class="js-example-basic-multiple w-100 rounded-0" id="disabled_categories" name="disabled_categories[]" multiple="multiple">
                       @foreach(\App\Models\Category::all() as $category)
                         <?= $check = false; ?>

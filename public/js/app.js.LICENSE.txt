@@ -6,7 +6,7 @@
 
 /*!
  * MDB5
- *   Version: FREE 3.1.0
+ *   Version: FREE 3.2.0
  * 
  * 
  *   Copyright: Material Design for Bootstrap
@@ -55,8 +55,8 @@
  */
 
 /*!
- * vuex v3.6.0
- * (c) 2020 Evan You
+ * vuex v3.6.2
+ * (c) 2021 Evan You
  * @license MIT
  */
 

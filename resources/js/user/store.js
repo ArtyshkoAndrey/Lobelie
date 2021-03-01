@@ -8,7 +8,7 @@ const store = new Vuex.Store({
   state: {
     cart: {
       items: [],
-      products: []
+      products: [],
     },
     currency: {},
     currency_id: 1,
@@ -17,24 +17,24 @@ const store = new Vuex.Store({
   },
   mutations: {
     addItem: (state, {id, amount}) => {
-      let item = state.cart.items.find(el => el.id === id )
+      let item = state.cart.items.find(el => el.id === id );
       if (item) {
         if (item.amount + amount === 0) {
-          store.commit('removeItem', item.id)
+          store.commit('removeItem', item.id);
         } else {
           item.amount += amount
         }
       } else {
-        state.cart.items.push({id: id, amount: amount})
-        store.dispatch('getProducts')
+        state.cart.items.push({id: id, amount: amount});
+        store.dispatch('getProducts');
       }
-      store.dispatch('updateAuthCart')
+      store.dispatch('updateAuthCart');
     },
     setProducts: (state, products) => {
       state.cart.products = products
     },
     removeItem: (state, id) => {
-      state.cart.items = state.cart.items.filter( e => e.id !== id )
+      state.cart.items = state.cart.items.filter( e => e.id !== id );
       state.cart.products = state.cart.products.filter( e => {
         return !e.product_skuses.some(sk => sk.id === id)
       })

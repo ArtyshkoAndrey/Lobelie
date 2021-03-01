@@ -71,6 +71,13 @@
       Промокоды
     </a>
 
+    <a href="{{ route('admin.slider.index') }}" class="sidebar-link sidebar-link-with-icon {{ Route::currentRouteNamed('admin.slider.*') ? 'active' : '' }}">
+      <span class="sidebar-icon bg-transparent justify-content-start mr-0">
+        <i class="bx bxs-image" aria-hidden="true"></i>
+      </span>
+      Slider
+    </a>
+
     <br />
     <h5 class="sidebar-title">Товары</h5>
     <div class="sidebar-divider"></div>
@@ -86,7 +93,7 @@
       <span class="sidebar-icon bg-transparent justify-content-start mr-0">
         <i class="bx bx-purchase-tag-alt" aria-hidden="true"></i>
       </span>
-      Бренды
+      Цвета
     </a>
 
     <a href="{{ route('admin.skus.index') }}" class="sidebar-link sidebar-link-with-icon {{ Route::currentRouteNamed('admin.skus.*') ? 'active' : '' }}">
@@ -100,7 +107,7 @@
       <span class="sidebar-icon bg-transparent justify-content-start mr-0">
         <i class="bx bx-purchase-tag" aria-hidden="true"></i>
       </span>
-      Категории
+      Вид изделий
     </a>
 
     <br />

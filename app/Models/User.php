@@ -6,11 +6,13 @@
 
 namespace App\Models;
 
+use App\Notifications\ResetPassword;
 use Eloquent;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -67,6 +69,10 @@ use Illuminate\Support\Carbon;
  * @property-read string $avatar_image
  * @property-read string $full_address
  * @method static Builder|User wherePhone($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Product[] $favorites
+ * @property-read int|null $favorites_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Order[] $orders
+ * @property-read int|null $orders_count
  */
 class User extends Authenticatable
 {
@@ -139,6 +145,11 @@ class User extends Authenticatable
     return $this->belongsTo(Country::class);
   }
 
+  public function favorites (): BelongsToMany
+  {
+    return $this->belongsToMany(Product::class, 'user_favorite_products');
+  }
+
   public function addToCart (Skus $skus)
   {
     if ($item = $this->cartItems()->where('product_sku_id', $skus->pivot->id)->first()) {
@@ -182,5 +193,10 @@ class User extends Authenticatable
       $text .= $this->post_code;
 
     return $text;
+  }
+
+  public function sendPasswordResetNotification($token)
+  {
+    $this->notify(new ResetPassword($token));
   }
 }

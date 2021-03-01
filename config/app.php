@@ -13,7 +13,7 @@ return [
   |
   */
 
-  'name' => env('APP_NAME', 'Docku'),
+  'name' => env('APP_NAME', 'Lobelie'),
   'admin' => [
     'version' => env('ADMIN_VERSION', 'CRACKED VERSION'),
     'name' => env('PROGRAMMER_NAME', 'Fulliton'),
@@ -67,7 +67,7 @@ return [
   | your application so that it is used when running Artisan tasks.
   |
   */
-
+// TODO: Изменить ссылку как в домене
   'url' => env('APP_URL', 'https://dockuboardhouse.com/'),
 
   'asset_url' => env('ASSET_URL', null),
@@ -191,6 +191,7 @@ return [
     App\Providers\EventServiceProvider::class,
     App\Providers\RouteServiceProvider::class,
     App\Providers\TelescopeServiceProvider::class,
+    App\Providers\WidgetServiceProvider::class,
 //    Barryvdh\Debugbar\ServiceProvider::class,
 //    TODO: Коментить для Прод
 //    Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,

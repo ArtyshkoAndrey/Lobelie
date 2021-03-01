@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 02 2021 г., 07:22
+-- Время создания: Фев 27 2021 г., 15:59
 -- Версия сервера: 5.7.29
 -- Версия PHP: 7.4.5
 
@@ -34,6 +34,37 @@ CREATE TABLE `brands` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `brands`
+--
+
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(41, 'magni', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(42, 'ea', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(43, 'mollitia', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(44, 'hic', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(45, 'nobis', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(46, 'eum', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(47, 'et', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(48, 'ipsa', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(49, 'voluptas', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(50, 'ut', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(51, 'provident', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(52, 'id', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(53, 'eos', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(54, 'repudiandae', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(55, 'non', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(56, 'illo', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(57, 'saepe', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(58, 'laudantium', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(59, 'debitis', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(60, 'accusantium', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(61, 'cumque', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(62, 'veniam', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(63, 'reiciendis', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(64, 'est', '2021-02-23 05:06:20', '2021-02-23 05:06:20'),
+(65, 'error', '2021-02-23 05:06:20', '2021-02-23 05:06:20');
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +80,15 @@ CREATE TABLE `cart_items` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `cart_items`
+--
+
+INSERT INTO `cart_items` (`id`, `user_id`, `product_sku_id`, `amount`, `created_at`, `updated_at`) VALUES
+(8, 1, 19, 1, '2021-02-27 07:50:28', '2021-02-27 07:50:28'),
+(9, 1, 2, 1, '2021-02-27 07:50:28', '2021-02-27 07:50:28'),
+(10, 1, 9, 1, '2021-02-27 07:50:28', '2021-02-27 07:50:28');
+
 -- --------------------------------------------------------
 
 --
@@ -61,8 +101,20 @@ CREATE TABLE `categories` (
   `to_menu` tinyint(1) NOT NULL DEFAULT '0',
   `description` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `photo` text COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `to_menu`, `description`, `created_at`, `updated_at`, `photo`) VALUES
+(50, 'Анжелика Дударева1', 1, NULL, '2021-02-27 07:15:19', '2021-02-27 07:19:51', 'look.com.ua-113865.jpg'),
+(51, 'Test', 1, NULL, '2021-02-27 07:20:00', '2021-02-27 07:20:00', 'look.com.ua-113978.jpg'),
+(52, 'Зона Алматы', 1, NULL, '2021-02-27 07:20:26', '2021-02-27 07:20:26', 'look.com.ua-114437.jpg'),
+(53, 'Прикол', 1, NULL, '2021-02-27 07:20:42', '2021-02-27 07:20:42', 'look.com.ua-113917.jpg'),
+(54, '56', 0, NULL, '2021-02-27 07:24:01', '2021-02-27 07:24:01', 'look.com.ua-114391.jpg');
 
 -- --------------------------------------------------------
 
@@ -3065,7 +3117,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (26, '2021_01_24_060206_disabled_coupons_brands', 6),
 (27, '2021_01_24_060354_disabled_coupons_products', 6),
 (28, '2021_01_24_060658_coupons_categories', 6),
-(29, '2021_01_24_061105_disabled_coupons_categories', 6);
+(29, '2021_01_24_061105_disabled_coupons_categories', 6),
+(30, '2021_02_23_113909_add_photo_category', 7),
+(31, '2021_02_26_210359_user_favorite_product', 8),
+(32, '2021_02_27_184341_create_sliders_table', 9);
 
 -- --------------------------------------------------------
 
@@ -3134,6 +3189,50 @@ CREATE TABLE `photos` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `photos`
+--
+
+INSERT INTO `photos` (`id`, `product_id`, `name`, `created_at`, `updated_at`) VALUES
+(241, 177, '1614411685891_look.com.ua-6906', '2021-02-27 07:41:27', '2021-02-27 07:41:27'),
+(242, 177, '1614411685890_look.com.ua-6637', '2021-02-27 07:41:27', '2021-02-27 07:41:27'),
+(243, 173, '1614411825700_look.com.ua-113978', '2021-02-27 07:43:47', '2021-02-27 07:43:47'),
+(244, 173, '1614411825702_look.com.ua-113991', '2021-02-27 07:43:47', '2021-02-27 07:43:47'),
+(245, 182, '1614411877720_look.com.ua-113879', '2021-02-27 07:44:39', '2021-02-27 07:44:39'),
+(246, 182, '1614411877718_look.com.ua-113865', '2021-02-27 07:44:39', '2021-02-27 07:44:39'),
+(247, 182, '1614411877721_look.com.ua-113891', '2021-02-27 07:44:41', '2021-02-27 07:44:41'),
+(248, 182, '1614411877721_look.com.ua-113896', '2021-02-27 07:44:41', '2021-02-27 07:44:41'),
+(249, 181, '1614411909505_look.com.ua-113991', '2021-02-27 07:45:11', '2021-02-27 07:45:11'),
+(250, 181, '1614411909507_look.com.ua-114009', '2021-02-27 07:45:11', '2021-02-27 07:45:11'),
+(251, 181, '1614411909508_look.com.ua-114013', '2021-02-27 07:45:12', '2021-02-27 07:45:12'),
+(252, 180, '1614411926193_look.com.ua-114221', '2021-02-27 07:45:27', '2021-02-27 07:45:27'),
+(253, 180, '1614411926195_look.com.ua-114236', '2021-02-27 07:45:28', '2021-02-27 07:45:28'),
+(254, 180, '1614411926196_look.com.ua-114247', '2021-02-27 07:45:29', '2021-02-27 07:45:29'),
+(255, 180, '1614411926197_look.com.ua-114255', '2021-02-27 07:45:29', '2021-02-27 07:45:29'),
+(256, 179, '1614411958579_look.com.ua-114359', '2021-02-27 07:46:00', '2021-02-27 07:46:00'),
+(257, 179, '1614411958581_look.com.ua-114364', '2021-02-27 07:46:00', '2021-02-27 07:46:00'),
+(258, 179, '1614411958582_look.com.ua-114378', '2021-02-27 07:46:01', '2021-02-27 07:46:01'),
+(259, 179, '1614411958583_look.com.ua-114390', '2021-02-27 07:46:02', '2021-02-27 07:46:02'),
+(260, 179, '1614411958584_look.com.ua-114391', '2021-02-27 07:46:03', '2021-02-27 07:46:03'),
+(261, 178, '1614411981960_look.com.ua-113978', '2021-02-27 07:46:23', '2021-02-27 07:46:23'),
+(262, 178, '1614411981958_look.com.ua-113937', '2021-02-27 07:46:23', '2021-02-27 07:46:23'),
+(263, 178, '1614411981961_look.com.ua-113991', '2021-02-27 07:46:25', '2021-02-27 07:46:25'),
+(264, 178, '1614411981962_look.com.ua-114009', '2021-02-27 07:46:25', '2021-02-27 07:46:25'),
+(265, 178, '1614411981964_look.com.ua-114013', '2021-02-27 07:46:26', '2021-02-27 07:46:26'),
+(266, 176, '1614412002949_look.com.ua-113917', '2021-02-27 07:46:44', '2021-02-27 07:46:44'),
+(267, 175, '1614412012892_look.com.ua-113978', '2021-02-27 07:46:54', '2021-02-27 07:46:54'),
+(268, 174, '1614412036335_look.com.ua-114185', '2021-02-27 07:47:17', '2021-02-27 07:47:17'),
+(269, 172, '1614412066558_look.com.ua-113937', '2021-02-27 07:47:48', '2021-02-27 07:47:48'),
+(270, 171, '1614412077747_look.com.ua-113879', '2021-02-27 07:47:59', '2021-02-27 07:47:59'),
+(271, 170, '1614412094913_look.com.ua-114120', '2021-02-27 07:48:16', '2021-02-27 07:48:16'),
+(272, 169, '1614412110608_look.com.ua-113915', '2021-02-27 07:48:32', '2021-02-27 07:48:32'),
+(273, 168, '1614412121690_look.com.ua-114160', '2021-02-27 07:48:43', '2021-02-27 07:48:43'),
+(274, 167, '1614412136220_look.com.ua-114500', '2021-02-27 07:48:58', '2021-02-27 07:48:58'),
+(275, 166, '1614412148563_look.com.ua-113978', '2021-02-27 07:49:10', '2021-02-27 07:49:10'),
+(276, 165, '1614412163107_look.com.ua-113896', '2021-02-27 07:49:24', '2021-02-27 07:49:24'),
+(277, 164, '1614412175203_look.com.ua-113991', '2021-02-27 07:49:36', '2021-02-27 07:49:36'),
+(278, 163, '1614412184340_look.com.ua-114013', '2021-02-27 07:49:45', '2021-02-27 07:49:45');
+
 -- --------------------------------------------------------
 
 --
@@ -3160,6 +3259,32 @@ CREATE TABLE `products` (
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `products`
+--
+
+INSERT INTO `products` (`id`, `title`, `description`, `on_sale`, `on_new`, `on_top`, `sold_count`, `price`, `price_sale`, `weight`, `sex`, `meta`, `brand_id`, `category_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(163, 'quia dolore qui qui quia consequatur dolorem a laborum veritatis', '<p>minima est quia earum ut illo ut nihil consectetur nostrum delectus optio nam sunt sed accusantium eum autem rerum aut recusandae sint non exercitationem aliquid consequuntur sapiente laboriosam nemo molestiae ut excepturi repudiandae minus architecto perspiciatis asperiores minima vel et aut sapiente ut hic sequi quibusdam et quia totam et error repudiandae omnis vel eos consequatur magni voluptatum necessitatibus quibusdam est aut ut qui sequi sunt ut saepe eaque maxime blanditiis hic omnis aut id est in aut totam et voluptate sed consectetur sed qui cumque incidunt est sit iste officia consequatur doloribus qui vitae quos nobis et ratione ducimus</p>', 1, 1, 0, 0, '169844', '244060', '6.00', 'unisex', '{\"title\": \"Товар1\", \"description\": \"Men\'s Burton Lightweight X Base Layer Crewneck\"}', 42, 52, '2021-02-23 06:14:23', '2021-02-27 07:49:48', NULL),
+(164, 'autem exercitationem repudiandae omnis cum possimus illum perspiciatis velit delectus', '<p>at totam qui enim blanditiis deserunt nostrum dolorum sunt itaque dolor sed id odio sit est doloremque officia numquam qui culpa et ab consequatur nihil doloremque eum quidem sed suscipit repellendus provident est consequatur ducimus praesentium ratione voluptas laudantium vel commodi repellat dolor et voluptate at est quia blanditiis dolores eveniet minima ut illo laudantium consequatur consectetur ullam eum id voluptas laboriosam iure laborum vel velit et aspernatur quo dignissimos vitae dicta consequatur assumenda beatae est sit voluptatem qui facere quasi cum magnam sunt beatae aut aliquid iure totam dolores et saepe saepe facilis distinctio occaecati consectetur quia eveniet corporis</p>', 1, 0, 0, 0, '13960', '134148', '6.00', 'unisex', '{\"title\": \"Burton Polartec® One World Fleece Long Sleeve T-Shirt\", \"description\": \"Официальный разработчик w\"}', 42, 54, '2021-02-23 06:14:23', '2021-02-27 07:49:37', NULL),
+(165, 'consequatur non illum laboriosam iusto necessitatibus at reiciendis aut dolor', '<p>aperiam ad qui nesciunt qui sed necessitatibus rerum reprehenderit excepturi et voluptatem fugit unde deleniti et laborum ut odio quia molestiae fugit est eligendi doloremque quaerat optio omnis odit culpa veniam at rerum adipisci aliquid similique reiciendis exercitationem sapiente eius consequatur repudiandae quidem neque provident rerum esse earum omnis sit voluptatum quisquam dolores odit culpa veniam omnis cumque quas reiciendis est sunt minima et est suscipit unde voluptas beatae temporibus vel magnam dicta quia doloribus vel neque pariatur sed saepe veniam sed voluptatum eius sint ipsum deleniti ducimus quia eaque enim dolor atque eum tempora molestias sint facere voluptatem dolores</p>', 0, 0, 0, 0, '134862', '189803', '4.00', 'unisex', '{\"title\": \"asdasd\", \"description\": \"Официальный разработчик 1\"}', 42, 53, '2021-02-23 06:14:23', '2021-02-27 07:49:25', NULL),
+(166, 'dolore sed earum ut mollitia incidunt dolore quis est quia', '<p>saepe deleniti odit et consequatur quaerat est et natus ad magnam eius mollitia nostrum impedit ut in dolorem voluptas ut error sed quis qui quos architecto odit dolore in veniam ad veniam ratione ratione cum amet harum reiciendis porro vel ut molestias quae veritatis voluptate aut quisquam distinctio nemo eum consectetur eveniet porro necessitatibus numquam minima sint error assumenda corporis quia velit consequatur est est sint totam sed incidunt vel in temporibus consequatur necessitatibus quisquam nihil aliquam minima fugit recusandae ab consequatur et id et qui numquam quam et voluptas itaque rem vel tenetur illum cum fuga veritatis non dolorem</p>', 0, 0, 0, 0, '244356', '34448', '8.00', 'unisex', '{\"title\": \"Burton Polartec® One World Fleece Long Sleeve T-Shirt\", \"description\": \"Burton Polartec® One World Fleece Long Sleeve T-Shirt\"}', 42, 50, '2021-02-23 06:14:23', '2021-02-27 07:49:11', NULL),
+(167, 'in aut est optio qui et dolorem repellat reiciendis voluptas', '<p>hic corrupti dolorem rerum ut illum quisquam incidunt sint velit similique voluptas inventore illum inventore assumenda voluptatum aut ut accusantium quisquam voluptatibus ut aspernatur quibusdam assumenda itaque similique consequatur sed veniam temporibus qui repellat nemo at ullam laborum nihil eum perspiciatis rerum corporis distinctio rerum blanditiis ab quia optio iste sint et exercitationem totam qui modi enim facilis assumenda eum sint est neque quia dolor nobis saepe nisi dolor rerum illo quis nam pariatur recusandae unde ea doloremque eos qui consequatur inventore illum perspiciatis qui quo reiciendis dicta ipsa est delectus nobis amet iste labore officiis repellat excepturi tempora expedita</p>', 0, 1, 0, 0, '171739', '31937', '6.00', 'unisex', '{\"title\": \"Товарw\", \"description\": \"Официальный разработчик 1\"}', 42, 53, '2021-02-23 06:14:23', '2021-02-27 07:49:01', NULL),
+(168, 'ipsa et autem dolores dolores aut corporis et eius eveniet', '<p>eveniet eaque incidunt est dolorem repudiandae possimus est dolorem nemo sunt sint fugiat excepturi voluptatibus non aperiam voluptas facere sit dolor voluptas ipsum aliquid temporibus qui aut repellat dicta id sed odio delectus vero et officiis et unde rerum assumenda a aut rerum repellendus nobis voluptas quaerat non doloremque iure ipsam occaecati consequatur libero iste perferendis et qui hic optio voluptate laboriosam corporis minus illum sit voluptas molestiae ea nostrum quia sequi nemo nesciunt veritatis ipsum perspiciatis earum voluptates dolorem molestias accusantium ducimus vero consequatur sapiente et tenetur necessitatibus dignissimos assumenda eos sapiente est excepturi perspiciatis repudiandae minus dignissimos odio</p>', 0, 1, 0, 0, '4382', '226286', '2.00', 'unisex', '{\"title\": \"Товарw\", \"description\": \"Официальный разработчик w\"}', 42, 50, '2021-02-23 06:14:23', '2021-02-27 07:48:44', NULL),
+(169, 'voluptatem voluptas reiciendis eos quo hic magni quibusdam id commodi', '<p>id provident quo aut corporis consectetur magni accusantium sint placeat saepe asperiores est quae dignissimos quia enim dolor eveniet dolor enim cum et optio similique facere qui distinctio nobis cum ab et occaecati minima nisi qui corrupti facere dicta culpa quos officiis dolore alias ea omnis rerum quaerat deleniti numquam consequatur veniam tenetur reprehenderit eum recusandae quaerat deleniti magnam et eveniet ratione libero saepe eum dolores quibusdam doloribus consequuntur veniam ut excepturi sed vitae perspiciatis similique minima nam voluptatem sapiente eum et esse rerum et enim impedit quos reiciendis voluptatibus corporis et sed animi eum et enim quas quia ipsam</p>', 0, 0, 0, 0, '84818', '60190', '1.00', 'unisex', '{\"title\": \"Men\'s Burton Lightweight X Base Layer Crewneck\", \"description\": \"Официальный разработчик 1\"}', 42, 51, '2021-02-23 06:14:23', '2021-02-27 07:48:33', NULL),
+(170, 'ut temporibus dolores aut et nemo est animi eos est', '<p>itaque at voluptatem at fuga corrupti laudantium doloribus corrupti facere temporibus debitis ut nisi velit quia quam aliquam non quis ducimus exercitationem et corrupti eos voluptas et rerum minus cum omnis est consequatur voluptates sed laboriosam dolorem aut ea nisi id porro deleniti repellat cum vero voluptas accusamus recusandae tempora vero voluptatem voluptate incidunt aut cumque assumenda minima expedita vero omnis ut laudantium placeat ut tempore quasi temporibus repellat sit asperiores doloribus deleniti placeat natus debitis enim aperiam eos voluptates voluptatibus commodi ipsum porro et adipisci iure error aut beatae ut est ut voluptatem et doloremque ipsam non animi tenetur</p>', 1, 1, 0, 0, '99095', '241974', '7.00', 'unisex', '{\"title\": \"asdasd\", \"description\": \"Официальный разработчик 1\"}', 42, 50, '2021-02-23 06:14:23', '2021-02-27 07:48:17', NULL),
+(171, 'rerum reiciendis recusandae molestias similique perferendis minus at accusamus incidunt', '<p>distinctio eveniet est delectus voluptatem perspiciatis aliquam debitis id dolor ipsa tempora odit officiis animi velit accusamus ut et et magnam autem rerum voluptate doloremque repellendus sit dolorem pariatur a nemo exercitationem cupiditate delectus dolorum delectus quia sint reprehenderit nemo sint qui velit nulla corrupti laboriosam eum voluptates dolor et facere incidunt aut quia quae voluptatibus ut similique porro totam et sequi commodi aperiam omnis accusantium omnis eum ea sint iste perspiciatis non consequuntur ab laboriosam ad rerum quibusdam ea iste molestias ducimus facere magni voluptatum aut earum quia dolores natus necessitatibus harum nostrum sit harum veniam dignissimos ad nobis</p>', 1, 0, 0, 0, '49154', '46397', '6.00', 'unisex', '{\"title\": \"Товарw\", \"description\": \"Burton Polartec® One World Fleece Long Sleeve T-Shirt\"}', 42, 50, '2021-02-23 06:14:23', '2021-02-27 07:48:02', NULL),
+(172, 'id illum vitae ut similique quia et veniam et at', '<p>sunt architecto et magni dolor facere eos illo nobis non molestiae eos molestiae reiciendis repudiandae aliquam nobis ut et doloremque quis consequatur explicabo non quas perspiciatis alias dolorum et velit dicta non velit error et aliquam asperiores molestiae velit consequuntur earum veniam officia nobis soluta omnis nesciunt quas accusantium dolor tempora veritatis autem alias deserunt est similique aut quam et deleniti facere amet sed exercitationem velit dolores fugiat perspiciatis sunt accusamus autem quos totam veniam nobis architecto eum nisi eos ut quae labore deleniti id ad dicta molestiae sit sit accusantium quibusdam ipsum illum odio libero nemo minus amet qui</p>', 0, 1, 0, 0, '241301', '159852', '7.00', 'unisex', '{\"title\": \"Men\'s Burton Lightweight X Base Layer Crewneck\", \"description\": \"Официальный разработчик 1\"}', 42, 51, '2021-02-23 06:14:23', '2021-02-27 07:47:48', NULL),
+(173, 'molestias adipisci et facere qui et fugit ut autem a', 'voluptatem consectetur maiores sequi sunt maiores quia fuga ipsa non est vel fugiat et porro enim eaque nulla consectetur odit incidunt quos occaecati necessitatibus dolores ad amet error placeat magni qui qui architecto magni aut rerum tenetur facere consequatur odit debitis molestiae quam consectetur nam aut vitae neque neque ullam et amet aut dolorum at quidem itaque sunt voluptatum dolorem id consequatur voluptatum facere totam molestiae ut atque rerum sapiente doloribus error illo inventore aliquid molestias odit earum explicabo et quia autem fuga necessitatibus autem doloribus rerum officiis explicabo qui excepturi repudiandae unde omnis dolores harum sequi est error quia', 1, 1, 0, 0, '168061', '121635', '4.00', 'unisex', '{\"title\": \"\", \"description\": \"\"}', 42, NULL, '2021-02-23 06:14:23', '2021-02-23 06:14:23', NULL),
+(174, 'quae qui deleniti est dolorum ipsum quia et harum sapiente', '<p>provident dolore quia sed cupiditate omnis non at sit repellendus ut dignissimos alias et ut tenetur dolorem delectus dolorem quas est veritatis saepe ipsum sunt maiores est maiores omnis nisi mollitia et exercitationem aut sint consequuntur sint expedita qui non voluptates ut autem necessitatibus asperiores maiores corrupti recusandae laborum dolore aut blanditiis cupiditate aut debitis rem magni aut et harum blanditiis et omnis quia itaque ipsa voluptatem nihil fugiat quia quo quos sequi aut aperiam maiores saepe quasi debitis tempora temporibus nisi cupiditate nobis non quisquam porro velit iste quo eos culpa totam saepe qui ab tempore quidem natus odio</p>', 1, 1, 0, 0, '62101', '176021', '3.00', 'unisex', '{\"title\": \"asdasd\", \"description\": \"Men\'s Burton Lightweight X Base Layer Crewneck\"}', 42, 53, '2021-02-23 06:14:23', '2021-02-27 07:47:19', NULL),
+(175, 'voluptatibus ea ea voluptates aut eum natus consequuntur quo quisquam', '<p>ad perferendis omnis provident voluptate illo praesentium blanditiis provident eos expedita eligendi ex illo dolore voluptatem aut accusantium ut officiis doloribus dolorum occaecati vel aperiam ut similique laborum dolorem quaerat doloribus natus dolor vero dolores sed itaque ipsa eaque dicta ipsa ad illo et error sit quis debitis ipsa ut vero quisquam nisi aspernatur atque ut ea voluptatem itaque dolorem reprehenderit velit quia aut voluptatum vel similique quis architecto error qui voluptatum hic praesentium optio molestiae quia enim aut soluta itaque omnis qui autem occaecati minima facere vel minus doloribus maxime sit sint repellendus quod explicabo doloremque fugiat id est</p>', 1, 1, 0, 0, '199572', '139002', '5.00', 'unisex', '{\"title\": \"Men\'s Burton Lightweight X Base Layer Crewneck\", \"description\": \"Официальный разработчик w\"}', 42, 50, '2021-02-23 06:14:23', '2021-02-27 07:47:02', NULL),
+(176, 'placeat doloribus asperiores harum qui velit est saepe velit non', '<p>numquam nobis velit fuga qui alias voluptas quidem dolorem eligendi quia recusandae dignissimos amet perferendis amet et iste ut veritatis voluptas quis asperiores exercitationem similique nemo aut quibusdam hic accusamus omnis ad ullam omnis et et voluptatum qui ullam tenetur dicta necessitatibus sed ut tempore iure illo enim ex porro sit quia quas rem laborum at aut reiciendis voluptas magnam molestiae qui sint voluptatem ratione exercitationem quod non atque amet non est sunt ut qui eveniet nobis deserunt error laboriosam ea et autem aperiam maxime quo rerum laborum sed necessitatibus et ab dolorem quo quis magni non dolores suscipit quis</p>', 0, 0, 0, 0, '115474', '184751', '1.00', 'unisex', '{\"title\": \"Товар1\", \"description\": \"Burton Polartec® One World Fleece Long Sleeve T-Shirt\"}', 42, 53, '2021-02-23 06:14:23', '2021-02-27 07:46:45', NULL),
+(177, 'cum dolores cumque excepturi eos soluta reiciendis nostrum et dolore', '<p>sit est explicabo ea facere eum nisi quia et assumenda blanditiis ut est sapiente labore et dolorem ducimus consectetur rerum soluta voluptas aperiam officia illum porro inventore pariatur numquam aut modi ut expedita necessitatibus sit facilis ut ratione et neque tempore tempore nemo saepe suscipit voluptatem voluptas provident ea voluptatem sed debitis consequatur cum vitae unde temporibus quo sed ut et ullam quia quidem omnis maiores impedit laborum nostrum cupiditate eius dolores saepe voluptas non repudiandae quibusdam quas aspernatur voluptates sequi vel velit molestiae corporis dolorum officiis culpa nam consequatur architecto magnam nulla iusto vel ratione quia quia in voluptatem</p>', 1, 1, 0, 0, '146014', '8351', '7.00', 'unisex', '{\"title\": \"фываыва\", \"description\": \"ываываыва\"}', 41, 51, '2021-02-23 06:14:23', '2021-02-27 07:41:16', NULL),
+(178, 'culpa nam dolores impedit fugiat voluptas blanditiis ea tempora blanditiis', '<p>alias debitis quod voluptas nobis ducimus consequatur dolor expedita animi quos autem quis aut qui enim inventore neque id qui quibusdam dolorem sunt ut est alias sint alias labore non occaecati consequuntur magnam ad provident et ut et enim laboriosam nisi debitis accusamus fuga ea quia totam laborum dolorem veritatis odio ratione consequatur praesentium aspernatur sed commodi vero atque quos eum est amet id quaerat debitis repellat a cupiditate deserunt vel facere ex aliquam accusamus porro et sit ut autem laudantium voluptas facilis esse alias dolorem voluptates quaerat nulla natus illum deleniti ut laborum repellendus neque ipsum itaque non voluptatum</p>', 0, 0, 0, 0, '200774', '60443', '4.00', 'unisex', '{\"title\": \"Men\'s Burton Lightweight X Base Layer Crewneck\", \"description\": \"Официальный разработчик 1\"}', 42, 51, '2021-02-23 06:14:23', '2021-02-27 07:46:27', NULL),
+(179, 'perferendis inventore quam numquam dolorem amet voluptate eius inventore iure', '<p>eveniet qui quis laudantium iste cumque repellat et ipsam praesentium maxime ipsa delectus nulla assumenda id facere harum hic harum mollitia perferendis sunt voluptatem quo quam hic fugiat optio eligendi facilis aliquam optio laboriosam nostrum quia quia id omnis et vitae corporis eos et facere est aut neque at assumenda doloremque rerum praesentium qui quo quaerat ipsam asperiores vel ab numquam sint quas fuga doloremque quod qui temporibus occaecati et error et eum a illum itaque sed consectetur voluptas et natus ipsa id et voluptates voluptates quis dignissimos repellat vero vero illo et dicta praesentium quisquam cupiditate repellat omnis molestiae</p>', 1, 0, 0, 0, '44945', '128735', '1.00', 'unisex', '{\"title\": \"ghjghj\", \"description\": \"ghjghj\"}', 42, 52, '2021-02-23 06:14:23', '2021-02-27 07:46:05', NULL),
+(180, 'voluptates vel ipsa pariatur ipsa quia delectus possimus praesentium hic', '<p>rerum dolorem et saepe dolorem deleniti architecto enim qui earum dicta rerum ut nostrum ullam dignissimos consectetur est nostrum dolores ullam dolor saepe ea laboriosam animi minima illum aspernatur et temporibus dolore et magnam recusandae eos cupiditate quos quia quis laudantium reiciendis a officiis nulla omnis est repellat neque cumque velit minus provident non vero nihil aut voluptas error debitis totam commodi voluptatum ratione fugiat non natus ex molestiae voluptas maxime sapiente id laudantium temporibus officiis blanditiis assumenda aut earum ipsa voluptatem consequuntur eveniet ut quibusdam vitae aut nesciunt dolorem omnis facilis consectetur ipsa unde et ut consequatur quisquam dolorem</p>', 1, 1, 0, 0, '218707', '195986', '10.00', 'unisex', '{\"title\": \"asdasd\", \"description\": \"asdasd\"}', 42, 51, '2021-02-23 06:14:23', '2021-02-27 07:45:41', NULL),
+(181, 'voluptatem sed a molestiae qui enim quisquam esse voluptates non', 'tempore ut nesciunt et eum sunt rerum voluptas nesciunt aut nam ut repellat velit tempora consequatur occaecati quia animi odit et consequatur optio officia voluptates rem et a et facilis voluptates aperiam quis aut ea sint ut aut quos eum ducimus nihil quia illum et ab quia voluptatibus exercitationem qui pariatur sunt voluptas tempore expedita laborum voluptates numquam ipsam eum itaque magnam reiciendis et dolores ex maxime quis ut ipsa cupiditate consectetur velit ad quod in architecto assumenda quam nisi molestiae quia et assumenda sequi sed sint tempora consectetur consequatur assumenda ipsum maxime a enim veritatis rerum quo tempore asperiores', 1, 0, 0, 0, '22252', '240910', '2.00', 'unisex', '{\"title\": \"\", \"description\": \"\"}', 42, NULL, '2021-02-23 06:14:23', '2021-02-23 06:14:23', NULL),
+(182, 'similique aut aliquam ea vero rem libero provident minima voluptatum', 'et ea voluptates quis sunt nesciunt aut quo laborum repellat aut minus vitae necessitatibus earum accusantium eius veritatis ducimus impedit beatae voluptatibus doloribus ullam quos commodi dignissimos labore facilis soluta est id aperiam mollitia sit corporis minima autem autem et eum odio architecto eaque quia quos voluptatem reprehenderit est qui vel molestiae enim neque harum eum quasi nesciunt reiciendis est iure voluptatum est eveniet quia consequuntur id labore itaque quia ut et ullam veritatis maxime suscipit sit sunt voluptatum doloremque nulla dolores quo veniam aut consequuntur dolorum rerum accusamus vel reprehenderit velit itaque culpa omnis vero rem recusandae dolorem quia', 0, 0, 0, 0, '12474', '59940', '3.00', 'unisex', '{\"title\": \"\", \"description\": \"\"}', 42, NULL, '2021-02-23 06:14:23', '2021-02-23 06:14:23', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -3175,6 +3300,34 @@ CREATE TABLE `product_skuses` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `product_skuses`
+--
+
+INSERT INTO `product_skuses` (`id`, `stock`, `product_id`, `skus_id`, `created_at`, `updated_at`) VALUES
+(2, 50, 163, 1, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(3, 56, 164, 1, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(4, 92, 165, 2, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(5, 40, 166, 3, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(6, 8, 167, 4, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(7, 14, 168, 1, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(8, 87, 169, 1, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(9, 62, 170, 2, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(10, 16, 171, 3, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(11, 72, 172, 4, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(12, 98, 173, 1, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(13, 22, 174, 1, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(14, 33, 175, 2, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(15, 84, 176, 3, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(16, 35, 177, 4, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(17, 13, 178, 1, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(18, 79, 179, 1, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(19, 54, 180, 2, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(20, 56, 181, 3, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(21, 36, 182, 4, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(22, 13, 178, 2, '2021-02-23 06:14:23', '2021-02-23 06:14:23'),
+(23, 35, 177, 3, '2021-02-23 06:14:23', '2021-02-23 06:14:23');
+
 -- --------------------------------------------------------
 
 --
@@ -3188,6 +3341,14 @@ CREATE TABLE `settings` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `settings`
+--
+
+INSERT INTO `settings` (`id`, `name`, `data`, `created_at`, `updated_at`) VALUES
+(1, 'cash', '1', '2021-01-22 04:25:07', '2021-01-22 04:27:53'),
+(2, 'cloudPayment', '1', '2021-01-22 04:25:07', '2021-01-22 04:27:53');
 
 -- --------------------------------------------------------
 
@@ -3204,6 +3365,17 @@ CREATE TABLE `skuses` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `skuses`
+--
+
+INSERT INTO `skuses` (`id`, `title`, `weight`, `skus_category_id`, `created_at`, `updated_at`) VALUES
+(1, 'facilis', 1747803855, 20, '2021-02-23 05:27:38', '2021-02-23 05:27:38'),
+(2, 'doloremque', 1765134909, 20, '2021-02-23 05:27:38', '2021-02-23 05:27:38'),
+(3, 'enim', 1037150686, 20, '2021-02-23 05:27:38', '2021-02-23 05:27:38'),
+(4, 'consequatur', 834825154, 20, '2021-02-23 05:27:38', '2021-02-23 05:27:38'),
+(5, 'optio', 804747322, 20, '2021-02-23 05:27:38', '2021-02-23 05:27:38');
+
 -- --------------------------------------------------------
 
 --
@@ -3216,6 +3388,35 @@ CREATE TABLE `skus_categories` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `skus_categories`
+--
+
+INSERT INTO `skus_categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(20, 'omnis', '2021-02-23 05:27:38', '2021-02-23 05:27:38');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `sliders`
+--
+
+CREATE TABLE `sliders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `photo` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `photo`, `title`, `created_at`, `updated_at`) VALUES
+(3, '1614429886_defaultImage.small_1000_1000_nofilter.jpg', 'Find something you love', '2021-02-27 12:44:46', '2021-02-27 12:44:46'),
+(5, '1614429920_65535_50087825307_0f774e7db1_h_1000_1000_nofilter.jpg', 'Asaý Júrek Vintage home', '2021-02-27 12:45:11', '2021-02-27 12:45:20');
 
 -- --------------------------------------------------------
 
@@ -3285,10 +3486,22 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `avatar`, `email`, `email_verified_at`, `password`, `address`, `post_code`, `phone`, `country_id`, `city_id`, `currency_id`, `is_admin`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Андрей Артышко Алексеевич', '1611909036.jpg', 'artyshko.andrey@gmail.com', NULL, '$2y$10$qklL3fdQo2X355MD8D8QM.gFmJp/k80yW9rTkQCcjee/VYKY22WTC', 'Горького 24, 25', '660099', '+7 (902) 963-43-66', 1, 1116, 2, 1, NULL, '2021-01-05 06:31:39', '2021-01-29 12:30:36'),
+(1, 'Андрей Артышко Алексеевич', '1611509194.jpg', 'artyshko.andrey@gmail.com', NULL, '$2y$10$qklL3fdQo2X355MD8D8QM.gFmJp/k80yW9rTkQCcjee/VYKY22WTC', 'Горького 24, 25', '660090', '+7 (902) 963-43-66', 1, 1116, 2, 1, NULL, '2021-01-05 06:31:39', '2021-02-27 08:57:43'),
 (2, 'Роман', NULL, 'iminovarts@gmail.com', NULL, '$2y$10$LbSGgkMpEaBPEwFB2q3UduMaAGYqROEppU2sLSKtqfhXICeu2yCLq', 'Казахстан', '660099', NULL, 82, 10451, NULL, 1, NULL, '2021-01-05 06:31:39', '2021-01-05 06:31:39'),
 (3, 'Артышко Андрей Алексеевич', NULL, 'artyshko.test@gmail.com', NULL, '$2y$10$V5zSaZH8NfjbhCdQjMW8IeuOEBIAEJZcgoTbJTUoXkJQL0df3TulO', 'artyshko.test@gmail.com', '660099', '+7 (902) 963-43-66', 1, 1116, 2, 0, NULL, '2021-01-27 15:45:35', '2021-01-27 15:46:13'),
-(4, 'Андрей Артышко', '1611912394.jpg', 'artyshko.andreygg@gmail.com', NULL, '$2y$10$tIHoTA9sTup0OLqLc8wE7u8LLxTlj8SH5Z/vFS9B5bX.Q/nsoKBce', 'Горького 24', '660099', '+7 (890) 296-34-36', 1, 1116, 3, 0, NULL, '2021-01-29 13:26:16', '2021-01-29 13:26:51');
+(4, 'Андрей Артышко', '1611509194.jpg', 'artyshko.andreygg@gmail.com', NULL, '$2y$10$tIHoTA9sTup0OLqLc8wE7u8LLxTlj8SH5Z/vFS9B5bX.Q/nsoKBce', 'Горького 24', '660099', '+7 (890) 296-34-36', 1, 1116, 3, 0, NULL, '2021-01-29 13:26:16', '2021-01-29 13:26:51');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `user_favorite_products`
+--
+
+CREATE TABLE `user_favorite_products` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `product_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Индексы сохранённых таблиц
@@ -3485,6 +3698,12 @@ ALTER TABLE `skus_categories`
   ADD UNIQUE KEY `skus_categories_name_unique` (`name`);
 
 --
+-- Индексы таблицы `sliders`
+--
+ALTER TABLE `sliders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `telescope_entries`
 --
 ALTER TABLE `telescope_entries`
@@ -3513,6 +3732,14 @@ ALTER TABLE `users`
   ADD KEY `users_currency_id_foreign` (`currency_id`);
 
 --
+-- Индексы таблицы `user_favorite_products`
+--
+ALTER TABLE `user_favorite_products`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_favorite_products_user_id_foreign` (`user_id`),
+  ADD KEY `user_favorite_products_product_id_foreign` (`product_id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -3520,19 +3747,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT для таблицы `cart_items`
 --
 ALTER TABLE `cart_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT для таблицы `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT для таблицы `categories_categories`
@@ -3550,7 +3777,7 @@ ALTER TABLE `cities`
 -- AUTO_INCREMENT для таблицы `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=219;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT для таблицы `coupons_brands`
@@ -3574,7 +3801,7 @@ ALTER TABLE `coupons_products`
 -- AUTO_INCREMENT для таблицы `coupon_codes`
 --
 ALTER TABLE `coupon_codes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `currencies`
@@ -3616,7 +3843,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT для таблицы `orders`
@@ -3634,37 +3861,43 @@ ALTER TABLE `order_items`
 -- AUTO_INCREMENT для таблицы `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=279;
 
 --
 -- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
 
 --
 -- AUTO_INCREMENT для таблицы `product_skuses`
 --
 ALTER TABLE `product_skuses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT для таблицы `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `skuses`
 --
 ALTER TABLE `skuses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `skus_categories`
 --
 ALTER TABLE `skus_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT для таблицы `sliders`
+--
+ALTER TABLE `sliders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `telescope_entries`
@@ -3677,6 +3910,12 @@ ALTER TABLE `telescope_entries`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT для таблицы `user_favorite_products`
+--
+ALTER TABLE `user_favorite_products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
@@ -3798,6 +4037,13 @@ ALTER TABLE `users`
   ADD CONSTRAINT `users_city_id_foreign` FOREIGN KEY (`city_id`) REFERENCES `cities` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `users_country_id_foreign` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `users_currency_id_foreign` FOREIGN KEY (`currency_id`) REFERENCES `currencies` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `user_favorite_products`
+--
+ALTER TABLE `user_favorite_products`
+  ADD CONSTRAINT `user_favorite_products_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `user_favorite_products_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

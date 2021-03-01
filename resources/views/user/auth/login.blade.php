@@ -1,14 +1,14 @@
 @extends('user.layouts.app')
 
-@section('title', 'DOCKU | Вход в профиль')
+@section('title', 'Вход в профиль')
 
 @section('content')
   <div class="container-fluid d-flex align-items-center justify-content-center">
     <div class="row w-100 d-flex justify-content-center">
       <div class="col-lg-4 col-md-5 col-sm-8 col-12">
         <div class="row justify-content-center">
-          <div class="col-md-5 col-6">
-            <img src="{{ asset('images/logo-dark.svg') }}" alt="logo" class="img-fluid mb-5 mx-auto d-block logo">
+          <div class="col-md-8 col-6">
+            <img src="{{ asset('images/logo.svg') }}" alt="logo" class="img-fluid mb-2 mx-auto d-block logo">
           </div>
         </div>
         <div class="card rounded-0">
@@ -67,8 +67,7 @@
                     <button type="button" class="hide-show-btn" onclick="passwordTypeToggle(this, 'password')"><i class="fas fa-eye"></i></button>
                   </div>
                   <a href="{{ route('password.request') }}">Забыли пароль?</a>
-{{--                  TODO: forgot password--}}
-                  <button id="submitter" class="btn btn-dark w-100 d-block mt-3" style="height: 43px;">Войти</button>
+                  <button id="submitter" style="height: 43px;">Войти</button>
                 </form>
               </div>
             </div>

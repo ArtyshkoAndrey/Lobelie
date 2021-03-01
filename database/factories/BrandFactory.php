@@ -12,7 +12,7 @@ class BrandFactory extends Factory
    *
    * @var string
    */
-  protected $model = Brand::class;
+  protected string $model = Brand::class;
 
   /**
    * Define the model's default state.
@@ -22,7 +22,7 @@ class BrandFactory extends Factory
   public function definition(): array
   {
     return [
-      'name' => $this->faker->name
+      'name' => $this->faker->unique()->words(1, true)
     ];
   }
 }

@@ -33,6 +33,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Product[] $products
  * @property-read int|null $products_count
  * @property-read string $search_name
+ * @property string|null $photo
+ * @property-read string $photo_storage
+ * @method static \Illuminate\Database\Eloquent\Builder|Category wherePhoto($value)
  */
 class Category extends Model
 {
@@ -46,7 +49,8 @@ class Category extends Model
   protected $fillable = [
     'name',
     'to_menu',
-    'description'
+    'description',
+    'photo',
   ];
 
   /**
@@ -61,6 +65,8 @@ class Category extends Model
   protected $appends = [
     'search_name'
   ];
+
+  const PHOTO_PATH = 'storage/category/';
 
   /**
    * Дочерние категории
@@ -95,6 +101,16 @@ class Category extends Model
     if ($this->child()->count() > 0)
       return $this->name . '(' . $this->child()->first()->name .')';
 
-    return '()';
+    return $this->name;
+  }
+
+  public function getPhotoStorageAttribute (): string
+  {
+    if ($this->photo)
+      return asset(Category::PHOTO_PATH . $this->photo);
+
+    else
+      return asset('images/user-o.png');
+
   }
 }

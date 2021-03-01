@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Docku - Редактирова размера $skus->title')
+@section('title', 'Редактирова размера $skus->title')
 
 @section('content')
   <div class="container-fluid mt-20 mb-20">

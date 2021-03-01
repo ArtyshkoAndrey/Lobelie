@@ -1,0 +1,208 @@
+
+.order-create-page {
+  margin-top: 80px;
+  padding-bottom: 30px;
+
+  .promocode-btn {
+    text-transform: none;
+    font-size: 1em;
+    padding: 0.8em
+  }
+
+  .title {
+    color: #2D3134;
+    font-size: 1.4em;
+    margin-bottom: 1em;
+  }
+
+  select.form-control, .form-outline {
+    span.required {
+      color: #ff5200;
+    }
+
+    label.form-label {
+      color: #4F545B;
+    }
+  }
+
+  .order-results {
+    border: 1px solid $light-gray;
+    padding: .5em 1em;
+    font-family: "Lato", sans-serif;
+
+    & > * {
+      margin-bottom: .5em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .row .col-12 {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.3em .5em;
+      font-weight: 500;
+    }
+
+    .result {
+      span {
+        color: $dark;
+        font-size: 1.3em;
+      }
+    }
+
+    .complete-button {
+      background: $dark;
+      width: 100%;
+      color: $white;
+      border: none;
+      padding: .8em;
+      margin-top: 1.5em;
+
+      &:disabled {
+        opacity: .65;
+      }
+    }
+  }
+
+  .complete-button {
+    width: 100%;
+    font-weight: 600;
+    font-size: 1em;
+    padding: 1em;
+  }
+
+  .agreement {
+    font-size: .9em;
+  }
+
+  .form-outline {
+    line-height: 2em;
+    margin-bottom: 1em;
+    padding-right: 3em;
+
+    .form-control {
+      line-height: 2em;
+
+      & ~ .form-label {
+        line-height: 2.4em;
+      }
+
+      & ~ .form-notch {
+        .form-notch-leading, .form-notch-middle, .form-notch-trailing {
+          border-radius: 0;
+        }
+      }
+
+      &:focus {
+        & ~ .form-notch {
+          .form-notch-leading, .form-notch-middle, .form-notch-trailing {
+            border-color: $dark !important;
+            border-radius: 0;
+          }
+        }
+
+        & ~ .form-label {
+          color: $dark;
+          transform: translateY(-1.1rem) scale(.8);
+        }
+
+        & ~ .icon {
+          color: $dark;
+        }
+      }
+    }
+
+    .form-control.active {
+      & ~ .form-notch {
+        .form-notch-leading, .form-notch-middle, .form-notch-trailing {
+          border-color: $dark !important;
+          border-radius: 0;
+        }
+      }
+
+      & ~ .form-label {
+        color: $dark;
+        transform: translateY(-1.1rem) translateY(-0.1rem) scale(.8);
+      }
+
+      & ~ .icon {
+        color: $dark;
+      }
+    }
+
+    .icon {
+      position: absolute;
+      top: 0;
+      right: 0.75rem;
+      transform-origin: 0 0;
+      transition: all 0.2s ease-out;
+      color: rgba(0, 0, 0, 0.6);
+      margin-bottom: 0;
+      border: none;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      justify-content: center;
+      width: 25px;
+      font-size: 1.3em;
+    }
+  }
+
+  .choice-field {
+    width: 100%;
+    border: 1px solid $gray;
+    display: flex;
+    align-items: center;
+    padding: 1em .5em;
+    font-family: "Lato", sans-serif;
+    margin-bottom: 1em;
+    cursor: pointer;
+
+    .icon {
+      margin-right: .5em;
+      font-size: 1.4em;
+      color: $dark;
+    }
+
+    .content {
+      margin-right: auto;
+      color: $dark;
+    }
+
+    .radio-wrapper {
+      position: relative;
+      width: 30px;
+      height: 15px;
+
+      .radio {
+        position: absolute;
+        border-radius: 50px;
+        border: 1px solid $gray;
+        width: 20px;
+        height: 20px;
+        top: calc(50% - 10px);
+        right: calc(50% - 10px);
+      }
+
+      .dot {
+        display: none;
+        position: absolute;
+        border-radius: 50px;
+        background: $dark;
+        width: 14px;
+        height: 14px;
+        top: calc(50% - 7px);
+        right: calc(50% - 7px);
+      }
+    }
+
+    &.active {
+      .dot {
+        display: block;
+      }
+    }
+  }
+}

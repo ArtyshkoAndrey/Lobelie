@@ -1,0 +1,91 @@
+a.item-link:hover .heart-button,
+a.item-link:hover .cart-button {
+  color: $gray;
+}
+
+.item-card {
+  font-family: "Lato", sans-serif;
+  padding-bottom: .5em;
+
+  &:hover {
+    background: #F8F8F8;
+  }
+
+  .item-name {
+    color: $dark;
+    font-size: 1.2em;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    overflow: hidden;
+    height: 1.5rem;
+    -webkit-box-orient: vertical;
+  }
+
+  .price, .old-price {
+    font-size: 1.1em;
+  }
+
+  .old-price {
+    color: $light-gray;
+    text-decoration: line-through;
+  }
+
+  .price {
+    color: $dark;
+  }
+
+  .cart-button, .heart-button {
+    font-size: 1.1em;
+    border: none;
+    background: transparent;
+    color: $gray;
+  }
+
+  .cart-button {
+    display: flex;
+    cursor: pointer;
+    align-items: flex-start;
+    padding-left: 0;
+
+    &:hover {
+      span {
+        color: $dark;
+      }
+    }
+
+    span {
+      margin-left: .5em;
+    }
+
+    img {
+      display: none;
+
+      &.shopping-bag {
+        width: 25px;
+      }
+
+      &.shopping-bag-alt {
+        width: 17px;
+        margin: 0 4px;
+      }
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  .heart-button {
+    i {
+      font-size: 1.2em;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      i {
+        color: $dark;
+      }
+    }
+  }
+}

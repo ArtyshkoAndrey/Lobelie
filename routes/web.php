@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/payment', [\App\Http\Controllers\HomeController::class, 'payment'])->name('payment');
+Route::get('/policy', [\App\Http\Controllers\HomeController::class, 'policy'])->name('policy');
 
 
 Route::prefix('product')->name('product.')->group( function () {
@@ -30,6 +32,8 @@ Route::middleware(['auth'])->prefix('profile')->name('profile.')->group( functio
     Route::put('photo', [ProfileController::class, 'photo'])->name('photo');
     Route::put('password', [ProfileController::class, 'password'])->name('password');
   });
+  Route::get('/favorites', [ProductController::class, 'favorites'])->name('favorites');
+  Route::post('/favorites', [ProductController::class, 'userFavorites'])->name('userFavorites');
   Route::get('/', [ProfileController::class, 'index'])->name('index');
 });
 
@@ -67,6 +71,9 @@ Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function ()
   ]);
   Route::resource('coupon', App\Http\Controllers\Admin\CouponController::class)->except([
     'show'
+  ]);
+  Route::resource('slider', App\Http\Controllers\Admin\SliderController::class)->except([
+    'show', 'create', 'edit'
   ]);
 
   Route::post('product/photo/store', [\App\Http\Controllers\Admin\ProductController::class, 'photoStore'])->name('product.store.photo');

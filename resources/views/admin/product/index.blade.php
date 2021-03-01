@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Docku - Список товаров')
+@section('title', 'Список товаров')
 
 @section('content')
   <div class="container-fluid mt-20 mb-20">

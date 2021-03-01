@@ -1,175 +1,93 @@
-// Montserrat font
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-Black.ttf');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-BlackItalic.ttf');
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-ExtraBold.ttf');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-ExtraBoldItalic.ttf');
-  font-weight: 800;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-Bold.ttf');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-BoldItalic.ttf');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-Medium.ttf');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-MediumItalic.ttf');
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-SemiBold.ttf');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-SemiBoldItalic.ttf');
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-Regular.ttf');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-Italic.ttf');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-Light.ttf');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-LightItalic.ttf');
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-Thin.ttf');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-ThinItalic.ttf');
-  font-weight: 200;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-ExtraLight.ttf');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/Montserrat-ExtraLightItalic.ttf');
-  font-weight: 100;
-  font-style: italic;
-  font-display: swap;
-}
-
-// Body
-$body-bg: #f8fafc; // Настройка заднего фона страницы
-
-// Typography
-//$font-family-sans-serif: "Montserrat", sans-serif;
-body {
-  font-family: "Montserrat", sans-serif;
-}
-// Подтягивать прифты примерно так
-// $font-family-sans-serif: url('public/fonts/.../... .tff'), sans-serif;
-
-// Найди в инете как подключать шрифты для разные браузера, для айфонов один тип шрифтов, и тп. т.е. одни фонт фемили но подключаются множетсво файлов для разных ос
+$body-bg: #f8fafc;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+$dark: #1B1B1B;
+$gray: #7A808C;
+$light-gray: #C1C5CE;
+$white: #FFFFFF;
+$light: #C1C5CE;
+//EBEBEB
 
-// Breakpoints
-$grid-breakpoints: ( xs: 0, xsm: 300px, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl:
-1400px );
+$menu-toggle-color: $dark;
+$menu-toggle-open-color: $dark;
+
+
+$menu-item-font-size: 1.3em;
+$menu-item-color: $dark;
+//Color
+
+$font-family-header: 'Lato', sans-serif;
+$font-family-category-menu: 'Tenor Sans', sans-serif;
+
+$font-family-search-input: 'Lato', sans-serif;
+
+$font-family-slider-to-cart: 'Lato', sans-serif;
+
+$font-family-footer-link-block-title: 'Lato', sans-serif;
+$font-family-footer-link-block-link: 'Lato', sans-serif;
+
+$instagram-background: #fafafa;
+
+$filter-underline-color: #C1C5CE;
+
+$box-shadow-1: 0px 4px 10px 0px #000000 11%;
+$box-shadow-2: 0px 2px 10px rgba(0, 0, 0, 0.25);
+$box-shadow-3: -10px 4px 115px rgba(0, 0, 0, 0.2);
+
+
+
+$grid-breakpoints: ( xs: 0, xsm: 300px, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px);
+
+/// Mixin to manage responsive breakpoints
+/// @author Fulliton
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin media-breakpoint-down($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (max-width: map-get($grid-breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+    // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($grid-breakpoints)}.";
+  }
+}
+
+@mixin media-breakpoint-up($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+    // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($grid-breakpoints)}.";
+  }
+}
+
+.shadow-1 {
+  box-shadow: $box-shadow-1;
+}
+
+.shadow-2 {
+  box-shadow: $box-shadow-2;
+}
+
+.shadow-3 {
+  box-shadow: $box-shadow-3;
+}

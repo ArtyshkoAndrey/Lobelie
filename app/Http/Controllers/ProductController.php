@@ -162,7 +162,7 @@ class ProductController extends Controller
     }
 
     $itemsCount = $items->count();
-    $items = $items->paginate(15);
+    $items = $items->paginate(16);
     $filter = [
       'category' => $categoryArr,
       'order' => $order,
@@ -202,9 +202,32 @@ class ProductController extends Controller
       } catch (\Error $exception) {
         $categories = [];
       }
+      $similarProducts = [];
+      if ($category = end($categories)) {
+        $similarProducts = $category->products()->take(4)->get();
+      }
 
-      return view('user.product.show', compact('product', 'categories'));
+      return view('user.product.show', compact('product', 'categories', 'similarProducts'));
     }
     throw new NotFoundHttpException();
+  }
+
+  public function favorites ()
+  {
+    $products = auth()->user()->favorites;
+    return view('user.product.favorites', compact('products'));
+  }
+
+  public function userFavorites (Request $request)
+  {
+    $data = $request->all();
+
+    $user = auth()->user();
+    if ($data['type'] === 'add' && !$user->favorites()->find($data['id']))
+      $user->favorites()->attach($data['id']);
+    else if ($data['type'] === 'delete')
+      $user->favorites()->detach($data['id']);
+
+    return response()->json(['status' => 'success']);
   }
 }

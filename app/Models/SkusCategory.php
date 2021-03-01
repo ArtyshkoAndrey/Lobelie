@@ -6,6 +6,7 @@ use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 
 /**
@@ -39,7 +40,7 @@ class SkusCategory extends Model
     'name',
   ];
 
-  public function skuses ()
+  public function skuses (): HasMany
   {
     return $this->hasMany(Skus::class);
   }

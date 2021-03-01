@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 
-@section('title', 'DOCKU | Сброс пароля')
+@section('title', 'Сброс пароля')
 
 @section('content')
   {{--  TODO: Backend part --}}
@@ -9,7 +9,7 @@
     <div class="col-lg-5 col-md-6 col-12">
       <div class="row justify-content-center">
         <div class="col-md-5 col-6">
-          <img src="{{ asset('images/logo-dark.svg') }}" alt="logo" class="img-fluid mb-5 mx-auto d-block logo">
+          <img src="{{ asset('images/logo.svg') }}" alt="logo" class="img-fluid mb-5 mx-auto d-block logo">
         </div>
       </div>
       @if (session('status'))
