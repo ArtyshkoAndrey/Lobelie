@@ -24,4 +24,14 @@ class HomeController extends Controller
     $sliders = Slider::all();
     return view('user.index', compact('categories', 'newProducts', 'sliders'));
   }
+
+  public function payment (): View
+  {
+    return view('user.info.pay');
+  }
+
+  public function policy (): View
+  {
+    return view('user.info.policy');
+  }
 }
