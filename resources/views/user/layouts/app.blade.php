@@ -57,18 +57,18 @@
     }
   }
 
-  for (let button of heartButtons) {
-    button = $(button)
-    button.on('mouseenter', function() {
-      button.children('i').removeClass('fal')
-      button.children('i').addClass('fa')
-    })
-
-    button.on('mouseleave', function() {
-      button.children('i').addClass('fal')
-      button.children('i').removeClass('fa')
-    })
-  }
+  // for (let button of heartButtons) {
+  //   button = $(button)
+  //   button.on('mouseenter', function() {
+  //     button.children('i').removeClass('fal')
+  //     button.children('i').addClass('fa')
+  //   })
+  //
+  //   button.on('mouseleave', function() {
+  //     button.children('i').addClass('fal')
+  //     button.children('i').removeClass('fa')
+  //   })
+  // }
 
   for (let button of cartButtons) {
     button = $(button)
