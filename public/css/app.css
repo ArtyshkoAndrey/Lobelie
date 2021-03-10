@@ -18188,6 +18188,17 @@ a:hover {
   padding-left: 30px;
   padding-right: 30px;
 }
+.item-page .images-stack {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .item-page .images-stack {
+    flex-direction: row;
+    overflow: auto;
+  }
+}
 .item-page .images-stack img {
   width: 100%;
   margin-bottom: 1.5em;
