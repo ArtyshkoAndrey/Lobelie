@@ -1,11 +1,11 @@
 {
-  "name": "fulliton/docku",
+  "name": "fulliton/lobelie",
   "type": "project",
   "description": "shop",
   "keywords": [
     "framework",
     "laravel",
-    "docku"
+    "lobelie"
   ],
   "license": "MIT",
   "require": {

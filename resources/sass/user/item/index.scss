@@ -80,11 +80,12 @@ a.item-link:hover .cart-button {
       font-size: 1.2em;
     }
 
-    &:hover {
+    &.active, &:hover {
       cursor: pointer;
 
       i {
         color: $dark;
+        font-weight: 900;
       }
     }
   }
