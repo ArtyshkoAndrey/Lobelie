@@ -5,13 +5,15 @@
 @section('content')
   <div class="container-fluid item-page">
     <div class="row mb-5">
-      <div class="col-12 col-md-6 images-stack">
+      <div class="col-12 col-md-6 images-stack mb-3 mb-md-0">
         @foreach($product->photos as $photo)
-          <picture>
-            <source type="image/webp" srcset="{{ $photo->thumbnail_url_webp }}">
-            <source type="image/jpeg" srcset="{{ $photo->thumbnail_url_jpg }}">
-            <img src="{{ $photo->thumbnail_url_jpg }}" alt="{{ $photo->name }}">
-          </picture>
+          <div class="col-12 px-2 py-0 px-md-0 py-md-2">
+            <picture>
+              <source type="image/webp" srcset="{{ $photo->thumbnail_url_webp }}">
+              <source type="image/jpeg" srcset="{{ $photo->thumbnail_url_jpg }}">
+              <img src="{{ $photo->thumbnail_url_jpg }}" alt="{{ $photo->name }}">
+            </picture>
+          </div>
         @endforeach
       </div>
       <div class="col-12 col-md-6 pl-3 pl-md-4 item-details">

@@ -6,6 +6,15 @@
   padding-right: 30px;
 
   .images-stack {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: row;
+      overflow: auto;
+    }
+
     img {
       width: 100%;
       margin-bottom: 1.5em;
