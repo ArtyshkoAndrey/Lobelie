@@ -6,6 +6,7 @@
 
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="yandex-verification" content="a803dca1cc9e8c9c" />
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
   <title>{{ config('app.name') }} | @yield('title', config('app.name'))</title>
   <!-- Styles -->
