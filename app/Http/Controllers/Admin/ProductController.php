@@ -45,6 +45,7 @@ class ProductController extends Controller
       'name' => $name,
       'type' => $type
     ];
+    $products->appends($filter);
     return view('admin.product.index', compact('products', 'filter'));
   }
 
