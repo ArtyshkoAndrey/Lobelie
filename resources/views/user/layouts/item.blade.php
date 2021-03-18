@@ -34,7 +34,7 @@
             {{--        <i class="las la-shopping-bag"></i>--}}
             <span class="d-none d-sm-block">Выбрать размер</span>
           </a>
-        @else
+        @elseif($product->skuses->count()  === 1)
           <button class="cart-button" @click="$store.commit('addItem', {id: {{ $product->skuses()->first()->pivot->id }}, amount: 1})">
             <img class="shopping-bag active" src="{{ asset('images/la_shopping-bag.svg') }}" alt="bag">
             <img class="shopping-bag-alt" src="{{ asset('images/la_shopping-bag-alt.svg') }}" alt="bag">
