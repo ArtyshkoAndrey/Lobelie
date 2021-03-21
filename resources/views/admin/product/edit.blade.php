@@ -244,8 +244,8 @@
             .then(response => {
               console.log(response)
             })
-            .catch(response => {
-              alert(response.data.status)
+            .catch(error => {
+              alert(error.response.data.status)
             })
           }
         });

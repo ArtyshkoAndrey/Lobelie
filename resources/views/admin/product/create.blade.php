@@ -171,7 +171,7 @@
           </div>
 
           @foreach(old('photos', []) as $photo)
-            <input type="hidden" id="{{ $photo }}" value="{{ $photo }}">
+            <input type="hidden" id="{{ $photo . '.jpg' }}" value="{{ $photo }}">
           @endforeach
         </form>
       </div>
@@ -229,8 +229,8 @@
         // Hack: Add the dropzone class to the element
         $(this.element).addClass("dropzone");
         this.on("success", function (file, serverFileName) {
-          fileList[i] = {"serverFileName": serverFileName, "fileName": file.name, "fileId": i};
-          $('form').append('<input type="hidden" name="photos[]" id="' + serverFileName + '" value="' + serverFileName + '">')
+          fileList[i] = {"serverFileName": serverFileName + '.jpg', "fileName": file.name, "fileId": i};
+          $('form').append('<input type="hidden" name="photos[]" id="' + serverFileName + '.jpg" value="' + serverFileName + '">')
           i++;
         });
         this.on("removedfile", function(file) {
@@ -248,10 +248,11 @@
             })
               .then(response => {
                 console.log(response)
+                console.log('file', document.getElementById(rmvFile).remove());
                 document.getElementById(rmvFile).remove()
               })
-              .catch(response => {
-                alert(response.data.status)
+              .catch(error => {
+                alert(error.response.data.status)
               })
           }
         });
@@ -328,12 +329,12 @@
       <?php $i = 0;?>
       let mockFile
       @foreach(old('photos', []) as $photo)
-        mockFile = { name: '{{ $photo }}', size: {{ File::size(public_path('storage/images/photos/' . $photo)) }} };
+        mockFile = { name: '{{ $photo . '.jpg' }}', size: {{ File::size(public_path('storage/images/photos/' . $photo . '.jpg')) }} };
         uploader.emit("addedfile", mockFile);
-        uploader.emit("thumbnail", mockFile, '{{ asset('storage/images/thumbnails/' . $photo) }}');
+        uploader.emit("thumbnail", mockFile, '{{ asset('storage/images/thumbnails/' . $photo . '.jpg') }}');
         uploader.emit("complete", mockFile);
         uploader.files.push(mockFile)
-        fileList.push({"serverFileName": '{{ $photo }}', "fileName":'{{ $photo }}', "fileId": {{ $i }}});
+        fileList.push({"serverFileName": '{{ $photo . '.jpg' }}', "fileName":'{{ $photo . '.jpg' }}', "fileId": {{ $i }}});
         <?php $i++?>
       @endforeach
     });
