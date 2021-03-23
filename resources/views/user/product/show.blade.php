@@ -27,7 +27,7 @@
 
           </div>
           <div class="col-12 title-wrapper">{{ $product->title }}</div>
-          <div class="col-12 type-wrapper mb-2">Браслет</div>
+          <div class="col-12 type-wrapper mb-2">{{ $product->category->name ?? '' }}</div>
           <div class="col-12 prices-wrapper sale mb-2">
             @if($product->on_sale)
               <span class="old-price">{{ $cost($store.state.currency.ratio * <? echo $product->price ?>) }} тг.</span>
