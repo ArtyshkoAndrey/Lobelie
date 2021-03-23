@@ -138,8 +138,8 @@
                   <div class="form-group">
                     <input type="hidden" name="to_menu" value="0">
                     <div class="custom-switch d-inline-block mr-10"> <!-- d-inline-block = display: inline-block, mr-10 = margin-right: 1rem (10px) -->
-                      <input type="checkbox" id="to_menu" name="to_menu" value="1" {{ $category->to_menu ? 'checked' : null }}>
-                      <label for="to_menu">На главный экран</label>
+                      <input type="checkbox" id="to_menu-{{ $category->id }}" name="to_menu" value="1" {{ $category->to_menu ? 'checked' : null }}>
+                      <label for="to_menu-{{ $category->id }}">На главный экран</label>
                     </div>
 
                   </div>
@@ -201,8 +201,8 @@
                 <div class="form-group">
                   <input type="hidden" name="to_menu" value="0">
                   <div class="custom-switch d-inline-block mr-10"> <!-- d-inline-block = display: inline-block, mr-10 = margin-right: 1rem (10px) -->
-                    <input type="checkbox" name="to_menu" id="to_menu-cteate" value="1" {{ old('to_menu') ? 'checked' : null }}>
-                    <label for="to_menu-cteate">На главный экран</label>
+                    <input type="checkbox" name="to_menu" id="to_menu-create" value="1" {{ old('to_menu') ? 'checked' : null }}>
+                    <label for="to_menu-create">На главный экран</label>
                   </div>
                 </div>
 
