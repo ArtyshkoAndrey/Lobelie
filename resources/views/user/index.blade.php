@@ -82,66 +82,65 @@
   <section id="catalog-section" class="my-5">
     <div class="container-fluid">
       <h1 class="section-title">Каталог</h1>
+      @php($i = 0)
+      @foreach($categories as $index => $category)
 
-      @if (count($categories) > 0)
-        <div class="row line-wrapper">
-          @if (isset($categories[0]))
-            <div class="col-12 col-md-4 col-sm-6 offset-md-1 d-flex flex-column" >
-              <div class="category-wrapper">
-                <img class="category-image" src="{{ $categories[0]->photo_storage }}" alt="{{ $categories[0]->name }}">
-                <span class="category-name">{{ $categories[0]->name }}</span>
-                <div class="arrow-wrapper">
-                  <img src="{{ asset('images/arrow.svg') }}" alt="">
-                </div>
-                <a href="{{ route('product.all', ['category' => $categories[0]->id]) }}" class="category-link">Перейти в каталог</a>
+        @if($i === 0)
+          <div class="row line-wrapper">
+        @endif
+
+        @if (($index + 1) % 4 === 1)
+          <div class="col-12 col-md-4 col-sm-6 offset-md-1 d-flex flex-column" >
+            <div class="category-wrapper">
+              <img class="category-image" src="{{ $category->photo_storage }}" alt="{{ $category->name }}">
+              <span class="category-name">{{ $category->name }}</span>
+              <div class="arrow-wrapper">
+                <img src="{{ asset('images/arrow.svg') }}" alt="">
               </div>
+              <a href="{{ route('product.all', ['category' => $category->id]) }}" class="category-link">Перейти в каталог</a>
             </div>
-          @endif
-
-          @if (isset($categories[1]))
-            <div class="col-12 col-md-4 col-sm-6 offset-md-1 d-flex flex-column" >
-              <div class="category-wrapper">
-                <img class="category-image" src="{{ $categories[1]->photo_storage }}" alt="{{ $categories[1]->name }}">
-                <span class="category-name">{{ $categories[1]->name }}</span>
-                <div class="arrow-wrapper">
-                  <img src="{{ asset('images/arrow.svg') }}" alt="">
-                </div>
-                <a href="{{ route('product.all', ['category' => $categories[1]->id]) }}" class="category-link">Перейти в каталог</a>
+          </div>
+        @elseif(($index + 1) % 4 === 2)
+          <div class="col-12 col-md-4 col-sm-6 offset-md-1 d-flex flex-column" >
+            <div class="category-wrapper">
+              <img class="category-image" src="{{ $category->photo_storage }}" alt="{{ $category->name }}">
+              <span class="category-name">{{ $category->name }}</span>
+              <div class="arrow-wrapper">
+                <img src="{{ asset('images/arrow.svg') }}" alt="">
               </div>
+              <a href="{{ route('product.all', ['category' => $category->id]) }}" class="category-link">Перейти в каталог</a>
             </div>
-          @endif
-        </div>
-
-        <div class="row line-wrapper">
-
-          @if (isset($categories[2]))
-            <div class="col-12 col-md-4 col-sm-6 offset-md-1 d-flex flex-column" >
-              <div class="category-wrapper">
-                <img class="category-image" src="{{ $categories[2]->photo_storage }}" alt="{{ $categories[1]->name }}">
-                <span class="category-name">{{ $categories[2]->name }}</span>
-                <div class="arrow-wrapper">
-                  <img src="{{ asset('images/arrow.svg') }}" alt="">
-                </div>
-                <a href="{{ route('product.all', ['category' => $categories[2]->id]) }}" class="category-link">Перейти в каталог</a>
+          </div>
+        @elseif(($index + 1) % 4 === 3)
+          <div class="col-12 col-md-4 col-sm-6 offset-md-1 d-flex flex-column" >
+            <div class="category-wrapper">
+              <img class="category-image" src="{{ $category->photo_storage }}" alt="{{ $category->name }}">
+              <span class="category-name">{{ $category->name }}</span>
+              <div class="arrow-wrapper">
+                <img src="{{ asset('images/arrow.svg') }}" alt="">
               </div>
+              <a href="{{ route('product.all', ['category' => $category->id]) }}" class="category-link">Перейти в каталог</a>
             </div>
-          @endif
-
-          @if (isset($categories[3]))
-            <div class="col-12 col-md-4 col-sm-6 offset-md-1 d-flex flex-column" >
-              <div class="category-wrapper">
-                <img class="category-image" src="{{ $categories[3]->photo_storage }}" alt="{{ $categories[1]->name }}">
-                <span class="category-name">{{ $categories[3]->name }}</span>
-                <div class="arrow-wrapper">
-                  <img src="{{ asset('images/arrow.svg') }}" alt="">
-                </div>
-                <a href="{{ route('product.all', ['category' => $categories[3]->id]) }}" class="category-link">Перейти в каталог</a>
+          </div>
+        @else
+          <div class="col-12 col-md-4 col-sm-6 offset-md-1 d-flex flex-column" >
+            <div class="category-wrapper">
+              <img class="category-image" src="{{ $category->photo_storage }}" alt="{{ $category->name }}">
+              <span class="category-name">{{ $category->name }}</span>
+              <div class="arrow-wrapper">
+                <img src="{{ asset('images/arrow.svg') }}" alt="">
               </div>
+              <a href="{{ route('product.all', ['category' => $category->id]) }}" class="category-link">Перейти в каталог</a>
             </div>
-          @endif
+          </div>
+        @endif
 
-        </div>
-      @endif
+        @php($i = ($i === 1 ? 0 : ($i + 1)))
+
+        @if($i === 0)
+          </div>
+        @endif
+      @endforeach
 
     </div>
   </section>
