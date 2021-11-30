@@ -5,16 +5,18 @@
 @section('content')
   <div class="container-fluid item-page">
     <div class="row mb-5">
-      <div class="col-12 col-md-6 images-stack mb-3 mb-md-0">
-        @foreach($product->photos as $photo)
-          <div class="col-12 px-2 py-0 px-md-0 py-md-2">
-            <picture>
-              <source type="image/webp" srcset="{{ $photo->thumbnail_url_webp }}">
-              <source type="image/jpeg" srcset="{{ $photo->thumbnail_url_jpg }}">
-              <img src="{{ $photo->thumbnail_url_jpg }}" alt="{{ $photo->name }}">
-            </picture>
-          </div>
-        @endforeach
+      <div class="col-12 col-md-6 mb-3 mb-md-0">
+        <div class="row images-stack">
+          @foreach($product->photos as $photo)
+            <div class="col-12 px-2 py-0 px-md-0 py-md-2">
+              <picture>
+                <source type="image/webp" srcset="{{ $photo->thumbnail_url_webp }}">
+                <source type="image/jpeg" srcset="{{ $photo->thumbnail_url_jpg }}">
+                <img src="{{ $photo->thumbnail_url_jpg }}" alt="{{ $photo->name }}">
+              </picture>
+            </div>
+          @endforeach
+        </div>
       </div>
       <div class="col-12 col-md-6 pl-3 pl-md-4 item-details">
         <div class="row flex-column content-wrapper">
@@ -30,9 +32,9 @@
           <div class="col-12 type-wrapper mb-2">{{ $product->category->name ?? '' }}</div>
           <div class="col-12 prices-wrapper sale mb-2">
             @if($product->on_sale)
-              <span class="old-price">{{ $cost($store.state.currency.ratio * <? echo $product->price ?>) }} тг.</span>
+              <span class="old-price">{{ $cost($store.state.currency.ratio * <?php echo $product->price ?>) }} тг.</span>
             @endif
-            <span class="price">{{ $cost($store.state.currency.ratio * <? echo $product->on_sale ? $product->price_sale : $product->price?>) }} тг.</span>
+            <span class="price">{{ $cost($store.state.currency.ratio * <?php echo $product->on_sale ? $product->price_sale : $product->price?>) }} тг.</span>
           </div>
           <div class="col-12 sizes-wrapper mb-2">
             <div class="row">
