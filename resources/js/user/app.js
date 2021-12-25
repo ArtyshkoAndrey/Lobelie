@@ -3,6 +3,8 @@
  * Я буду рад если вы будите вносить улучшения, всегда жду ваших пул реквестов
  */
 
+import Vue from "vue";
+
 require('./bootstrap.js');
 import * as mdb from 'mdb-ui-kit'; // lib
 import store from "./store";

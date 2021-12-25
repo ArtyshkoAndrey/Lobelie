@@ -2,12 +2,12 @@
   "private": true,
   "scripts": {
     "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "npm run development -- --watch",
-    "watch-poll": "npm run watch -- --watch-poll",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
     "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "production": "mix --production"
   },
   "devDependencies": {
     "axios": "^0.21.1",
@@ -16,14 +16,25 @@
     "browser-sync-webpack-plugin": "^2.3.0",
     "cross-env": "^7.0",
     "jquery": "^3.2",
-    "laravel-mix": "^5.0.1",
+    "laravel-mix": "^6.0.39",
     "lodash": "^4.17.19",
     "popper.js": "^1.12",
     "resolve-url-loader": "^3.1.2",
-    "sass": "^1.32.6",
-    "sass-loader": "^8.0.0",
-    "vue": "^2.5.17",
-    "vue-template-compiler": "^2.6.10"
+    "sass": "^1.39.2",
+    "sass-loader": "^12.1.0",
+    "vue-eslint-parser": "^7.11.0",
+    "vue-loader": "^15.9.8",
+    "vue-meta": "^2.4.0",
+    "vue-template-compiler": "^2.6.14",
+    "webpack-bundle-analyzer": "^3.9.0",
+    "webpack-cli": "^4.9.0",
+    "@babel/core": "^7.15.8",
+    "@babel/eslint-parser": "^7.15.8",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.15.8",
+    "@vue/compiler-sfc": "^3.2.20",
+    "vue": "^2.6.14",
+    "vuex": "^3.6.2"
   },
   "dependencies": {
     "babel-eslint": "^10.1.0",
@@ -35,6 +46,7 @@
     "vue-material": "^1.0.0-beta-15",
     "vuex": "^3.6.2",
     "vuex-persistedstate": "^4.0.0-beta.3",
-    "zooming": "^2.1.1"
+    "zooming": "^2.1.1",
+    "laravel-mix-versionhash": "^2.0.1"
   }
 }

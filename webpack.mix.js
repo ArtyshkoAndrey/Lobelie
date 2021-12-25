@@ -11,14 +11,14 @@ let productionSourceMaps = false;
  |
  */
 
-mix.options({processCssUrls: false})
+mix.options({processCssUrls: false});
 
-mix.js('resources/js/user/app.js', 'public/js')
-  .sass('resources/sass/user/app.scss', 'public/css')
+mix.js('resources/js/user/app.js', 'public/js').vue()
+  .sass('resources/sass/user/app.scss', 'public/css');
 
-mix.js('resources/js/admin/app.js', 'public/js/admin')
+mix.js('resources/js/admin/app.js', 'public/js/admin').vue()
   .sass('resources/sass/admin/app.scss', 'public/css/admin')
-  .sourceMaps(productionSourceMaps, 'source-map')
+  .sourceMaps(productionSourceMaps, 'source-map');
 
 if (mix.inProduction()) {
   mix.version();
