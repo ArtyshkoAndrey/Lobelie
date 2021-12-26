@@ -1,3 +1,5 @@
+@import "resources/sass/variables";
+
 a.item-link:hover .heart-button,
 a.item-link:hover .cart-button {
   color: $gray;
@@ -31,7 +33,11 @@ a.item-link:hover .cart-button {
   }
 
   .price {
-    color: $dark;
+    color: $dark !important;
+
+    &.text-danger {
+      color: $danger !important;
+    }
   }
 
   .cart-button, .heart-button {

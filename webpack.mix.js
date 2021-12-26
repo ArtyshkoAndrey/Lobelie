@@ -24,6 +24,6 @@ if (mix.inProduction()) {
   mix.version();
 }
 
-mix.browserSync('http://lobelie');
+mix.browserSync('https://lobelie');
 mix.disableNotifications();
 
