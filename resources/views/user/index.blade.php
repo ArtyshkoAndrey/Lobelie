@@ -4,6 +4,19 @@
 
 @section('content')
   <div class="home-slider">
+    <div class="content">
+      <div class="title-wrapper">
+        <h1 class="title">Магазин<br>ювелирных изделий и купальников</h1>
+      </div>
+      <div class="subtitle-wrapper">
+
+        @forelse($sliders as $slider)
+          <span text-index="{{ $loop->index +1 }}" class="subtitle {{ $loop->first ? 'active' : null }}">{{ $slider->title }}</span>
+        @empty
+          <span text-index="1" class="subtitle active">Новый завоз колец 1</span>
+        @endforelse
+      </div>
+    </div>
     <div class="slides">
       <div class="slide-wrapper">
 
@@ -32,20 +45,6 @@
         @endforelse
       </div>
     </div>
-    <div class="content">
-      <div class="title-wrapper">
-        <h1 class="title">Магазин<br>ювелирных изделий и купальников</h1>
-      </div>
-      <div class="subtitle-wrapper">
-
-        @forelse($sliders as $slider)
-          <span text-index="{{ $loop->index +1 }}" class="subtitle {{ $loop->first ? 'active' : null }}">{{ $slider->title }}</span>
-        @empty
-          <span text-index="1" class="subtitle active">Новый завоз колец 1</span>
-        @endforelse
-      </div>
-    </div>
-
     <a href="{{ route('product.all') }}" class="catalog-link">
       <i class="las la-shopping-cart"></i>
       <span>Перейти в каталог</span>
