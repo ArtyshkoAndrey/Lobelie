@@ -9,6 +9,10 @@ $transition-duration-slide: .5s;
     margin-top: 140px
   }
 
+  @include media-breakpoint-down(sm) {
+    margin-top: 80px;
+  }
+
   .slides {
     width: 100%;
     height: calc(100vh - 80px);
@@ -141,6 +145,7 @@ $transition-duration-slide: .5s;
   }
 
   .content {
+    z-index: 2;
     position: absolute;
     width: 50%;
     height: calc(100vh - 80px);
@@ -150,6 +155,16 @@ $transition-duration-slide: .5s;
     justify-content: center;
     margin-left: 2em;
     padding-bottom: 8em;
+
+    @include media-breakpoint-down(sm) {
+      position: relative;
+      width: 50%;
+      height: auto;
+      top: unset;
+      padding-bottom: 1em !important;
+      padding-top: 0 !important;
+
+    }
 
     @include media-breakpoint-down(md) {
       padding-top: 80px;
