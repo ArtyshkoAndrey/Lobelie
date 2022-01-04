@@ -1,4 +1,4 @@
-const Vue = require("vue");
+import Vue from "vue";
 window.Vue = require('vue');
 
 window.halfmoon = require("halfmoon");

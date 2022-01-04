@@ -4,10 +4,9 @@
  */
 
 import Vue from "vue";
+import store from "./store";
 
 require('./bootstrap.js');
-import * as mdb from 'mdb-ui-kit'; // lib
-import store from "./store";
 window.Vue = require('vue');
 
 /**
@@ -15,7 +14,7 @@ window.Vue = require('vue');
  * Vue components. It will recursively scan this directory for the Vue
  * components and automatically register them with their "basename".
  *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * E.g. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
 const files = require.context('./components', true, /\.vue$/i);
@@ -32,7 +31,7 @@ Vue.prototype.$cost = function (number) {
  */
 
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 Vue.config.devtools = true;
 Vue.config.performance = true;
 
@@ -46,11 +45,11 @@ const app = new Vue({
       selectSkus: null,
     };
   },
-  async created () {
+  async created() {
     await window.axios.post('/auth/check')
       .then(response => {
         this.$store.commit('auth', response.data);
-        if(this.test) {
+        if (this.test) {
           console.log('Auth bool server', response.data);
         }
       })
@@ -61,7 +60,7 @@ const app = new Vue({
     await window.axios.post('/api/currency/' + this.$store.state.currency_id)
       .then(response => {
         this.$store.commit('currency', response.data);
-        if(this.test) {
+        if (this.test) {
           console.log('Server return currency', response.data);
         }
       })
@@ -78,7 +77,7 @@ const app = new Vue({
         try {
           this.$store.state.cart.items.map(item => {
             let product = this.$store.state.cart.products.find(el => el.product_skuses.some(sk => sk.id === item.id));
-            if (product === undefined) {
+            if (typeof product === "undefined") {
               flag = true;
               this.$store.commit('removeItem', item.id);
             }
@@ -120,11 +119,11 @@ const app = new Vue({
       })
     }
   },
-  destroyed () {
+  destroyed() {
     this.$store.state.cart.products = [];
   },
   methods: {
-    addFavor (id) {
+    addFavor(id) {
       window.axios.post('/profile/favorites', {id: id, type: 'add'})
         .then(response => {
           if (response.data.status) {
@@ -143,7 +142,7 @@ const app = new Vue({
           });
         });
     },
-    deleteFavor (id, deleting) {
+    deleteFavor(id, deleting) {
       window.axios.post('/profile/favorites', {id: id, type: 'delete'})
         .then(response => {
           if (response.data.status) {
