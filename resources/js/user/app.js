@@ -5,6 +5,7 @@
 
 import Vue from "vue";
 import store from "./store";
+import * as mdb from 'mdb-ui-kit';
 
 require('./bootstrap.js');
 window.Vue = require('vue');
