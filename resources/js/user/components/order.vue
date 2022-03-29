@@ -194,7 +194,8 @@ export default {
     createOrder () {
       return window.axios.post('/order/store', {
         info: this.info,
-        method_pay: this.method_pay,
+        // method_pay: this.method_pay,
+        method_pay: 'cash',
         transfer: this.transfer,
         items: this.$store.getters.productsCart,
         code: this.code,
@@ -202,6 +203,51 @@ export default {
         sale: this.price_with_sale
       })
     },
+    // TODO: Временный меод что бы оплатить через QR
+    cashQr () {
+      // console.log(123)
+      // this.disabledButton = true
+      this.loaderButton = true
+      this.windowsLoader = true
+    },
+    payQr () {
+      this.createOrder()
+        .then(response => {
+          !this.$root.test ? this.$store.commit('clearCart') : null
+          this.order = response.data.order
+
+          window.Swal.fire({
+            title: 'Успешно',
+            text: 'Заказ успешно создан',
+            icon: 'success',
+            confirmButtonText: 'Отследить'
+          })
+            .then(result => {
+              window.location = '/order'
+            })
+
+        })
+        .catch(error => {
+          let errors = Object.values(error.response.data.errors)
+          errors = errors.flat()
+          let txt = ''
+          errors.forEach(value => {
+            txt += ('<p>' + value + '</p>')
+          })
+
+          window.Swal.fire({
+            title: 'Ошибка',
+            html: txt,
+            icon: 'error',
+            confirmButtonText: 'Изменить',
+            width: '40rem'
+          })
+            .then(result => {
+              this.loaderButtonAfter = false
+            })
+        })
+    },
+    // Конец
     cashPay () {
       this.createOrder()
         .then(response => {

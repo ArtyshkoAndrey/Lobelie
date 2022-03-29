@@ -145,6 +145,15 @@
                       </transition>
                     @endif
 
+                      <div class="choice-field" :class="method_pay === 'qr' ? 'active' : null" @click="method_pay = 'qr'" key="3">
+                        <i class="icon las la-credit-card"></i>
+                        <span class="content">Оплатить картой</span>
+                        <div class="radio-wrapper">
+                          <div class="radio"></div>
+                          <div class="dot"></div>
+                        </div>
+                      </div>
+
                   </div>
 
                 </transition>
@@ -206,13 +215,22 @@
                     </div>
 
                     <div class="col-12">
-                      <button @click="orderedNow" class="complete-button" :disabled="disabledButton">
+                      <button @click="cashQr" class="complete-button" :disabled="disabledButton">
                         <span v-if="!loaderButton">Завершить и оплатить</span>
                         <div v-else class="spinner-border text-light" role="status">
                           <span class="visually-hidden">Loading...</span>
                         </div>
                       </button>
                     </div>
+                    {{--              TODO: Убрано завершить попозже--}}
+{{--                    <div class="col-12">--}}
+{{--                      <button @click="orderedNow" class="complete-button" :disabled="disabledButton">--}}
+{{--                        <span v-if="!loaderButton">Завершить и оплатить</span>--}}
+{{--                        <div v-else class="spinner-border text-light" role="status">--}}
+{{--                          <span class="visually-hidden">Loading...</span>--}}
+{{--                        </div>--}}
+{{--                      </button>--}}
+{{--                    </div>--}}
 
                     <div class="col-12 agreement">
                       <span>Нажимая на кнопку “Завершить и оплатить” вы соглашаетесь с политикой конфиденциальности</span>
@@ -239,21 +257,54 @@
             </div>
           </div>
         </div>
-
         <div v-else key="loaderWindow" class="mt-5">
-          <div class="row">
-            <div class="col-12 text-center">
-              <h3><strong>Не закрывайте браузер.</strong> Ожидаем подтверждения оплаты</h3>
-            </div>
-          </div>
-          <div class="row justify-content-center my-5">
-            <div class="col-auto">
-              <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </div>
-          </div>
-        </div>
+                  <div class="row">
+                    <div class="col-12 text-center">
+                      <h3>
+                        Необходимо оплатить заказ через сервис KaspiBank
+                        <br>
+                        Отсканируйте QR код или перейдите по ссылке
+                      </h3>
+                      <span class="text-muted">Оплатите заказ через KaspiBank, а после подвердите нажав на кнопку "Подвердить"</span>
+                    </div>
+                  </div>
+                  <div class="row justify-content-center">
+                    <div class="col-12 mt-3 col-md-6 col-lg-3">
+                      <img src="{{ asset('images/qr.jpg') }}" class="img-fluid" alt="qr">
+                    </div>
+                  </div>
+                  <div class="row mt-3 justify-content-center">
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <a class="btn btn-black d-block" target="_blank" href="https://pay.kaspi.kz/pay/2gtzlsdx">Оплатить заказ</a>
+                    </div>
+                  </div>
+                  <div class="row mt-5 justify-content-center">
+                    <div class="col-10 col-md-6 col-lg-5">
+                      <span class="text-muted">В случае не оплаты, Ваш заказ отменят. В нелёгкое время, администраторы проверяют оплату и заказ в ручную. Но скоро всё наладится</span>
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 justify-content-center">
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <button class="btn btn-dark d-block w-100" @click="payQr">Подвердить</button>
+                    </div>
+                  </div>
+                </div>
+        {{--        TODO: Востановить код ниже что бы показывать об проверки оплаты заказа--}}
+{{--        <div v-else key="loaderWindow" class="mt-5">--}}
+{{--          <div class="row">--}}
+{{--            <div class="col-12 text-center">--}}
+{{--              <h3><strong>Не закрывайте браузер.</strong> Ожидаем подтверждения оплаты</h3>--}}
+{{--            </div>--}}
+{{--          </div>--}}
+{{--          <div class="row justify-content-center my-5">--}}
+{{--            <div class="col-auto">--}}
+{{--              <div class="spinner-border" role="status">--}}
+{{--                <span class="visually-hidden">Loading...</span>--}}
+{{--              </div>--}}
+{{--            </div>--}}
+{{--          </div>--}}
+{{--        </div>--}}
       </transition>
 
     </order>

@@ -30,7 +30,9 @@ class OrderService
         'ship_price' => $transfer['price'],
         'paid_at' => $method_pay === Order::PAYMENT_METHODS_CASH ? Carbon::now() : null,
         'sale' => $sale,
-        'ship_status' => $method_pay === Order::PAYMENT_METHODS_CARD ? Order::SHIP_STATUS_PAID : Order::SHIP_STATUS_PENDING
+//        'ship_status' => $method_pay === Order::PAYMENT_METHODS_CARD ? Order::SHIP_STATUS_PAID : Order::SHIP_STATUS_PENDING
+        // TODO: Это код который глушит алгорит, пока не подключать Эквайринг
+        'ship_status' => Order::SHIP_STATUS_PENDING
       ]);
       $order->user()->associate($user);
       $order->couponCode()->associate(CouponCode::firstWhere('code', $code));
